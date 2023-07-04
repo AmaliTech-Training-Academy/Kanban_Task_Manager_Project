@@ -1,8 +1,11 @@
 // Third party Modules
 import express from 'express';
 import morgan from 'morgan';
-import helmet from 'helmet'
-import cookieParser from 'cookie-parser'
+import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
+
+// Developer Modules
+import userRouter from './routers/userRoutes.js';
 
 const app = express();
 
@@ -21,8 +24,10 @@ app.use(express.json({ limit: '10kb' }));
 // passes data from cookie
 app.use(cookieParser());
 
-app.get('/', (req: Request, res: Response | any, next: any) => {
-  res.send('Server started');
-});
+// Routers
+app.get('/', (req: Request, res: Response | any, next: any) => res.send('server started'));
+
+app.use('/auth', userRouter);
+
 
 export default app;
