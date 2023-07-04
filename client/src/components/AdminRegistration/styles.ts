@@ -1,10 +1,9 @@
-import styled from "styled-components"
-
+import styled from "styled-components";
 
 export const Styledcontainer = styled.div`
   .container-body {
     width: 100%;
-    height: 100%;
+    height: auto;
     background-color: #e4ebfa;
     overflow-x: hidden;
     display: flex;
@@ -83,17 +82,86 @@ export const Styledcontainer = styled.div`
       justify-content: space-between;
       align-items: center;
       color: white;
-      
+      &:hover {
+        cursor: pointer;
+      }
     }
-    
+
     .uploadIcon {
       width: 24px;
       height: 24px;
     }
-    
+
     .upload-photo button p {
+      font-size: 12px;
+      font-weight: 500;
+      color: white;
+      font-family: Plus Jakarta Sans;
+    }
+
+    form {
+      width: 648px;
+      margin-top: 24px;
+      display: flex;
+      gap: 20px;
+      height: auto;
+      flex-direction: column;
+    }
+
+    .grid {
+      display: flex;
+      gap: 20px;
+    }
+
+    .submit-container {
+      width: 303px;
+      height: 40px;
+      border-radius: 20px;
+      margin: auto;
+      border: 1px solid rgba(130, 143, 163, 0.25);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      font-size: 13px;
+      background-color: #635fc7;
+      font-family: Plus Jakarta Sans;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    input {
+      width: 306px;
+      height: 40px;
+      text-indent: 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(130, 143, 163, 0.25);
+    }
+    label {
       font-size: 13px;
       font-weight: 500;
+      color: #2b2c37;
+    }
+    ::placeholder {
+      color: #000112;
+      font-size: 13px;
+      opacity: 0.25;
+    }
+
+    footer {
+      color: #828fa3;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 24px;
+
+      a {
+        text-decoration: none;
+        color: #828fa3;
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 `;
