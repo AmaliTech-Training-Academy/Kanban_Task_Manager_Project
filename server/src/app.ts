@@ -29,5 +29,4 @@ app.get('/', (req: Request, res: Response | any, next: any) => res.send('server 
 
 app.use('/auth', userRouter);
 
-
 export default app;
