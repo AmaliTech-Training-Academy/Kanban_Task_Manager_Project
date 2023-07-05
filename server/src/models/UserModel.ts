@@ -79,7 +79,7 @@ const User = sequelize.define(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    
+
     token: {
       type: DataTypes.STRING,
       allowNull: true,
@@ -92,7 +92,6 @@ const User = sequelize.define(
       defaultValue: 'active',
     },
     isVerified: { type: DataTypes.BOOLEAN, defaultValue: false },
-    verifyCode: DataTypes.STRING,
     passwordChangedAt: DataTypes.DATE,
     passwordResetToken: DataTypes.STRING,
     passwordResetExpires: DataTypes.DATE,
