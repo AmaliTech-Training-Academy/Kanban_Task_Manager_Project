@@ -1,4 +1,5 @@
 import './App.css'
+import Home from './components/Home'
 import Navbar from './components/Navbar'
 import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -9,6 +10,7 @@ function App() {
     <div className='App'>
       <Router>
         <Navbar />
+        <Home />
       </Router>
     </div>
   )
