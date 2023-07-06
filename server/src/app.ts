@@ -1,3 +1,7 @@
+// System Modules
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
+
 // Third party Modules
 import express from 'express';
 import morgan from 'morgan';
@@ -7,9 +11,18 @@ import cookieParser from 'cookie-parser';
 // Developer Modules
 import userRouter from './routers/userRoutes.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const app = express();
 
 //  GLOBAL MIDDLEWARES
+
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.static(path.join(__dirname, './public')));
+
 // NOTE: Set security HTTP headers
 app.use(helmet());
 

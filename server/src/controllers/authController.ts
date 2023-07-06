@@ -7,6 +7,7 @@ import User from '../models/UserModel.js';
 import sendMail from '../utils/email.js';
 import { signToken } from '../utils/helpers.js';
 import { comparePasswords } from '../utils/helpers.js';
+import { correctPasswordResetToken } from '../utils/helpers.js';
 
 export const adminRole = (req: Request | any, res: Response | any, next: any) => {
   req.role = 'admin';
@@ -132,4 +133,54 @@ export const login = async (req: Request | any, res: Response | any, next: any) 
     token,
     data: { user },
   });
+};
+
+// Forgot Password
+export const forgotPassword = async (req: Request | any, res: Response | any, next: any) => {
+  const { email } = req.body;
+
+  const user: Model | any = await User.findOne({
+    where: { email },
+    attributes: {
+      exclude: [
+        'rank',
+        'token',
+        'status',
+        'createdAt',
+        'specialization',
+        'passwordConfirm',
+        'passwordChangedAt',
+        'passwordResetToken',
+        'passwordResetExpires',
+      ],
+    },
+  });
+
+  // STEP: Check if use exist
+  if (!user) {
+    return new Error('There is no user with the email address');
+  }
+  // STEP: Generate a token
+  const resetToken = correctPasswordResetToken(user);
+  await user.save();
+
+  const host = process.env.NODE_ENV === 'production' ? process.env.HOST : req.get('host');
+
+  const resetTokenURL = `${req.protocol}://${host}/auth/reset-password/new/${resetToken}`;
+
+  // STEP: Send Password Reset mail
+  try {
+    await new sendMail(user, resetTokenURL).sendPasswordReset();
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Token sent to email',
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save();
+
+    return new Error('There was an error sending the email. Try again later');
+  }
 };

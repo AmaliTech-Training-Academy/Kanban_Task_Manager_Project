@@ -1,29 +1,42 @@
 
 style.
+
+
+
+    html{
+         font-size: 62.5%; 
+    }
+
     img {
         border: none;
         -ms-interpolation-mode: bicubic;
         max-width: 100%; 
     }
+    
     body {
         background-color: #f6f6f6;
-        font-family: sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         -webkit-font-smoothing: antialiased;
-        font-size: 14px;
+        font-size: 1.3rem;
         line-height: 1.4;
         margin: 0;
         padding: 0;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%; 
     }
+    
+    img {
+        margin-bottom: 2.4rem;
+    }
+
     table {
         border-collapse: separate;
         mso-table-lspace: 0pt;
         mso-table-rspace: 0pt;
         width: 100%; }
         table td {
-            font-family: sans-serif;
-            font-size: 14px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.3rem;
             vertical-align: top; 
     }
     .body {
@@ -34,33 +47,42 @@ style.
         display: block;
         margin: 0 auto !important;
         /* makes it centered */
-        max-width: 580px;
-        padding: 10px;
-        width: 580px; 
+        max-width: 58rem;
+        padding: 1rem;
+        width: 58rem; 
+    }
+    .small{
+        font-weight: 500;
+        font-size: 1.1rem;
+        line-height: 1.8rem;
+    }
+    .text-blue {
+        color: #635FC7;
     }
     .content {
         box-sizing: border-box;
         display: block;
         margin: 0 auto;
-        max-width: 580px;
-        padding: 10px; 
+        max-width: 46.1rem;
+        height: 47.2rem;
+        padding: .1rem.; 
     }
     .main {
         background: #ffffff;
-        border-radius: 3px;
+        border-radius: .9rem;
         width: 100%; 
     }
     .wrapper {
         box-sizing: border-box;
-        padding: 20px; 
+        padding: 4rem; 
     }
     .content-block {
-        padding-bottom: 10px;
-        padding-top: 10px;
+        padding-bottom: .1rem;
+        padding-top: .1rem;
     }
     .footer {
         clear: both;
-        margin-top: 10px;
+        margin-top: .1rem;
         text-align: center;
         width: 100%; 
     }
@@ -69,7 +91,7 @@ style.
         .footer span,
         .footer a {
             color: #999999;
-            font-size: 12px;
+            font-size: 1.2rem;
             text-align: center; 
     }
     h1,
@@ -77,32 +99,33 @@ style.
     h3,
     h4 {
         color: #000000;
-        font-family: sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         font-weight: 400;
         line-height: 1.4;
         margin: 0;
-        margin-bottom: 30px; 
+        margin-bottom: 3.0rem; 
     }
     h1 {
-        font-size: 35px;
-        font-weight: 300;
+        font-size: 3.5rem;
+        font-weight: 400;
         text-align: center;
         text-transform: capitalize; 
     }
     p,
     ul,
     ol {
-        font-family: sans-serif;
-        font-size: 14px;
-        font-weight: normal;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 2.3rem;
         margin: 0;
-        margin-bottom: 15px; 
+        margin-bottom: 1.5rem; 
     }
         p li,
         ul li,
         ol li {
             list-style-position: inside;
-            margin-left: 5px; 
+            margin-left: .5rem; 
     }
     a {
         color: #635FC7;
@@ -112,32 +135,29 @@ style.
         box-sizing: border-box;
         width: 100%; }
         .btn > tbody > tr > td {
-            padding-bottom: 15px; }
+            padding-bottom: 1.5rem; }
         .btn table {
             width: auto; 
     }
         .btn table td {
             background-color: #ffffff;
-            border-radius: 5px;
             text-align: center; 
     }
         .btn a {
             background-color: #ffffff;
-            border: solid 1px #635FC7;
-            border-radius: 5px;
+            border: solid .1rem #635FC7;
+            border-radius: 50rem !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             box-sizing: border-box;
             color: #635FC7;
             cursor: pointer;
             display: inline-block;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 1.3rem;
+            font-weight: 700;
             margin: 0;
-            padding: 12px 25px;
+            padding: 1rem 11rem;
             text-decoration: none;
             text-transform: capitalize; 
-    }
-    .btn-primary table td {
-        background-color: #635FC7; 
     }
     .btn-primary a {
         background-color: #635FC7;
@@ -185,13 +205,13 @@ style.
     }
     hr {
         border: 0;
-        border-bottom: 1px solid #f6f6f6;
-        margin: 20px 0; 
+        border-bottom: .1rem solid #f6f6f6;
+        margin: 2rem 0; 
     }
     @media only screen and (max-width: 620px) {
         table[class=body] h1 {
-            font-size: 28px !important;
-            margin-bottom: 10px !important; 
+            font-size: 2.8rem !important;
+            margin-bottom: 1rem !important; 
         }
         table[class=body] p,
         table[class=body] ul,
@@ -199,11 +219,11 @@ style.
         table[class=body] td,
         table[class=body] span,
         table[class=body] a {
-            font-size: 16px !important; 
+            font-size: 1.6rem !important; 
         }
         table[class=body] .wrapper,
         table[class=body] .article {
-            padding: 10px !important; 
+            padding: 1rem !important; 
         }
         table[class=body] .content {
             padding: 0 !important; 
@@ -249,9 +269,7 @@ style.
             line-height: inherit !important;
             text-decoration: none !important; 
         }
-        .btn-primary table td:hover {
-            background-color: #A8A4FF !important; 
-        }
+      
         .btn-primary a:hover {
             background-color: #A8A4FF !important;
             border-color: #A8A4FF !important; 

@@ -8,10 +8,12 @@ class Email {
   firstName: string;
   url: string;
   from: string;
+  email: string;
 
   constructor(user: any, url: string) {
     this.to = user.email;
     this.firstName = user.fullName.split(' ')[0];
+    this.email = user.email;
     this.url = url;
     this.from = `Kanban <${process.env.EMAIL_FROM}>`;
   }
@@ -49,6 +51,7 @@ class Email {
     // STEP:  Render HTML based on a pug template
     const html = pug.renderFile(`./views/email/${template}.pug`, {
       firstName: this.firstName,
+      email: this.email,
       url: this.url,
       subject,
     });
@@ -68,6 +71,9 @@ class Email {
 
   async sendConfirmationEmail() {
     await this.send('confirmEmail', 'Email Confirmation');
+  }
+  async sendPasswordReset() {
+    await this.send('sendPasswordReset', 'Reset Your Password (valid for 10 minutes)');
   }
 }
 
