@@ -12,7 +12,7 @@ export const Nav = styled.nav`
   flex-shrink: 0;
   background:  #FFF;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.30), 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
-
+  /* width: 100%; */
  
 `;
 
@@ -81,7 +81,8 @@ export const NavContainer = styled.div`
 
 export const NavBtn= styled.div`
   display:flex;
-  
+  /* justify-content:center; */
+    /* margin-right:4px; */
      
 `
 

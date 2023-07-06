@@ -5,7 +5,7 @@ export const Stylecontainer = styled.div`
     overflow-x: hidden;
 } */
   .image {
-    width: 215.78vh;
+    width: 100%;
     /* height: 170vh; */
   }
 
@@ -114,7 +114,7 @@ export const Stylecontainer = styled.div`
 
   .trustedCom {
     height: 242px;
-    width: 215.78vh;
+    width: 100%;
     margin-top: 25rem;
   }
 `;

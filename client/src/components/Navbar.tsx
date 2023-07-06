@@ -12,7 +12,7 @@ import {
 } from "../components/NavbarElements";
 
 const Navbar = () => {
-  return (
+  return  (
     <>
       <Nav>
         <SmallLogo>
