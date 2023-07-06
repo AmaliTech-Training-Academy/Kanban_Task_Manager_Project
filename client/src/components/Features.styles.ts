@@ -3,31 +3,20 @@ import styled from "styled-components";
 
 export const Stylecontainer = styled.div`
 
+.section{
+    overflow-x: hidden;
+}
 .image{
     width: 100%;
-    padding: 18px 0;
-}
-/* .imagg{
-    margin-left: 20px;
-    margin-top: -20px;
-    padding: 17px 71px;
-    margin-bottom: 200px;
-}
-.imagee{
-    margin-left: 200px;
-    margin-top: -20px;
-
-    padding: 17px 71px;
-    margin-bottom: 200px;
+    padding: 28px 85px;
 }
 .imag{
-    width: 100px;
     margin-left: 1213px;
-    margin-top: -210px;
-} */
+    margin-top: -450px; 
+}
 
 .features{
-    margin-top: -350px;
+    margin-top: -390px;
 
 }
 
@@ -52,9 +41,7 @@ export const Stylecontainer = styled.div`
     margin-left: 570px;
     margin-top: -250px;
  }
-.text{
-    /* margin: auto; */
-}
+
  .text h1{
     color: #20212C;
     font-size: 52px;
@@ -62,13 +49,11 @@ export const Stylecontainer = styled.div`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    /* margin-left:  360px; */
     padding: 0 310px;
 
  }
 
  .text2 p{
-    /* width: 100%; */
     height: 46px;
     display: flex;
     flex-direction: column;
@@ -89,11 +74,11 @@ export const Stylecontainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     margin-top: 60px;
+    padding: 0 130px;
+
  }
  .card{
-    /* text-align: center;
-    align-items: center; */
-    /* background-color: red; */
+   margin: auto;
  }
  .card img{
     width: 82px;
@@ -111,8 +96,7 @@ export const Stylecontainer = styled.div`
     margin-top: 30px;
 }
  .card p{
-    /* width: 328px;
-    height: 38px; */
+    height: 38px;
     flex-direction: column;
     flex-shrink: 0;
     color: #000;
@@ -123,13 +107,26 @@ export const Stylecontainer = styled.div`
     font-weight: 700;
     line-height: normal;
     opacity: 0.6000000238418579;
-    margin-left: 60px;
     margin-top: 20px;
  }
 
+ .p1{
+    display: flex;
+    width: 328px;
+    height: 38px;
+ }
  .p2{
+    display: flex;
     width: 277px;
     height: 38px;
  }
+
+ .p3{
+    display: flex;
+    width: 242px;
+    height: 38px;
+ }
+
+ 
 
 `;

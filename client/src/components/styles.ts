@@ -24,7 +24,7 @@ export const Stylecontainer = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: 0 71px;
+    padding: 0 85px;
   }
 
   .content h2 {
@@ -39,11 +39,11 @@ export const Stylecontainer = styled.div`
     font-weight: 700;
     line-height: normal;
     opacity: 0.6000000238418579;
-    padding: 0 71px;
+    padding: 0 85px;
   }
 
   .get-started {
-    padding: 0 71px;
+    padding: 25px 85px;
     font-family: Plus Jakarta Sans;
     font-size: 18px;
     font-style: normal;
