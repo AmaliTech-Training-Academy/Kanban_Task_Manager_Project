@@ -1,6 +1,7 @@
 import './index.css'
 
-import { Admin } from './components/AdminRegistration'
+import * as React from 'react'
+import { Admin } from './admin_registration_page'
 
 function App() {
 
