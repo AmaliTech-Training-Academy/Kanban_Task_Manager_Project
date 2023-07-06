@@ -1,7 +1,8 @@
 import multer from 'multer';
 import sharp from 'sharp';
 import randomstring from 'randomstring';
-import { Model } from 'sequelize';
+import { Model, Op } from 'sequelize';
+import crypto from 'crypto';
 
 import User from '../models/UserModel.js';
 import sendMail from '../utils/email.js';
@@ -183,4 +184,33 @@ export const forgotPassword = async (req: Request | any, res: Response | any, ne
 
     return new Error('There was an error sending the email. Try again later');
   }
+};
+
+export const resetPassword = async (req: Request | any, res: Response | any, next: any) => {
+  // STEP: Get token from
+  const token = req.params.token;
+
+  const hashToken = crypto.createHash('sha256').update(token).digest('hex');
+
+  const user: Model | any = await User.findOne({
+    where: {
+      passwordResetToken: hashToken,
+      passwordResetExpires: { [Op.gt]: Date.now() },
+    },
+  });
+  
+  // STEP:  If token has not expired, and there is a user, set the new password
+  if (!user) {
+    return new Error('Token is invalid or has expired');
+  }
+
+  // STEP: 3) Update password propety for the user
+  user.password = req.body.password;
+  user.passwordConfirm = req.body.passwordConfirm;
+  user.passwordResetToken = null;
+  user.passwordResetExpires = null;
+
+  res.status(200).json({
+    status: 'success',
+  });
 };

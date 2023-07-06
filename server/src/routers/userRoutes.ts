@@ -3,6 +3,7 @@ import {
   signup,
   login,
   forgotPassword,
+  resetPassword,
   adminRole,
   resizeUserPhoto,
   uploadUserPhoto,
@@ -13,5 +14,6 @@ const router = express.Router();
 router.post('/admin/sign-up', uploadUserPhoto, resizeUserPhoto, adminRole, signup);
 router.post('/admin/login', login);
 router.post('/forgot-password', forgotPassword);
+router.patch('/reset-password/new/:token', resetPassword);
 
 export default router;

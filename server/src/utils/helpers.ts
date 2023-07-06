@@ -18,9 +18,9 @@ export const comparePasswords = async (userPassword: string, candidatePassowrd: 
 // NOTE: Generate Randon String
 export const correctPasswordResetToken = (user: any) => {
   const resetToken = crypto.randomBytes(32).toString('hex');
-
+  
   user.passwordResetToken = crypto.createHash('sha256').update(resetToken).digest('hex');
-
+  
   user.passwordResetExpires = Date.now() + 10 * 60 * 1000;
 
   return resetToken;
