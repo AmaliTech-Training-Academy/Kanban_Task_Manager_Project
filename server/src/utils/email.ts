@@ -69,8 +69,8 @@ class Email {
     await this.newTransport().sendMail(mailOptions);
   }
 
-  async sendConfirmationEmail() {
-    await this.send('confirmEmail', 'Email Confirmation');
+  async sendAdminVerificationMail() {
+    await this.send('adminVerifyMail', 'Admin Verification');
   }
   async sendPasswordReset() {
     await this.send('sendPasswordReset', 'Reset Your Password (valid for 10 minutes)');

@@ -78,7 +78,7 @@ export const signup = async (req: Request | any, res: Response | any, next: any)
   await newUser.save();
 
   // STEP:  send verification link
-  await new sendMail(newUser, verificationLink).sendConfirmationEmail();
+  await new sendMail(newUser, verificationLink).sendAdminVerificationMail();
 
   res.status(200).json({
     status: 'success',
@@ -198,7 +198,7 @@ export const resetPassword = async (req: Request | any, res: Response | any, nex
       passwordResetExpires: { [Op.gt]: Date.now() },
     },
   });
-  
+
   // STEP:  If token has not expired, and there is a user, set the new password
   if (!user) {
     return new Error('Token is invalid or has expired');
