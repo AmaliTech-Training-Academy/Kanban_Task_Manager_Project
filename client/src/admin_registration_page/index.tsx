@@ -6,6 +6,8 @@ import { RegistrationForm } from "../components/RegistrationForm";
 import { RegistrationFooter } from "../components/RegistrationFooter";
 
 export const Admin = () => {
+
+ 
   
   return (
     <StyledRegistrationContainer>
@@ -29,3 +31,5 @@ export const Admin = () => {
     </StyledRegistrationContainer>
   );
 };
+
+

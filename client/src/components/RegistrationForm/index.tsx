@@ -3,6 +3,9 @@ import { StyledRegistrationForm } from './styles'
 
 
 export const RegistrationForm = () => {
+
+
+   
   return (
     <StyledRegistrationForm>
       <div>
