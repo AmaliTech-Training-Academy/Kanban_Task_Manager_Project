@@ -11,8 +11,8 @@ export const signToken = (id: string) => {
 };
 
 // NOTE: Confirm Passwords
-export const comparePasswords = async (userPassword: string, candidatePassowrd: string) => {
-  return await bcrypt.compare(userPassword, candidatePassowrd);
+export const comparePasswords = async (candidatePassword: string, userPassword: string) => {
+  return await bcrypt.compare(candidatePassword, userPassword);
 };
 
 // NOTE: Generate Randon String

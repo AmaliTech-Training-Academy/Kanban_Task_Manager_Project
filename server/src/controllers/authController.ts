@@ -112,12 +112,12 @@ export const login = async (req: Request | any, res: Response | any, next: any) 
 
   // STEP: check if user password && input password match
   if (!user || !(await comparePasswords(password, user.password))) {
-    new Error('Incorrect email or password');
+    return console.log('Incorrect email or password', 401);
   }
 
-  // STEP: Verify User
-  user.set({ isVerified: true });
-  user.save();
+  // // STEP: Verify User
+  // user.set({ isVerified: true });
+  // user.save();
 
   //STEP: Assign user a login token
   const token = signToken(user.id);
@@ -196,7 +196,7 @@ export const resetPassword = async (req: Request | any, res: Response | any, nex
 
   // STEP:  If token has not expired, and there is a user, set the new password
   if (!user) {
-    return new Error('Token is invalid or has expired');
+    return console.log('💥💥💥 Token is invalid or has expired');
   }
 
   // STEP: 3) Update password propety for the user
@@ -204,6 +204,7 @@ export const resetPassword = async (req: Request | any, res: Response | any, nex
   user.passwordConfirm = req.body.passwordConfirm;
   user.passwordResetToken = null;
   user.passwordResetExpires = null;
+  user.save();
 
   res.status(200).json({
     status: 'success',
