@@ -3,10 +3,11 @@ import sharp from 'sharp';
 import randomstring from 'randomstring';
 import { Model, Op } from 'sequelize';
 import crypto from 'crypto';
+import jwt from 'jsonwebtoken';
 
 import User from '../models/UserModel.js';
 import sendMail from '../utils/email.js';
-import { signToken } from '../utils/helpers.js';
+import { signToken, stringToken } from '../utils/helpers.js';
 import { comparePasswords } from '../utils/helpers.js';
 import { correctPasswordResetToken } from '../utils/helpers.js';
 
@@ -68,7 +69,7 @@ export const signup = async (req: Request | any, res: Response | any, next: any)
   const host = process.env.NODE_ENV === 'production' ? process.env.HOST : req.get('host');
 
   // STEP: Create Token and Verification
-  const token = signToken(newUser.id);
+  const token = stringToken(newUser);
   const verificationLink = `${req.protocol}://${host}/auth/admin/new/token/${token}`;
 
   // STEP: Save token to database
@@ -209,6 +210,32 @@ export const resetPassword = async (req: Request | any, res: Response | any, nex
   user.passwordConfirm = req.body.passwordConfirm;
   user.passwordResetToken = null;
   user.passwordResetExpires = null;
+
+  res.status(200).json({
+    status: 'success',
+  });
+};
+
+export const verifyAdmin = async (req: Request | any, res: Response | any, next: any) => {
+  // STEP: Get token form URL
+  const token = req.params.token;
+
+  const hashToken = crypto.createHash('sha256').update(token).digest('hex');
+
+  const user: Model | any = await User.findOne({
+    where: {
+      token: hashToken,
+    },
+  });
+
+  if (!user) {
+    return new Error('Token is invalid or has expired');
+  }
+
+  // STEP: Verify user
+  user.isVerified = true;
+  user.token = '';
+  await user.save();
 
   res.status(200).json({
     status: 'success',
