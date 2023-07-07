@@ -24,7 +24,7 @@ export const RegistrationForm = () => {
             <div className="form1">
               <label htmlFor="password">Password</label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 id="fullname"
                 placeholder="************"
@@ -46,7 +46,7 @@ export const RegistrationForm = () => {
             <div className="form1">
               <label htmlFor="confirm">Comfirm Password</label>
               <input
-                type="text"
+                type="password"
                 name="confirmpassword"
                 id="confirmpassword"
                 placeholder="***********"
