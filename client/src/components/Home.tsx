@@ -17,7 +17,7 @@ const Home = () => {
             drive productivity and achieve successful project outcomes.{" "}
           </h2>
           <div className="get-started">
-            <button>Get Started</button>
+            <button><a href="">Get Started</a></button>
             <div className="videoIcon">
               <a href="/" className="forIcon">
                 <img src={playArrow} alt="" className="play-arrow" />

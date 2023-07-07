@@ -23,7 +23,7 @@ const Navbar = () => {
 
         <NavContainer>
           <NavMenu>
-            <NavLink1 to="/home">Home</NavLink1>
+            <NavLink1 to="/home"><a href=""></a>Home</NavLink1>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/features">Features</NavLink>
             <NavLink to="/contact">Contact Us</NavLink>
@@ -33,8 +33,8 @@ const Navbar = () => {
         </NavContainer>
 
         <NavBtn>
-            <NavBtnLink>Login</NavBtnLink>
-            <NavBtnLink2>Register</NavBtnLink2>
+            <NavBtnLink> <a href="">Login</a></NavBtnLink>
+            <NavBtnLink2><a href="">Register</a></NavBtnLink2>
         </NavBtn>
       </Nav>
     </>

@@ -52,6 +52,10 @@ export const Stylecontainer = styled.div`
     display: flex;
     align-items: center;
   }
+  a{
+    text-decoration: none;
+    color: #fff;
+}
   button {
     width: 242px;
     height: 85px;

@@ -126,6 +126,11 @@ export const Stylecontainer = styled.div`
     line-height: normal;
     border: none;
 
+    a{
+    text-decoration: none;
+    color: #fff;
+}
+
     &:hover{
         background:#A8A4FF;
         cursor: pointer;

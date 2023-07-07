@@ -5,6 +5,9 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 // import { BrowserRouter as Router,Routes,Route,Link } from 'react-router-dom'
 import { BrowserRouter as Router} from 'react-router-dom'
+import Testimonials from './components/Testimonials'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
         <Home />
         <Features />
         <About />
+        <Testimonials />
+        <Contact />
+        <Footer />
       </Router>
     </div>
   )

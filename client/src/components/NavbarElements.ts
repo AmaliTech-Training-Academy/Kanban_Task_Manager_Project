@@ -28,8 +28,14 @@ export const NavLink= styled(Link)`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    opacity: 0.6000000238418579; 
-    
+    /* opacity: 0.6000000238418579;  */
+    a{
+        text-decoration: none;
+    }
+
+    &.active{
+        color:#635FC7;
+    }
     &:hover{
         color:#A8A4FF;
     } 
@@ -47,6 +53,9 @@ export const NavLink1= styled(Link)`
     font-weight: 700;
     line-height: normal;
 
+    a{
+        text-decoration: none;
+    }
   
     &.active{
         color:#635FC7;
@@ -100,10 +109,14 @@ export const NavBtnLink= styled.div`
    border-radius: 100px;
    border: 2px solid #635FC7;
    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25); 
-   cursor:pointer;
-
+   
+    a{
+        text-decoration: none;
+    }
    &:hover{
-    background:#A8A4FF;    }  
+    background:#A8A4FF;  
+    cursor:pointer;
+    }  
 `
 
 export const NavBtnLink2= styled.div`
@@ -120,6 +133,10 @@ export const NavBtnLink2= styled.div`
    align-items: flex-start;
    gap: 8px;
    cursor:pointer;
+
+   a{
+        text-decoration: none;
+    }
 
    &:hover{
         background:#A8A4FF;

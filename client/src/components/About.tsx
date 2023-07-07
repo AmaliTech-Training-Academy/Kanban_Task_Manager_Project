@@ -1,7 +1,8 @@
 // import React from 'react'
 import { Stylecontainer } from './About.styles'
 import backgroundImage from "../assets/Images/Group 558.png"
-import contentIcon from "../assets/Icons/Ellipse 44.png"
+import contentIcon from "../assets/Images/about us icon 1.png"
+import contentIconn from "../assets/Images/about us icon 2.png"
 import contentImage from "../assets/Images/Rectangle 25.png"
 import contentImg from "../assets/Images/Group 543.png"
 
@@ -22,13 +23,13 @@ const About = () => {
                 </div>
                 <div className='content'>
                     <div className='content-sec'>
-                        <img src={contentIcon} alt="" />
+                        <img src={contentIconn} alt="" />
                         <h1>Plan better for easier projects</h1>
                         <p>Enhance your project planning process with advanced
                            tools and comprehensive features that enable seamless 
                            coordination, efficient resource allocation, and streamlined workflows.
                         </p>
-                        <button type='button'>Get Started</button>
+                        <button type='button'><a href="">Get Started</a></button>
                     </div>
                     <div className='content-img'>
                         <img src={contentImage} alt="" />
@@ -46,7 +47,7 @@ const About = () => {
                             task management, facilitate efficient collaboration, 
                             and provide real-time insights. 
                         </p>
-                        <button type='button'>Get Started</button>
+                        <button type='button'><a href="">Get Started</a></button>
                     </div>
                     
                 </div>
