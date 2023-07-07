@@ -33,3 +33,12 @@ export const stringToken = (user: any) => {
 
   return stringToken;
 };
+
+export const restrictTo = (role: string) => {
+  return (req: any, res: any, next: any) => {
+    if (!role.includes(req.user.role)) {
+      return console.log('💥💥💥 You do not have permission to perform this action', 403);
+    }
+    next();
+  };
+};

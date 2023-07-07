@@ -18,4 +18,7 @@ router.post('/forgot-password', forgotPassword);
 router.patch('/reset-password/new/:token', resetPassword);
 router.patch('/admin/new/token/:token', verifyAdmin);
 
+
+
+
 export default router;

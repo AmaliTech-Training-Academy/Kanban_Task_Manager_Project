@@ -72,6 +72,9 @@ class Email {
   async sendAdminVerificationMail() {
     await this.send('adminVerifyMail', 'Admin Verification');
   }
+  async sendUserVerificationMail() {
+    await this.send('userVerificationMail', 'User Verification');
+  }
   async sendPasswordReset() {
     await this.send('sendPasswordReset', 'Reset Your Password (valid for 10 minutes)');
   }

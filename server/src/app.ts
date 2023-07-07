@@ -10,6 +10,7 @@ import cookieParser from 'cookie-parser';
 
 // Developer Modules
 import userRouter from './routers/userRoutes.js';
+import adminRouter from './routers/adminRoutes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -41,5 +42,6 @@ app.use(cookieParser());
 app.get('/', (req: Request, res: Response | any, next: any) => res.send('server started'));
 
 app.use('/auth', userRouter);
+app.use('/admin', adminRouter);
 
 export default app;
