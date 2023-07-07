@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledRegistrationContainer = styled.body`
+export const StyledAdminLoginContainer = styled.body`
   .container-body {
     width: 100%;
     height: auto;
@@ -10,28 +10,29 @@ export const StyledRegistrationContainer = styled.body`
     justify-content: center;
   }
 
-  .kanbanlogo {
-    width: 296px;
-    height: 49px;
-    margin: 163px 0 90px 0;
-  }
-
-  .registration {
-    width: 712px;
-    height: 558px;
+  .login {
+    width: 487px;
+    height: 500px;
     background-color: #fff;
     border-radius: 8px;
     margin-bottom: 164px;
-    margin: 0 0 164px 0;
+    /* margin: 0 0 164px 0; */
+    /* background-color: aqua; */
+    /* border: solid 1px red; */
   }
-
-  .register-container {
-    width: 648px;
+  .login-container {
+    width: 432px;
     height: 494px;
     padding: 32px;
   }
 
-  .register-container h1 {
+  .kanbanlogo {
+    width: 152px;
+    height: 25px;
+    /* margin: 163px 0 90px 0; */
+  }
+
+  .login-container h1 {
     font-size: 18px;
     color: #20212c;
     font-weight: 700;
