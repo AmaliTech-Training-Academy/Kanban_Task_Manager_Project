@@ -10,6 +10,7 @@ import {
   NavBtnLink,
   NavBtnLink2
 } from "../components/NavbarElements";
+// import {Link} from "react-router-dom"
 
 const Navbar = () => {
   return  (
@@ -22,10 +23,10 @@ const Navbar = () => {
 
         <NavContainer>
           <NavMenu>
-            <NavLink1 to="/">Home</NavLink1>
-            <NavLink to="/">About</NavLink>
-            <NavLink to="/">Features</NavLink>
-            <NavLink to="/">Contact Us</NavLink>
+            <NavLink1 to="/home">Home</NavLink1>
+            <NavLink to="/about">About</NavLink>
+            <NavLink to="/features">Features</NavLink>
+            <NavLink to="/contact">Contact Us</NavLink>
           </NavMenu>
 
 

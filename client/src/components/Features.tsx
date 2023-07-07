@@ -1,10 +1,7 @@
 // import React from 'react';
 import { Stylecontainer } from "./Features.styles"
 import backgroundImg from "../assets/Images/our features design.png"
-// import backgroundImgg from "../assets/Images/Group 556.png"
 import backgroundImage from "../assets/Images/Ellipse 39.png"
-// import backgroundImag from "../assets/Images/Ellipse 42.png"
-// import backgroundImagee from "../assets/Images/Ellipse 43.png"
 import Icon1 from "../assets/Icons/Group 460.png"
 import Icon2 from "../assets/Icons/Group 461.png"
 import Icon3 from "../assets/Icons/Group 462.png"
@@ -18,8 +15,6 @@ const Features = () => {
         <div className="section">
             <img src={backgroundImg} alt="" className="image"/>
              <img src={backgroundImage} alt="" className="imag"/>
-            {/*<img src={backgroundImag} alt="" className="imagg"/>
-            <img src={backgroundImagee} alt="" className="imagee"/>  */}
             <div className="features">
                 <h2 className="ourFeature">Our Features</h2>
             </div>
