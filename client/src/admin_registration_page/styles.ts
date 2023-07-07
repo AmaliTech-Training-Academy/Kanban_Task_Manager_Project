@@ -2,18 +2,19 @@ import styled from "styled-components";
 
 export const StyledRegistrationContainer = styled.body`
   .container-body {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100vh;
     background-color: #e4ebfa;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   .kanbanlogo {
     width: 296px;
     height: 49px;
-    margin: 163px 0 90px 0;
+    padding-bottom: 5%;
   }
 
   .registration {
@@ -21,8 +22,7 @@ export const StyledRegistrationContainer = styled.body`
     height: 558px;
     background-color: #fff;
     border-radius: 8px;
-    margin-bottom: 164px;
-    margin: 0 0 164px 0;
+
   }
 
   .register-container {

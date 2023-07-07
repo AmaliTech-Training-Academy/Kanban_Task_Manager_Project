@@ -2,24 +2,22 @@ import styled from "styled-components";
 
 export const StyledAdminLoginContainer = styled.body`
   .container-body {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100vh;
     background-color: #e4ebfa;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
-
+  
   .login {
     width: 487px;
     height: 500px;
     background-color: #fff;
     border-radius: 8px;
-    margin-bottom: 164px;
-    /* margin: 0 0 164px 0; */
-    /* background-color: aqua; */
-    /* border: solid 1px red; */
   }
+
   .login-container {
     width: 432px;
     height: 494px;
@@ -29,7 +27,6 @@ export const StyledAdminLoginContainer = styled.body`
   .kanbanlogo {
     width: 152px;
     height: 25px;
-    /* margin: 163px 0 90px 0; */
   }
 
   .login-container h1 {

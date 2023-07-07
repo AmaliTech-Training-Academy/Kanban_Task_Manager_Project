@@ -10,7 +10,7 @@ export const StyledLoginFooter = styled.footer`
 
     a {
       text-decoration: none;
-      color: #828fa3;
+      color: #635fc7;
       &:hover {
         cursor: pointer;
       }

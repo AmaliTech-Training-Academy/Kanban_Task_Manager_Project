@@ -23,7 +23,6 @@ export const StyledLoginForm = styled.form`
     font-size: 13px;
     background-color: #635fc7;
     font-family: Plus Jakarta Sans;
-    background-color: cadetblue;
     &:hover {
       cursor: pointer;
     }
