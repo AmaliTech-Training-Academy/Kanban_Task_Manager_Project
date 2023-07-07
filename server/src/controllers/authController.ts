@@ -72,12 +72,6 @@ export const signup = async (req: Request | any, res: Response | any, next: any)
   const token = stringToken(newUser);
   const verificationLink = `${req.protocol}://${host}/auth/admin/new/token/${token}`;
 
-  // STEP: Save token to database
-  newUser.set({
-    ntoken: token,
-  });
-  await newUser.save();
-
   // STEP:  send verification link
   await new sendMail(newUser, verificationLink).sendAdminVerificationMail();
 
