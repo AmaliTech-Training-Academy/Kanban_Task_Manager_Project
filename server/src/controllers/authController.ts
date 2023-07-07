@@ -117,7 +117,7 @@ export const login = async (req: Request | any, res: Response | any, next: any) 
   });
 
   // STEP: check if user password && input password match
-  if (!user || !(await comparePasswords(user.password, password))) {
+  if (!user || !(await comparePasswords(password, user.password))) {
     new Error('Incorrect email or password');
   }
 
@@ -234,6 +234,34 @@ export const verifyAdmin = async (req: Request | any, res: Response | any, next:
 
   // STEP: Verify user
   user.isVerified = true;
+  user.token = '';
+  await user.save();
+
+  res.status(200).json({
+    status: 'success',
+  });
+};
+// NOTE: set password
+export const setPassword = async (req: Request | any, res: Response | any, next: any) => {
+  // STEP: Get token from
+  const token = req.params.token;
+
+  const hashToken = crypto.createHash('sha256').update(token).digest('hex');
+
+  const user: Model | any = await User.findOne({
+    where: {
+      token: hashToken,
+    },
+  });
+
+  // STEP: Check if user exists
+  if (!user) {
+    return console.log('💥💥💥 Token is invalid or has expired');
+  }
+
+  // STEP: Update password propety for the user
+  user.password = req.body.password;
+  user.passwordConfirm = req.body.passwordConfirm;
   user.token = '';
   await user.save();
 
