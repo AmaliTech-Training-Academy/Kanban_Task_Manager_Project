@@ -11,14 +11,14 @@ export const StyledSetNewPassword = styled.div`
     align-items: center;
   }
 
-  .login {
+  .SetNewPassword {
     width: 480px;
     height: 445px;
     background-color: #fff;
     border-radius: 8px;
   }
 
-  .login-container {
+  .SetNewPassword-container {
     width: 432px;
     height: 494px;
     padding: 32px;
@@ -29,7 +29,7 @@ export const StyledSetNewPassword = styled.div`
     height: 25px;
   }
 
-  .login-container h1 {
+  .SetNewPassword-container h1 {
     font-size: 18px;
     color: #20212c;
     font-weight: 700;

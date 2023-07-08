@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-export const StyledLoginForm = styled.form`
+export const StyledNewPasswordForm = styled.form`
   form {
-    width: 648px;
-    margin-top: 24px;
+    width: 416px;
+    margin-top: 32px;
     display: flex;
-    gap: 20px;
+    gap: 32px;
     height: auto;
     flex-direction: column;
   }
 
-  .login-button-container {
+  .submit-button-container {
     width: 416px;
     height: 40px;
     border-radius: 20px;
@@ -21,6 +21,7 @@ export const StyledLoginForm = styled.form`
     font-size: 13px;
     background-color: #635fc7;
     font-family: Plus Jakarta Sans;
+    align-self: center;
     &:hover {
       cursor: pointer;
     }
@@ -33,6 +34,9 @@ export const StyledLoginForm = styled.form`
     border-radius: 4px;
     border: 1px solid rgba(130, 143, 163, 0.25);
   }
+  input:focus {
+    outline-color: #828fa3;
+  }
 
   label {
     font-size: 13px;
@@ -44,44 +48,5 @@ export const StyledLoginForm = styled.form`
     color: #000112;
     font-size: 13px;
     opacity: 0.25;
-  }
-
-  .form-management {
-    display: flex;
-    flex-direction: row;
-    width: 419px;
-    height: 23px;
-    justify-content: space-between;
-  }
-
-  .checkbox-container {
-    width: 117px;
-    height: 23px;
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .checkbox-input {
-    width: auto;
-    height: auto;
-  }
-
-  .checkbox-label {
-    color: #828fa3;
-    font-size: 13px;
-    font-weight: 500;
-  }
-
-  .forgotPassword a {
-    color: #828fa3;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 13px;
-  }
-  .forgotPassword {
-    width: 114px;
-    height: 23px;
   }
 `;

@@ -1,19 +1,20 @@
-import { StyledLoginForm } from "./styles";
+import { StyledNewPasswordForm } from "./styles";
 
-export const SetPassword = () => {
+export const SetPasswordForm = () => {
   return (
-    <StyledLoginForm>
+    <StyledNewPasswordForm>
       <div>
         <form action="/submit-form" method="POST">
           <div className="grid">
             <div className="form1">
-              <label htmlFor="fullname">New Password</label>
+              <label htmlFor="NewPassword">New Password</label>
               <input
                 type="password"
                 name="password"
                 id="password"
                 placeholder="********"
                 required
+                minLength={8}
               ></input>
             </div>
           </div>
@@ -32,27 +33,13 @@ export const SetPassword = () => {
             </div>
           </div>
 
-          {/* <div className="form-management">
-            <div className="checkbox-container">
-              <input
-                type="checkbox"
-                className="checkbox-input"
-                id="remember-checkbox"
-              />
-              <label htmlFor="remember-checkbox" className="checkbox-label">
-                Remember me
-              </label>
-            </div>
-            <div className="forgotPassword">
-              <a href="">Forgot password?</a>
-            </div>
-          </div> */}
+        
 
-          <button type="submit" className="login-button-container">
+          <button type="submit" className="submit-button-container">
             Submit
           </button>
         </form>
       </div>
-    </StyledLoginForm>
+    </StyledNewPasswordForm>
   );
 };
