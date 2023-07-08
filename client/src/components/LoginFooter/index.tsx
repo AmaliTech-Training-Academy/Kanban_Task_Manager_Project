@@ -5,7 +5,7 @@ export const LoginFooter = () => {
     <div>
       <StyledLoginFooter>
         <footer>
-          Don't have an account? Register <a href="http:// ">Register</a>
+          Don't have an account?<a href="http:// ">Register</a>
         </footer>
       </StyledLoginFooter>
     </div>

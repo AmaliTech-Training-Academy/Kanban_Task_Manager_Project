@@ -12,7 +12,8 @@ export const LoginForm = () => {
                 type="text"
                 name="fullname"
                 id="fullname"
-                placeholder="e.g. Salami Joseph"
+                placeholder="Salami Joseph"
+                required
               ></input>
             </div>
           </div>
@@ -21,10 +22,12 @@ export const LoginForm = () => {
             <div className="form1">
               <label htmlFor="password">Password</label>
               <input
-                type="text"
-                name="email"
-                id="email"
+                type="password"
+                name="password"
+                id="password"
                 placeholder="*********"
+                required
+                minLength={8}
               ></input>
             </div>
           </div>
