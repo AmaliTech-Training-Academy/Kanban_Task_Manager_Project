@@ -23,7 +23,6 @@ function App() {
         <Route path='/about' Component={About}></Route>
         <Route path='/contact'  Component={Contact}></Route>
         <Route path='/testimonials'  Component={Testimonials}></Route>
-        <Route path='/footer'  Component={Footer}></Route>
        
       </Routes>
         {/* <Home />
@@ -32,6 +31,7 @@ function App() {
         <Testimonials />
         <Contact />
         <Footer /> */}
+        <Footer />
       </Router>
     </div>
   )

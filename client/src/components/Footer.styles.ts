@@ -3,7 +3,8 @@ import styled from "styled-components"
 export const Stylecontainer = styled.div`
 
 .footer{
-    margin-top: 350px;
+    /* margin-top: 350px; */
+    padding: 2rem 5rem;
     
 }
 .footerr{

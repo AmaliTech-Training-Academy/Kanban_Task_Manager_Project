@@ -5,7 +5,6 @@ export const Stylecontainer = styled.div`
 .image{
     width: 100%;
     /* height: 100%; */
-    border: 3px solid green;
     /* margin-top: -20px; */
 
 }
@@ -14,12 +13,10 @@ export const Stylecontainer = styled.div`
     background-color: #F4F7FD;
     height: 100%;
     margin-top: 10rem;
-    border: 3px solid red;
 }
 
 .about{
     margin-top: -80rem;
-    border: 3px solid red;
 
 }
 

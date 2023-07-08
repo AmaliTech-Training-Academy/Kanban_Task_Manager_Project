@@ -3,16 +3,24 @@ import styled from "styled-components"
 export const Stylecontainer = styled.div`
  .image{
     width: 100%;
+    position: absolute;
+    z-index: -1;
+
  }
  .section{
-    background-color: #F4F7FD;
-    height: 100%;
-    margin-top: 15rem;
+    /* border: 1px solid red; */
+    /* background-color: #F4F7FD; */
+    /* background-image: url("../assets/Images/Group 544.png"); */
+    /* height: 100%; */
+    /* margin-top: 50rem; */
+    /* background-image: url("../assets/Images/Group 544.png"); */
  }
 .contact{
-    margin-top: -75rem;
+    /* margin-top: -75rem; */
     text-align: center ;
 }
+
+
 
  .contactUs{
     width: 163px;
@@ -71,8 +79,11 @@ export const Stylecontainer = styled.div`
     grid-template-columns: 1fr 1fr;
     padding: 0 70px;
  }
- .questions{
-    display: flex;
+ 
+ .ans{
+    width: 482px;
+    color: #333441;
+    background-color: #FFF;
  }
  
 `
