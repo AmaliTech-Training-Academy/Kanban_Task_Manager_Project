@@ -1,7 +1,7 @@
 import Logo from "../assets/Icons/logo.png";
 import {
   Nav,
-  SmallLogo,
+  // SmallLogo,
   NavMenu,
   NavContainer,
   NavBtn,
@@ -16,15 +16,15 @@ const Navbar = () => {
   return  (
     <>
       <Nav>
-        <SmallLogo>
+        <NavLink to ="/">
           {" "}
           <img src={Logo} alt="/" style={{ width: "160px" }} />
-        </SmallLogo>
+        </NavLink>
 
         <NavContainer>
           <NavMenu>
-            <NavLink1 to="/home"><a href=""></a>Home</NavLink1>
-            <NavLink to="/"><a href="About.tsx">About</a></NavLink>
+            <NavLink1 to="/">Home</NavLink1>
+            <NavLink to="/about">About</NavLink>
             <NavLink to="/features">Features</NavLink>
             <NavLink to="/contact">Contact Us</NavLink>
           </NavMenu>

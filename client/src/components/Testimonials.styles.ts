@@ -90,7 +90,6 @@ export const Stylecontainer = styled.div`
     width: 39.657px;
     height: 39.657px;
     padding: 20px 55px;
-    /* text-align: center; */
     flex-shrink: 0;
     filter: drop-shadow(0px 3.605149984359741px 8.111587524414062px rgba(0, 0, 0, 0.25)) ;
 }
@@ -100,17 +99,11 @@ export const Stylecontainer = styled.div`
     padding: 0 18px;
 }
 .text3{
-    /* display: inline; */
-    /* justify-content: space-between; */
     margin-left: 50px;
-    /* text-align: center; */
 }
-.text3 p{
-    color: #000;
-opacity: 0.5;
-}
-.content h5{
-    opacity: 0.699999988079071;
+
+.testimony{
+    opacity: 0.69;
     
 }
 

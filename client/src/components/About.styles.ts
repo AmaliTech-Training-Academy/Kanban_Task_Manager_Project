@@ -4,22 +4,31 @@ export const Stylecontainer = styled.div`
 
 .image{
     width: 100%;
+    /* height: 100%; */
+    border: 3px solid green;
+    /* margin-top: -20px; */
+
 }
 
 .section{
     background-color: #F4F7FD;
     height: 100%;
-    margin-top: 15rem;
-    /* border: 3px solid red; */
+    margin-top: 10rem;
+    border: 3px solid red;
 }
 
 .about{
     margin-top: -80rem;
+    border: 3px solid red;
+
 }
 
+.section .about{
+    text-align: center;
+}
 .aboutUs{
     width: 182px;
-    height: 62px;
+    /* height: 62px; */
     border: none;
     border-radius: 25px;
     display: inline-flex;
@@ -35,12 +44,13 @@ export const Stylecontainer = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 570px;
-    margin-top: -250px;
+    /* margin-left: 570px; */
+    /* margin-top: -250px; */
  }
  .text{
     /* margin: auto; */
     text-align: center;
+    
  }
 
  .text h1{
@@ -56,6 +66,11 @@ export const Stylecontainer = styled.div`
 
  }
 
+ .section .text2{
+    display: flex;
+    justify-content: center;
+    background-color: greenyellow;
+ }
  .text2 p{
     height: 46px;
     display: flex;
@@ -69,6 +84,7 @@ export const Stylecontainer = styled.div`
     font-weight: 700;
     line-height: normal;
     opacity: 0.699999988079071;
+    background-color: red;
  }
  .content{
     display: flex;

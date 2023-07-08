@@ -29,7 +29,7 @@ export const NavLink= styled(Link)`
     font-weight: 700;
     line-height: normal;
     /* opacity: 0.6000000238418579;  */
-    a{
+     a{
         text-decoration: none;
     }
 

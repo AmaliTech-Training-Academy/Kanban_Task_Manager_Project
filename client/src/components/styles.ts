@@ -101,8 +101,10 @@ export const Stylecontainer = styled.div`
     opacity: 0.6000000238418579;
   }
   .play-arrow {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
+    margin-left: 7px;
+    margin-top: 5px;
     border-radius: 45px;
   }
 

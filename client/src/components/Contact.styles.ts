@@ -7,11 +7,11 @@ export const Stylecontainer = styled.div`
  .section{
     background-color: #F4F7FD;
     height: 100%;
-    margin-top: 5rem;
+    margin-top: 15rem;
  }
 .contact{
-    margin-top: -50rem;
-
+    margin-top: -75rem;
+    text-align: center ;
 }
 
  .contactUs{
@@ -32,8 +32,7 @@ export const Stylecontainer = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 570px;
-    margin-top: -250px;
+   
  }
 
  .text h1{
@@ -45,6 +44,11 @@ export const Stylecontainer = styled.div`
     line-height: normal;
     text-align: center;
 
+ }
+
+  .text2{
+    display: flex;
+    justify-content: center;
  }
  .text2 p{
     width: 572px;
@@ -60,7 +64,6 @@ export const Stylecontainer = styled.div`
     font-weight: 700;
     line-height: normal;
     opacity: 0.699999988079071;
-    padding: 0 370px;
  }
  
  .asked-questions{

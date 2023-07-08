@@ -19,7 +19,10 @@ export const Stylecontainer = styled.div`
     margin-top: -390px;
 
 }
-
+.section .features{
+   text-align: center;
+   /* background-color: red; */
+}
 .ourFeature{
     width: 182px;
     height: 62px;
@@ -38,12 +41,16 @@ export const Stylecontainer = styled.div`
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-left: 570px;
-    margin-top: -250px;
+    /* margin-left: 570px; */
+    /* margin-top: -250px; */
  }
-/* .text{
-   text-align: center;
-} */
+.section .text2 {
+   /* background-color: red; */
+   /* text-align: center; */
+   display: flex;
+   justify-content: center;
+   
+}
  .text h1{
     color: #20212C;
     font-size: 39.81px;
@@ -59,7 +66,7 @@ export const Stylecontainer = styled.div`
    width: 880px;
     height: 38px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-direction: column;
     flex-shrink: 0;
     color: #000;
@@ -70,7 +77,7 @@ export const Stylecontainer = styled.div`
     font-weight: 700;
     line-height: normal;
     opacity: 0.699999988079071;
-    padding: 0 14rem;
+    /* padding: 0 14rem; */
  }
 
  .cards{
