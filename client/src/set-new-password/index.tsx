@@ -1,11 +1,11 @@
-import { StyledAdminLoginContainer } from "./styles";
+import { StyledSetNewPassword } from "./styles";
 import Logo from "../assets/Icons/logo.png";
 // import { LoginFooter } from "../components/LoginFooter";
-// import { LoginForm } from "../components/LoginForm";
+import { SetPassword } from "../components/LoginForm";
 
 export const SetNewPassword = () => {
   return (
-    <StyledAdminLoginContainer>
+    <StyledSetNewPassword>
       <div className="container-body">
         <div className="container">
           <div className="login">
@@ -15,12 +15,12 @@ export const SetNewPassword = () => {
               <p className="text">
                 "Set your new password below to gain access to your account."
               </p>
-              {/* <LoginForm /> */}
+              <SetPassword />
               {/* <LoginFooter /> */}
             </div>
           </div>
         </div>
       </div>
-    </StyledAdminLoginContainer>
+    </StyledSetNewPassword>
   );
 };

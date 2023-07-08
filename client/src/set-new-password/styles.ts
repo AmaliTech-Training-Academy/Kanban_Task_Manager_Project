@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledAdminLoginContainer = styled.body`
+export const StyledSetNewPassword = styled.div`
   .container-body {
     width: auto;
     height: 100vh;
@@ -12,8 +12,8 @@ export const StyledAdminLoginContainer = styled.body`
   }
 
   .login {
-    width: 487px;
-    height: 500px;
+    width: 480px;
+    height: 445px;
     background-color: #fff;
     border-radius: 8px;
   }
