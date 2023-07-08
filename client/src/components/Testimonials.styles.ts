@@ -3,11 +3,11 @@ import styled from 'styled-components'
 export const Stylecontainer = styled.div`
 
 .ourtestimonial{
-    width: 258px;
+    width: 226px;
     height: 62px;
     border: none;
     display: inline-flex;
-    padding: 16px 32px;
+    padding: 16px;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -25,7 +25,7 @@ export const Stylecontainer = styled.div`
 
  .text h1{
     color: #20212C;
-    font-size: 52px;
+    font-size: 40px;
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 600;

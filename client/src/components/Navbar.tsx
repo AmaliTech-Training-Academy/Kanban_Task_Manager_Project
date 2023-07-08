@@ -24,7 +24,7 @@ const Navbar = () => {
         <NavContainer>
           <NavMenu>
             <NavLink1 to="/home"><a href=""></a>Home</NavLink1>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/"><a href="About.tsx">About</a></NavLink>
             <NavLink to="/features">Features</NavLink>
             <NavLink to="/contact">Contact Us</NavLink>
           </NavMenu>

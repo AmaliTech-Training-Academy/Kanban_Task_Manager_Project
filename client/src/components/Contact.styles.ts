@@ -15,12 +15,12 @@ export const Stylecontainer = styled.div`
 }
 
  .contactUs{
-    width: 215px;
+    width: 163px;
     height: 62px;
     border: none;
     border-radius: 25px;
     display: inline-flex;
-    padding: 16px 32px;
+    padding: 16px;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -43,7 +43,7 @@ export const Stylecontainer = styled.div`
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding: 0 310px;
+    text-align: center;
 
  }
  .text2 p{
@@ -54,7 +54,7 @@ export const Stylecontainer = styled.div`
     flex-shrink: 0;
     color: #000;
     text-align: center;
-    font-size: 18px;
+    /* font-size: 16px; */
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;

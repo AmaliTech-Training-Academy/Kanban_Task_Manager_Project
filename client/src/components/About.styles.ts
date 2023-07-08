@@ -18,12 +18,12 @@ export const Stylecontainer = styled.div`
 }
 
 .aboutUs{
-    width: 161px;
+    width: 182px;
     height: 62px;
     border: none;
     border-radius: 25px;
     display: inline-flex;
-    padding: 16px 32px;
+    padding: 16px;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -47,12 +47,11 @@ export const Stylecontainer = styled.div`
     width: 468;
     height: 66px;
     color: #20212C;
-    font-size: 52px;
+    font-size: 39.81px;
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding: 0 310px;
     text-align: center;
 
  }
@@ -64,13 +63,12 @@ export const Stylecontainer = styled.div`
     flex-shrink: 0;
     color: #000;
     text-align: center;
-    font-size: 18px;
+    /* font-size: 16px; */
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     opacity: 0.699999988079071;
-    padding: 0 130px;
  }
  .content{
     display: flex;
@@ -81,36 +79,38 @@ export const Stylecontainer = styled.div`
     padding: 30px 0;
  }
  .content-img img{
-    width: 640px;
-    height: 632px;
+    width: 550px;
+    height: 544px;
  }
  .content-sec h1{
     width: 356px;
+    height: 120px;
     flex-direction: column;
     flex-shrink: 0;
     color: #20212C;
     font-family: Plus Jakarta Sans;
-    font-size: 48px;
+    font-size: 47.78px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
  }
  .content-sec p{
-    width: 550px;
+    width: 530px;
+    height: 60px;
     flex-direction: column;
     flex-shrink: 0;
     color: #000;
     font-family: Plus Jakarta Sans;
-    font-size: 24px;
+    /* font-size: 16px; */
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     opacity: 0.699999988079071;
  }
- .content-sec button{
-    width: 220px;
-    height: 82px;
-    padding: 24px 32px;
+  button{
+    width: 136px;
+    height: 48px;
+    padding: 16px ;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -120,11 +120,12 @@ export const Stylecontainer = styled.div`
     box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
     color: #FFF;
     font-family: Plus Jakarta Sans;
-    font-size: 18px;
+    /* font-size: 18px; */
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     border: none;
+    margin-top: 20px;
 
     a{
     text-decoration: none;

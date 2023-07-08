@@ -10,42 +10,43 @@ export const Stylecontainer = styled.div`
   }
 
   .content {
-    margin-top: -982px;
+    margin-top: -882px;
   }
   .content h1 {
     width: 640px;
-    height: 234px;
+    height: 120px;
     /* display: flex; */
     flex-direction: column;
     flex-shrink: 0;
     color: #20212c;
-    font-size: 62px;
+    font-size: 47.78px;
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    padding: 0 85px;
+    padding: 0 70px;
   }
 
   .content h2 {
     /* display: flex; */
-    width: 550px;
+    width: 417px;
+    height: 100px;
     flex-direction: column;
     flex-shrink: 0;
     color: #20212c;
-    font-size: 24px;
+    font-size: 16px;
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     opacity: 0.6000000238418579;
-    padding: 0 85px;
+    padding: 0 70px;
   }
 
   .get-started {
-    padding: 25px 85px;
+    padding: 25px 70px;
     font-family: Plus Jakarta Sans;
-    font-size: 18px;
+    /* font-size: 16px; */
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -57,12 +58,12 @@ export const Stylecontainer = styled.div`
     color: #fff;
 }
   button {
-    width: 242px;
-    height: 85px;
-    padding: 16px 24px;
-    justify-content: center;
+    width: 136px;
+    height: 48px;
+    padding: 16px ;
+    /* justify-content: center; */
     align-items: center;
-    font-size: 18px;
+    /* font-size: 16px; */
     color: #fff;
     font-family: Plus Jakarta Sans;
     font-style: normal;
@@ -92,7 +93,7 @@ export const Stylecontainer = styled.div`
     margin: 0 15px;
     text-decoration: none;
     color: #000;
-    font-size: 18px;
+    /* font-size: 18px; */
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;
@@ -100,15 +101,15 @@ export const Stylecontainer = styled.div`
     opacity: 0.6000000238418579;
   }
   .play-arrow {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 45px;
   }
 
   .forIcon {
     background-color: #635fc7;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     border-radius: 45px;
 
     &:hover {

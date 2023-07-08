@@ -21,12 +21,12 @@ export const Stylecontainer = styled.div`
 }
 
 .ourFeature{
-    width: 215px;
+    width: 182px;
     height: 62px;
     border: none;
     border-radius: 25px;
     display: inline-flex;
-    padding: 16px 32px;
+    padding: 16px;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -41,32 +41,36 @@ export const Stylecontainer = styled.div`
     margin-left: 570px;
     margin-top: -250px;
  }
-
+/* .text{
+   text-align: center;
+} */
  .text h1{
     color: #20212C;
-    font-size: 52px;
+    font-size: 39.81px;
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    padding: 0 310px;
+    text-align: center;
 
  }
 
  .text2 p{
-    height: 46px;
+   width: 880px;
+    height: 38px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     flex-shrink: 0;
     color: #000;
     text-align: center;
-    font-size: 18px;
+    /* font-size: 16px; */
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     opacity: 0.699999988079071;
-    padding: 0 130px;
+    padding: 0 14rem;
  }
 
  .cards{
