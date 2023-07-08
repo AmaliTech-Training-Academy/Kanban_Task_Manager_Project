@@ -19,7 +19,7 @@ export const Admin = () => {
               <h1>Registration</h1>
               <p className="text">
                 Please fill out the required fields below to create your
-                account. We look forward to having yo join our community
+                account. We look forward to having you join our community
               </p>
               <UploadPhoto />
               <RegistrationForm />
