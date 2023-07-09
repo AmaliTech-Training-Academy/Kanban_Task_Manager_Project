@@ -1,5 +1,6 @@
 import Logo from "../assets/Icons/logo.png";
 import {ResetPasswordForm} from "../components/ResetPasswordForm";
+import { ResetPasswordFooter } from "../components/ResetPasswordFooter";
 import { StyledResetPassword } from "./styles";
 
 export const ResetPassword = () => {
@@ -12,9 +13,10 @@ export const ResetPassword = () => {
               <img className="kanbanlogo" src={Logo} alt="logo" />
               <h1>Reset password</h1>
               <p className="text">
-                "Fill the form below to reset your password"
+                Fill the form below to reset your password"
               </p>
               <ResetPasswordForm />
+              <ResetPasswordFooter/>
             </div>
           </div>
         </div>
