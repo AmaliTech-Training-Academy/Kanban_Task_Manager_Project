@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
 export const Stylecontainer = styled.div`
-  /* .container{
-    overflow-x: hidden;
-} */
   .image {
     width: 100%;
-    /* height: 170vh; */
   }
 
   .content {
@@ -15,7 +11,6 @@ export const Stylecontainer = styled.div`
   .content h1 {
     width: 640px;
     height: 120px;
-    /* display: flex; */
     flex-direction: column;
     flex-shrink: 0;
     color: #20212c;
@@ -28,7 +23,6 @@ export const Stylecontainer = styled.div`
   }
 
   .content h2 {
-    /* display: flex; */
     width: 417px;
     height: 100px;
     flex-direction: column;
@@ -46,24 +40,21 @@ export const Stylecontainer = styled.div`
   .get-started {
     padding: 25px 70px;
     font-family: Plus Jakarta Sans;
-    /* font-size: 16px; */
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     display: flex;
     align-items: center;
   }
-  a{
+  a {
     text-decoration: none;
     color: #fff;
-}
+  }
   button {
     width: 136px;
     height: 48px;
-    padding: 16px ;
-    /* justify-content: center; */
+    padding: 16px;
     align-items: center;
-    /* font-size: 16px; */
     color: #fff;
     font-family: Plus Jakarta Sans;
     font-style: normal;
@@ -93,7 +84,6 @@ export const Stylecontainer = styled.div`
     margin: 0 15px;
     text-decoration: none;
     color: #000;
-    /* font-size: 18px; */
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;
@@ -119,9 +109,26 @@ export const Stylecontainer = styled.div`
     }
   }
 
-  .trustedCom {
-    height: 242px;
+  .trusted-companies {
     width: 100%;
+    height: 194px;
+    background-color: #20212c;
     margin-top: 25rem;
+    text-align: center;
+  }
+  .trusted-companies h1 {
+    font-family: Plus Jakarta Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #fff;
+    margin-top: 7px;
+  }
+  .allCompanies {
+    padding: 27px;
+  }
+  .img {
+    margin-top: 48px;
   }
 `;

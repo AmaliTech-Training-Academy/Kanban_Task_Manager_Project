@@ -6,7 +6,6 @@ import cardImage2 from "../assets/Images/Frame 481.png";
 import cardImage3 from "../assets/Images/Frame 477.png";
 import cardImage4 from "../assets/Images/Frame 480.png";
 import cardImage5 from "../assets/Images/Frame 478.png";
-import facebookLogo from "../assets/Images/facebook logo.png";
 import Testimonial from "./Testimonial";
 
 const Testimonials = () => {

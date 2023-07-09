@@ -1,28 +1,30 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const Stylecontainer = styled.div`
- .image{
+  .image {
     width: 100%;
     position: absolute;
-    z-index: -1;
+    z-index: 10;
+    height: 100%;
+  }
+  .imag {
+    position: absolute;
+    top: 22%;
+  }
+  .imagg {
+    margin-left: 69.95rem;
+    margin-top: -30px;
+  }
+  .section {
+    background-color: #f4f7fd;
+    z-index: 0;
+    margin-top: 5rem;
+  }
+  .contact {
+    text-align: center;
+  }
 
- }
- .section{
-    /* border: 1px solid red; */
-    /* background-color: #F4F7FD; */
-    /* background-image: url("../assets/Images/Group 544.png"); */
-    /* height: 100%; */
-    /* margin-top: 50rem; */
-    /* background-image: url("../assets/Images/Group 544.png"); */
- }
-.contact{
-    /* margin-top: -75rem; */
-    text-align: center ;
-}
-
-
-
- .contactUs{
+  .contactUs {
     width: 163px;
     height: 62px;
     border: none;
@@ -33,32 +35,30 @@ export const Stylecontainer = styled.div`
     align-items: center;
     gap: 8px;
     border-radius: 100px;
-    background:  #E4EBFA;
-    color: #635FC7;
+    background: #e4ebfa;
+    color: #635fc7;
     font-size: 24px;
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-   
- }
+  }
 
- .text h1{
-    color: #20212C;
+  .text h1 {
+    color: #20212c;
     font-size: 52px;
     font-family: Plus Jakarta Sans;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-align: center;
+  }
 
- }
-
-  .text2{
+  .text2 {
     display: flex;
     justify-content: center;
- }
- .text2 p{
+  }
+  .text2 p {
     width: 572px;
     height: 46px;
     display: flex;
@@ -72,18 +72,17 @@ export const Stylecontainer = styled.div`
     font-weight: 700;
     line-height: normal;
     opacity: 0.699999988079071;
- }
- 
- .asked-questions{
+  }
+
+  .asked-questions {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 70px;
- }
- 
- .ans{
+  }
+
+  .ans {
     width: 482px;
     color: #333441;
-    background-color: #FFF;
- }
- 
-`
+    background-color: #fff;
+  }
+`;
