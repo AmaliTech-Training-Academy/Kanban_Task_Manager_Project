@@ -11,14 +11,14 @@ export const StyledResetPassword = styled.div`
     align-items: center;
   }
 
-  .SetNewPassword {
+  .ResetPassword {
     width: 480px;
     height: 445px;
     background-color: #fff;
     border-radius: 8px;
   }
 
-  .SetNewPassword-container {
+  .ResetPassword-container {
     width: 432px;
     height: 494px;
     padding: 32px;
@@ -29,7 +29,7 @@ export const StyledResetPassword = styled.div`
     height: 25px;
   }
 
-  .SetNewPassword-container h1 {
+  .ResetPassword-container h1 {
     font-size: 18px;
     color: #20212c;
     font-weight: 700;
