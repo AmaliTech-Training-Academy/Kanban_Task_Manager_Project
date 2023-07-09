@@ -8,9 +8,50 @@ import jwt from 'jsonwebtoken';
 import User from '../models/UserModel.js';
 import sendMail from '../utils/email.js';
 import { signToken, stringToken } from '../utils/helpers.js';
-import { comparePasswords, correctPasswordResetToken } from '../utils/helpers.js';
+import {
+  comparePasswords,
+  correctPasswordResetToken,
+  createAndSendToken,
+  changePasswordAfter,
+} from '../utils/helpers.js';
 import AppError from '../utils/appError.js';
 import catchAsync from '../utils/catchAsync.js';
+
+//NOTE: MIDDLWARES
+
+export const protect = async (req: Request | any, res: Response | any, next: any) => {
+  // STEP: Getting token and checking if it exist
+  let token;
+  if (req.header.authorization && req.header.authorization.startsWith('Bearer')) {
+    token = req.header.authorization.split('')[1];
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
+  }
+
+  if (!token) {
+    return next(new AppError('You are not logged in. Please log in to get access', 401));
+  }
+
+  // STEP: Verify token
+  // NOTE: We verfiy if the data was modified and if the token is expired
+  const decode: any = jwt.verify(token, process.env.JWT_SECRET || '');
+
+  const currentUser = await User.findByPk(decode.id);
+
+  // STEP:  Check if user still exist
+  if (!currentUser) {
+    return next(new AppError('The user belonging to this token does not exits', 401));
+  }
+
+  // STEP:  Check user change password after the token was issued
+  if (changePasswordAfter(decode.iat, currentUser)) {
+    next(new AppError('user recenty changed password!. Please log in again', 401));
+  }
+
+  // STEP: GRANT ACCESS TO PROTECT ROUTE
+  req.user = currentUser;
+  next();
+};
 
 export const adminRole = (req: Request | any, res: Response | any, next: any) => {
   req.role = 'admin';
@@ -128,11 +169,7 @@ export const login = catchAsync(async (req: Request | any, res: Response | any, 
 
   delete user.dataValues['password'];
 
-  res.status(200).json({
-    status: 'success',
-    token,
-    data: { user },
-  });
+  createAndSendToken(user, 200, req, res);
 });
 
 // Forgot Password

@@ -109,6 +109,9 @@ const User = sequelize.define(
     }
     // STEP: Hash the password with cost of 12
     user.password = await bcrypt.hash(user.password, 12);
+
+    // NOTE: -1000 is ensure the token is always created after the password has been changed
+    user.passwordChangedAt = Date.now() - 1000;
   });
 
   // Model Synchronization

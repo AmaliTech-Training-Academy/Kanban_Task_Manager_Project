@@ -20,7 +20,4 @@ router.post('/user/set-password/new/:token', setPassword);
 router.patch('/reset-password/new/:token', resetPassword);
 router.patch('/admin/new/token/:token', verifyAdmin);
 
-
-
-
 export default router;
