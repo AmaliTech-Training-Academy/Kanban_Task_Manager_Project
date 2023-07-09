@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../db/dbConfig.js';
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcryptjs';
 
 const User = sequelize.define(
   'User',
@@ -35,6 +35,7 @@ const User = sequelize.define(
         notEmpty: {
           msg: 'Please tell us your full name',
         },
+        len: [3, 50],
       },
     },
 
@@ -54,8 +55,9 @@ const User = sequelize.define(
       allowNull: false,
       validate: {
         notEmpty: {
-          msg: 'Please provide a passwords',
+          msg: 'Please provide a password',
         },
+        len: [8, 20],
       },
     },
 
@@ -102,20 +104,20 @@ const User = sequelize.define(
   }
 );
 
-  // Hooks
-  User.beforeSave(async (user: any) => {
-    if (!user.changed('password')) {
-      return;
-    }
-    // STEP: Hash the password with cost of 12
-    user.password = await bcrypt.hash(user.password, 12);
+// Hooks
+User.beforeSave(async (user: any) => {
+  if (!user.changed('password')) {
+    return;
+  }
+  // STEP: Hash the password with cost of 12
+  user.password = await bcrypt.hash(user.password, 12);
 
-    // NOTE: -1000 is ensure the token is always created after the password has been changed
-    user.passwordChangedAt = Date.now() - 1000;
-  });
+  // NOTE: -1000 is ensure the token is always created after the password has been changed
+  user.passwordChangedAt = Date.now() - 1000;
+});
 
-  // Model Synchronization
-User.sync({alter:true})
+// Model Synchronization
+User.sync({ alter: true })
   .then(() => console.log('✔ Synchronize user table'))
   .catch(err => console.log('Failed to create table', err));
 

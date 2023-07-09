@@ -50,7 +50,8 @@ app.use(cookieParser());
 // Routers
 app.get('/', (req: Request, res: Response | any, next: any) => res.send('server started'));
 
-app.use('/auth', userRouter);
+app.use('/api', userRouter);
+// app.use('/auth', userRouter);
 app.use('/admin', adminRouter);
 
 

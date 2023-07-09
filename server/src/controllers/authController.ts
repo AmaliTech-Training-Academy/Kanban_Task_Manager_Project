@@ -114,7 +114,7 @@ export const signup = catchAsync(async (req: Request | any, res: Response | any,
   // STEP: Create Token and Verification
   const token = stringToken(newUser);
   await newUser.save();
-  const verificationLink = `${req.protocol}://${host}/auth/admin/new/token/${token}`;
+  const verificationLink = `${req.protocol}://${host}/admin/new/token/${token}`;
 
   // STEP:  send verification link
   await new sendMail(newUser, verificationLink).sendAdminVerificationMail();
@@ -203,7 +203,7 @@ export const forgotPassword = async (req: Request | any, res: Response | any, ne
 
   const host = process.env.NODE_ENV === 'production' ? process.env.HOST : req.get('host');
 
-  const resetTokenURL = `${req.protocol}://${host}/auth/reset-password/new/${resetToken}`;
+  const resetTokenURL = `${req.protocol}://${host}/api/reset-password/new/${resetToken}`;
 
   // STEP: Send Password Reset mail
   try {
@@ -283,7 +283,7 @@ export const verifyAdmin = catchAsync(
 // NOTE: set password
 export const setPassword = catchAsync(
   async (req: Request | any, res: Response | any, next: any) => {
-    // STEP: Get token from
+    // STEP: Get token from URL
     const token = req.params.token;
 
     const hashToken = crypto.createHash('sha256').update(token).digest('hex');

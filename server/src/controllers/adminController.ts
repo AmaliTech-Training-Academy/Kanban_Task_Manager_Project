@@ -30,7 +30,7 @@ export const sendVerificationMail = catchAsync(
 
     //STEP: Verification URL
     const host = process.env.NODE_ENV === 'production' ? process.env.HOST : req.get('host');
-    const verificationURL = `${req.protocol}://${host}/auth/user/set-password/new/${resetToken}`;
+    const verificationURL = `${req.protocol}://${host}/api/user/set-password/new/${resetToken}`;
 
     // STEP: Send Verification mail
     try {

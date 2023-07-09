@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import { Model } from 'sequelize';
+import AppError from './appError.js';
 
 // NOTE: Create Token
 export const signToken = (id: string) => {
@@ -38,7 +39,7 @@ export const stringToken = (user: any) => {
 export const restrictTo = (role: string) => {
   return (req: any, res: any, next: any) => {
     if (!role.includes(req.user.role)) {
-      return console.log('💥💥💥 You do not have permission to perform this action');
+      return next(new AppError('You do not have permission to perform this action', 403));
     }
     next();
   };
