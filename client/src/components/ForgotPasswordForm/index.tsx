@@ -7,7 +7,9 @@ export const ForgotPasswordForm = () => {
         <form action="/submit-form" method="POST">
           <div className="grid">
             <div className="form1">
-              <label htmlFor="NewPassword">Email</label>
+              <label htmlFor="NewPassword">
+                <b>Email</b>
+              </label>
               <input
                 type="email"
                 name="email"
@@ -17,9 +19,6 @@ export const ForgotPasswordForm = () => {
               ></input>
             </div>
           </div>
-
-
-        
 
           <button type="submit" className="submit-button-container">
             Submit
