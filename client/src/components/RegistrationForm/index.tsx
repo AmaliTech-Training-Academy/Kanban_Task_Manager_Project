@@ -1,8 +1,11 @@
-import * as React from "react";
-import { useState } from "react";
+import  { useState } from "react";
+import axios from "axios";
 import { StyledRegistrationForm } from "./styles";
+import * as React from "react";
 
 interface FormState {
+  fullname: string;
+  email: string;
   password: string;
   confirmPassword: string;
 }
@@ -14,13 +17,15 @@ interface FormErrors {
 
 export const RegistrationForm = () => {
   const initialFormState: FormState = {
+    fullname: "",
+    email: "",
     password: "",
     confirmPassword: "",
   };
 
   const validatePassword = (password: string): string => {
     if (password.length < 8) {
-      return "Password must be 8 characters long.";
+      return "Password must be at least 8 characters long.";
     }
     return "";
   };
@@ -47,7 +52,7 @@ export const RegistrationForm = () => {
       setFormState((prevState) => ({ ...prevState, [name]: value }));
     };
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
 
       const passwordError = validatePassword(formState.password);
@@ -59,8 +64,13 @@ export const RegistrationForm = () => {
       setFormErrors({ passwordError, confirmPasswordError });
 
       if (!passwordError && !confirmPasswordError) {
-        // Form is valid, submit the data or perform other actions
-        console.log("Form submitted:", formState);
+        try {
+          const response = await axios.post("/api/endpoint", formState);
+          console.log("Form submitted:", response.data);
+          // Do something with the response if needed
+        } catch (error) {
+          console.log("Error:", error);
+        }
       }
     };
 
@@ -73,7 +83,6 @@ export const RegistrationForm = () => {
   };
 
   const { formState, formErrors, handleInputChange, handleSubmit } = useForm();
-  
 
   return (
     <StyledRegistrationForm>
@@ -86,9 +95,11 @@ export const RegistrationForm = () => {
                 type="text"
                 name="fullname"
                 id="fullname"
+                value={formState.fullname}
+                onChange={handleInputChange}
                 placeholder="e.g. Salami Joseph"
                 required
-              ></input>
+              />
             </div>
 
             <div className="form1">
@@ -102,7 +113,7 @@ export const RegistrationForm = () => {
                 placeholder="************"
                 required
                 minLength={8}
-              ></input>
+              />
               {formErrors.passwordError && <p>{formErrors.passwordError}</p>}
             </div>
           </div>
@@ -114,9 +125,11 @@ export const RegistrationForm = () => {
                 type="email"
                 name="email"
                 id="email"
-                placeholder="e.g theresah@kanban.com"
+                value={formState.email}
+                onChange={handleInputChange}
+                placeholder="e.g. theresah@kanban.com"
                 required
-              ></input>
+              />
             </div>
 
             <div className="form1">
@@ -130,7 +143,7 @@ export const RegistrationForm = () => {
                 placeholder="***********"
                 required
                 minLength={8}
-              ></input>
+              />
               {formErrors.confirmPasswordError && (
                 <p>{formErrors.confirmPasswordError}</p>
               )}

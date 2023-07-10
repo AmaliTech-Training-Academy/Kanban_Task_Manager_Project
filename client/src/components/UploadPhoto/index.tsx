@@ -1,11 +1,12 @@
 import * as React from "react";
-import photo from "../../assets/Images/Frame a.png";
+import photo from "../../assets/Images/blank image.svg";
 import { AiOutlineCamera } from "react-icons/ai";
 import { StyledUploadPhoto } from "./styles";
 import { useState } from "react";
 
 export const UploadPhoto = () => {
   const [profilePhoto, setProfilePhoto] = useState<File | null>(null);
+  console.log("default photo of user",profilePhoto)
   
 
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);

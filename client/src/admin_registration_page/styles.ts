@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledRegistrationContainer = styled.body`
+export const StyledRegistrationContainer = styled.div`
   .container-body {
     width: auto;
     height: 100vh;
@@ -9,6 +9,7 @@ export const StyledRegistrationContainer = styled.body`
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
 
   .kanbanlogo {

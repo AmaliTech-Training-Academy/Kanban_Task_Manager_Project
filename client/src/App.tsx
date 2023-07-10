@@ -1,12 +1,14 @@
 import "./index.css";
 
+
 import * as React from "react";
-import { Admin } from "./admin_registration_page";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router/router";
 
 function App() {
   return (
     <>
-      <Admin />
+      <RouterProvider router={router}/>
     </>
   );
 }

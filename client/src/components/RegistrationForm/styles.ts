@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledRegistrationForm = styled.form`
+export const StyledRegistrationForm = styled.div`
   form {
     width: 648px;
     margin-top: 24px;
@@ -29,7 +29,11 @@ export const StyledRegistrationForm = styled.form`
     font-family: Plus Jakarta Sans;
     &:hover {
       cursor: pointer;
+      color: #a8a4ff;
     }
+  }
+  .submit-container:focus {
+    outline: #828fa3;
   }
 
   input {
