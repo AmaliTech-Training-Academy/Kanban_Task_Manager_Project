@@ -10,6 +10,7 @@ const Faq = ({ questions, answers }: FaqTypeScript) => {
     setAnswer(!answer);
   };
   return (
+
     <div className="questions">
       <p>
         {questions}{" "}

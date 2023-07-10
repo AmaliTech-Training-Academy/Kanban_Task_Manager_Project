@@ -21,7 +21,7 @@ export const Stylecontainer = styled.div`
   }
   .ourFeature {
     width: 182px;
-    height: 62px;
+    /* height: 62px; */
     border: none;
     border-radius: 25px;
     display: inline-flex;

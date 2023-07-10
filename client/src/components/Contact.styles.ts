@@ -25,8 +25,8 @@ export const Stylecontainer = styled.div`
   }
 
   .contactUs {
-    width: 163px;
-    height: 62px;
+    width: 182px;
+    /* height: 62px; */
     border: none;
     border-radius: 25px;
     display: inline-flex;
@@ -82,7 +82,19 @@ export const Stylecontainer = styled.div`
 
   .ans {
     width: 482px;
-    color: #333441;
     background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    color: #333441;
+    font-family: Plus Jakarta Sans;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    opacity: 0.699999988079071;
   }
+ 
 `;

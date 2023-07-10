@@ -11,12 +11,18 @@ import Icon6 from "../assets/Icons/Group 465.png";
 import Feature from "./Feature";
 
 const Features = () => {
+  const handleClickScroll = () =>{
+    const element = document.querySelector('.section');
+    if (element){
+      element.scrollIntoView({behavior: 'smooth'});
+    }
+  }
   return (
     <Stylecontainer>
       <div className="section">
         <img src={backgroundImg} alt="" className="image" />
         <img src={backgroundImage} alt="" className="imag" />
-        <div className="features">
+        <div className="features" onClick={handleClickScroll}>
           <h2 className="ourFeature">Our Features</h2>
         </div>
         <div className="text">

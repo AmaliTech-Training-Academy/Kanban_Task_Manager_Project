@@ -15,6 +15,15 @@ function App() {
   return (
     <div className='App'>
       <Router>
+      <Navbar />
+      <Home />
+        <Features />
+        <About />
+        <Testimonials />
+        <Contact />
+        <Footer />
+        </Router>
+      {/* <Router>
         <Navbar />
         <Routes>
         <Route path='/' Component={Home}></Route>
@@ -25,14 +34,14 @@ function App() {
         <Route path='/testimonials'  Component={Testimonials}></Route>
        
       </Routes>
-        {/* <Home />
+        <Home />
         <Features />
         <About />
-        <Testimonials />
         <Contact />
-        <Footer /> */}
+      <Footer />
+      <Testimonials />
         <Footer />
-      </Router>
+      </Router> */}
     </div>
   )
 }

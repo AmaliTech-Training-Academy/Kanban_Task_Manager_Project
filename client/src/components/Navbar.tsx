@@ -12,7 +12,25 @@ import {
 } from "../components/NavbarElements";
 // import {Link} from "react-router-dom"
 
+const handleClickScroll = () =>{
+  const element: any = document.querySelector(".contact");
+  if (element){
+    element.scrollIntoView({behavior: 'smooth'});
+  }
+}
 const Navbar = () => {
+  const clickScrollHandler = () =>{
+    const element = document.querySelector(".features");
+    if(element){
+      element.scrollIntoView({behavior: 'smooth'})
+    }
+  }
+  const handlerClickScroll = () =>{
+    const element =document.querySelector(".about")
+    if(element){
+      element.scrollIntoView({behavior: 'smooth'})
+    }
+  }
   return (
     <>
       <Nav>
@@ -24,9 +42,9 @@ const Navbar = () => {
         <NavContainer>
           <NavMenu>
             <NavLink1 to="/">Home</NavLink1>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/features">Features</NavLink>
-            <NavLink to="/contact">Contact Us</NavLink>
+            <NavLink to="/about" onClick= {handlerClickScroll}>About</NavLink>
+            <NavLink to="/features" onClick= {clickScrollHandler}>Features</NavLink>
+            <NavLink to="/contact" onClick= {handleClickScroll}>Contact Us</NavLink>
           </NavMenu>
         </NavContainer>
 
