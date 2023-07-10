@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledForgotPasswordForm = styled.form`
+export const StyledForgotPasswordForm = styled.div`
   form {
     width: 416px;
     margin-top: 32px;

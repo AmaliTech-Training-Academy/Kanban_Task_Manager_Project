@@ -1,6 +1,6 @@
 import { StyledForgotPasswordForm } from "./styles";
 
-export const LoginForm = () => {
+export const ForgotPasswordForm = () => {
   return (
     <StyledForgotPasswordForm>
       <div>

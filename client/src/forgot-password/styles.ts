@@ -11,14 +11,14 @@ export const StyledForgotPasswordContainer = styled.div`
     align-items: center;
   }
 
-  .login {
+  .forgot-password {
     width: 480px;
     height: 417px;
     background-color: #fff;
     border-radius: 8px;
   }
 
-  .login-container {
+  .forgotpassword-container {
     width: 416px;
     height: 350px;
     padding: 32px;
@@ -29,7 +29,7 @@ export const StyledForgotPasswordContainer = styled.div`
     height: 25px;
   }
 
-  .login-container h1 {
+  .forgotpassword-container h1 {
     font-size: 18px;
     color: #20212c;
     font-weight: 700;
