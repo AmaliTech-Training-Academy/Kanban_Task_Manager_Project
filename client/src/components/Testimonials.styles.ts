@@ -61,18 +61,17 @@ export const Stylecontainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 36.051px;
+    color: #000;
     border-radius: 28.841px;
     background: #f4f7fd;
-    box-shadow: 0px 0.9012874960899353px 2.7038626670837402px
-        0.9012874960899353px rgba(0, 0, 0, 0.15),
-      0px 0.9012874960899353px 1.8025749921798706px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+      0px 1px 2px 0px rgba(0, 0, 0, 0.3);
     &:active {
       background: #635fc7;
     }
     &:hover {
       background: #635fc7;
       cursor: pointer;
-      transition: transform 0.3s ease;
     }
   }
   .photoImg {

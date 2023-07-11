@@ -1,4 +1,3 @@
-// import React from 'react'
 import { Stylecontainer } from "./Testimonials.styles";
 import cardImage from "../assets/Images/Frame 476.png";
 import cardImage1 from "../assets/Images/Frame 479.png";
