@@ -1,14 +1,11 @@
-import "./index.css";
-
-
 import * as React from "react";
-import { RouterProvider } from "react-router-dom";
-import { router } from "./router/router";
+import "./index.css";
+import { Admin } from "./admin_registration_page";
 
 function App() {
   return (
     <>
-      <RouterProvider router={router}/>
+      <Admin/>
     </>
   );
 }
