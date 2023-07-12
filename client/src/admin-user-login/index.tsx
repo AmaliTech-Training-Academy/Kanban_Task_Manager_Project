@@ -1,7 +1,8 @@
 import { StyledAdminLoginContainer } from "./styles";
 import Logo from "../assets/Icons/logo.png";
 import { LoginFooter } from "../components/LoginFooter";
-import { LoginForm } from "../components/SetNewPasswordForm";
+import { SetPasswordForm } from "../components/SetNewPasswordForm";
+import { LoginForm } from "../components/LoginForm";
 import * as React from "react";
 
 export const AdminLogin = () => {
