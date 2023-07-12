@@ -1,3 +1,4 @@
+import * as React from "react";
 import { StyledLoginForm } from "./styles";
 
 export const LoginForm = () => {
