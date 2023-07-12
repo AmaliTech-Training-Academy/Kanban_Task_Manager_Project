@@ -2,6 +2,7 @@ import { StyledAdminLoginContainer } from "./styles";
 import Logo from "../assets/Icons/logo.png";
 import { LoginFooter } from "../components/LoginFooter";
 import { LoginForm } from "../components/LoginForm";
+import * as React from "react";
 
 export const AdminLogin = () => {
   return (
