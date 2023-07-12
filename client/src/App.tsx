@@ -28,11 +28,11 @@ function App() {
         <Testimonials />
         <Contact />
         <Footer />
-        <ForgotPassword/>
+        {/* <ForgotPassword/>
         <ResetPassword/>
         <SetNewPassword/>
         <Admin/>
-        <AdminLogin/>
+        <AdminLogin/> */}
       </Router>
     </div>
   );
