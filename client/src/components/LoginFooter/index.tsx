@@ -1,3 +1,4 @@
+import * as React from "react";
 import { StyledLoginFooter } from "./styles";
 
 export const LoginFooter = () => {

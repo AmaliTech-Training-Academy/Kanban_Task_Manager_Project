@@ -1,3 +1,4 @@
+import * as React from "react";
 import { StyledForgotPasswordForm } from "./styles";
 
 export const ForgotPasswordForm = () => {
