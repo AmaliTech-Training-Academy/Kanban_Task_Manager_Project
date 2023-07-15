@@ -203,6 +203,27 @@ export const StyledDashSideBar = styled.div`
   .SideBarLogo {
     padding: 14px;
   }
+
+.HideSideBar{
+  width: 276px;
+  height: 46px;
+  margin-top: 49px;
+  background-color: goldenrod;
+  display: flex;
+  align-items: center;
+}
+.HideSideBarText{
+  width: 127px;
+  height: 19px;
+  margin-left: 31px;
+  background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  color: #828FA3;
+  font-size: 15px;
+  font-weight: 700;
+
+}
 `;
 
 export const StyledDashSideNav = styled.nav`

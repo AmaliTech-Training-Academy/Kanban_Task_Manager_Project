@@ -17,6 +17,7 @@ import DarkIcon from "../assets/Icons/dark mode icon.svg";
 import searchIcon from "../assets/Icons/searchIcon.svg"
 import notiIcon from "../assets/Icons/Notification icon.svg"
 import ProfileIcon from "../assets/Images/blank image.svg";
+import hidesidebarIcon from "../assets/Icons/Hide side bar icon.svg"
 
 
 
@@ -99,6 +100,12 @@ export const DashBoardSideBar = () => {
                 <div className="ThemeToggle-Btn "></div>
 
                 <img src={DarkIcon} alt="" />
+              </div>
+            </div>
+            <div className="HideSideBar">
+              <div className="HideSideBarText">
+                <img src={hidesidebarIcon} alt="" />
+                Hide Sidebar
               </div>
             </div>
           </div>
