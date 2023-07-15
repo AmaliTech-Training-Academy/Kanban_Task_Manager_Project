@@ -77,7 +77,9 @@ export const StyledDashSideBar = styled.div`
   }
 
   .MenuItems {
-    /* background-color: red; */
+    color: #828FA3;
+    font-size: 15;
+    font-weight: 700;
   }
 
   .item1 {
@@ -143,7 +145,7 @@ export const StyledDashSideBar = styled.div`
   .MessageCounter {
     width: 28px;
     height: 27px;
-    background-color: red;
+    background-color: #635fc7;
     margin-left: 60px;
     border-radius: 8px;
   }
@@ -204,26 +206,25 @@ export const StyledDashSideBar = styled.div`
     padding: 14px;
   }
 
-.HideSideBar{
-  width: 276px;
-  height: 46px;
-  margin-top: 49px;
-  background-color: goldenrod;
-  display: flex;
-  align-items: center;
-}
-.HideSideBarText{
-  width: 127px;
-  height: 19px;
-  margin-left: 31px;
-  background-color: bisque;
-  display: flex;
-  justify-content: space-between;
-  color: #828FA3;
-  font-size: 15px;
-  font-weight: 700;
-
-}
+  .HideSideBar {
+    width: 276px;
+    height: 46px;
+    margin-top: 49px;
+    background-color: goldenrod;
+    display: flex;
+    align-items: center;
+  }
+  .HideSideBarText {
+    width: 127px;
+    height: 19px;
+    margin-left: 31px;
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    color: #828fa3;
+    font-size: 15px;
+    font-weight: 700;
+  }
 `;
 
 export const StyledDashSideNav = styled.nav`
@@ -238,6 +239,11 @@ export const StyledDashSideNav = styled.nav`
     justify-content: center;
   }
 
+  .navtitle{
+    margin-right: 56px;
+    font-size: 24px;
+    font-weight: 700;
+  }
   .SeacrchBtn-AddNewTask {
     width: 571px;
     height: 48px;
@@ -246,6 +252,7 @@ export const StyledDashSideNav = styled.nav`
     flex-direction: row;
     justify-content: space-between;
     border-radius: 100px;
+    border: 2px solid green;
   }
 
   .AddNewTask-Btn {
@@ -257,6 +264,13 @@ export const StyledDashSideNav = styled.nav`
     font-size: 15px;
     font-family: 700;
     border: none;
+    &:active {
+      cursor: pointer;
+      transform: translateY(4px);
+    }
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .SearchBtn {
@@ -286,23 +300,27 @@ export const StyledDashSideNav = styled.nav`
     border: none;
     align-items: center;
     background-color: #e4ebfa;
-    /* width: 100%; */
+    width: 80%;
+  }
+  input[type="text"]:focus {
+    outline-color: #e4ebfa;
+;
   }
 
-  .notification{
+  .notification {
     width: 118px;
     height: 60px;
     margin-left: 71px;
     align-items: center;
     display: flex;
     justify-content: space-between;
-    
+    border: 2px solid yellow;
   }
-  .noti{
+  .noti {
     width: 42px;
     height: 42px;
   }
-  .profile{
+  .profile {
     width: 60px;
     height: 60px;
   }

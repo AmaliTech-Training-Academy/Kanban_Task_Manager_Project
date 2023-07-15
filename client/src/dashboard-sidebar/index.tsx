@@ -113,6 +113,7 @@ export const DashBoardSideBar = () => {
       </StyledDashSideBar>
       <StyledDashSideNav>
         <div className="NavBar">
+          <div className="navtitle"><h1>Task</h1></div>
           <div className="SeacrchBtn-AddNewTask">
             <div className="SearchBtn">
               <img className="searchIcon" src={searchIcon} alt="" />
