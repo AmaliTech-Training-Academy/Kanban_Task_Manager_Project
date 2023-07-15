@@ -139,7 +139,6 @@ export const StyledDashSideBar = styled.div`
     justify-content: space-between;
     background-color: rebeccapurple;
     padding: 15px;
-    
   }
   .MessageCounter {
     width: 28px;
@@ -162,12 +161,16 @@ export const StyledDashSideBar = styled.div`
   }
   .logout {
     background-color: white;
-    width: 140px;
+    width: 80px;
     height: 19px;
     margin-top: 491px;
-  }
-  .logout-logo {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
     margin-left: 32px;
+    font-size: 700;
+    font-size: 15px;
+    color: #828fa3;
   }
 
   .Theme {

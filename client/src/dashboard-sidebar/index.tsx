@@ -91,6 +91,7 @@ export const DashBoardSideBar = () => {
             </div>
             <div className="logout">
               <img className="logout-logo" src={LogoutLogo} alt="" />
+              Logout
             </div>
             <div className="Theme">
               <div className="ThemeContent">
