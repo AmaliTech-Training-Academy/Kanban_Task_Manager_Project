@@ -6,6 +6,7 @@ import cardImage3 from "../assets/Images/Frame 477.png";
 import cardImage4 from "../assets/Images/Frame 480.png";
 import cardImage5 from "../assets/Images/Frame 478.png";
 import Testimonial from "./Testimonial";
+import * as React from "react";
 
 const Testimonials = () => {
   const testimony = "Integrations make managing tasks and schedule easy.";
