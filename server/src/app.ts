@@ -11,6 +11,7 @@ import cookieParser from 'cookie-parser';
 // Developer Modules
 import AppError from './utils/appError.js';
 import userRouter from './routers/userRoutes.js';
+import taskRouter from "./routers/taskRoutes.js";
 import adminRouter from './routers/adminRoutes.js';
 import globalErrorHandler from './controllers/errorController.js';
 
@@ -51,6 +52,7 @@ app.use(cookieParser());
 app.get('/', (req: Request, res: Response | any, next: any) => res.send('server started'));
 
 app.use('/api', userRouter);
+app.use("/api", taskRouter);
 // app.use('/auth', userRouter);
 app.use('/admin', adminRouter);
 
