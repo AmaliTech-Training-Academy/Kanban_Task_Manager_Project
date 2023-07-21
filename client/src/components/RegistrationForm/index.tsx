@@ -31,7 +31,7 @@ export const RegistrationForm = () => {
   };
 
   const validateConfirmPassword = (
-    password: string,
+    password: string|number,
     confirmPassword: string
   ): string => {
     if (password !== confirmPassword) {

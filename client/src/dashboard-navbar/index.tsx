@@ -1,14 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
-import {
-  StyledNavContainer,
-  LeftContainer,
-  RightContainer,
-  NavbarInnerContainer,
-} from "./styles";
+import { StyledNavContainer, LeftContainer,RightContainer,NavbarInnerContainer,} from "./styles";
 import { KanbanSidebar } from "../dashboard-sidebar";
 import Kanbanlogo from "../assets/Icons/logo.png";
-
 import searchIcon from "../assets/Icons/searchIcon.svg";
 import notiIcon from "../assets/Icons/Notification icon.svg";
 import ProfileImg from "../assets/Images/blank image.svg";
@@ -19,10 +13,15 @@ export const KanbanNavbar = () => {
       <StyledNavContainer>
         <NavbarInnerContainer>
           <LeftContainer>
-            <img className="Kanbanlogo" src={Kanbanlogo} alt="" />
+            <a href="http://">
+              {" "}
+              <img className="Kanbanlogo" src={Kanbanlogo} alt="" />
+            </a>
           </LeftContainer>
           <RightContainer>
-            <div className="Navtitle">DashBoard</div>
+            <div id="active" className="Navtitle">
+              DashBoard
+            </div>
 
             <div className="SearchBtn-AddNewTask">
               <div className="SearchBtn">

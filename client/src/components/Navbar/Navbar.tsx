@@ -1,5 +1,5 @@
 import * as React from "react";
-import Logo from "../assets/Icons/logo.png";
+import Logo from "../../assets/Icons/logo.png";
 import {
   Nav,
   // SmallLogo,
@@ -10,7 +10,7 @@ import {
   NavLink,
   NavBtnLink,
   NavBtnLink2,
-} from "../components/NavbarElements";
+} from "./NavbarElements";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -53,13 +53,14 @@ const Navbar = () => {
         <NavBtn>
           <NavBtnLink>
             <Link to="login">
-              <a href="">Login</a>
+              Login
             </Link>
           </NavBtnLink>
           <NavBtnLink2>
             <Link to="adminregistration">
-              <a href="">Register</a>
+              Register
             </Link>
+            
           </NavBtnLink2>
         </NavBtn>
       </Nav>

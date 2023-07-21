@@ -2,7 +2,6 @@ import * as React from "react";
 import { StyledSidebarContainer } from "./styles";
 import { SidebarData } from "./sidebardata";
 
-
 export const KanbanSidebar = () => {
   return (
     <StyledSidebarContainer>
@@ -18,7 +17,7 @@ export const KanbanSidebar = () => {
               }}
             >
               <div id="icon">{val.icon}</div>
-              <div id="title">{val.title}</div>
+              <div id="title">{val.title}</div >
             </li>
           ))}
         </ul>

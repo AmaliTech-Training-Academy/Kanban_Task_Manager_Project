@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import * as React from "react";
+import  { useState } from "react" 
 import dropdown from "../assets/Icons/chevron_right.svg";
 import top from "../assets/Icons/chevron top.svg";
 import { FaqTypeScript } from "../types/Faq";

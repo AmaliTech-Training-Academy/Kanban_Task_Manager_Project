@@ -1,11 +1,11 @@
 import { Stylecontainer } from "./Testimonials.styles";
-import cardImage from "../assets/Images/Frame 476.png";
-import cardImage1 from "../assets/Images/Frame 479.png";
-import cardImage2 from "../assets/Images/Frame 481.png";
-import cardImage3 from "../assets/Images/Frame 477.png";
-import cardImage4 from "../assets/Images/Frame 480.png";
-import cardImage5 from "../assets/Images/Frame 478.png";
-import Testimonial from "./Testimonial";
+import cardImage from "../../assets/Images/Frame 476.png";
+import cardImage1 from "../../assets/Images/Frame 479.png";
+import cardImage2 from "../../assets/Images/Frame 481.png";
+import cardImage3 from "../../assets/Images/Frame 477.png";
+import cardImage4 from "../../assets/Images/Frame 480.png";
+import cardImage5 from "../../assets/Images/Frame 478.png";
+import Testimonial from "../Testimonial";
 import * as React from "react";
 
 const Testimonials = () => {

@@ -8,8 +8,8 @@ export const RegistrationFooter = () => {
       <StyledFooter>
         <footer>
           Already have an account?{" "}
-          <Link to="login">
-            <a href="">Login</a>
+          <Link to="/login">
+            Login
           </Link>
         </footer>
       </StyledFooter>

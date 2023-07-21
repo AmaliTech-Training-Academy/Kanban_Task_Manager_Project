@@ -1,22 +1,23 @@
 // import React from 'react';
 import { Stylecontainer } from "./Features.styles";
-import backgroundImg from "../assets/Images/our features design.png";
-import backgroundImage from "../assets/Images/Ellipse 39.png";
-import Icon1 from "../assets/Icons/Group 460.png";
-import Icon2 from "../assets/Icons/Group 461.png";
-import Icon3 from "../assets/Icons/Group 462.png";
-import Icon4 from "../assets/Icons/Group 463.png";
-import Icon5 from "../assets/Icons/Group 464.png";
-import Icon6 from "../assets/Icons/Group 465.png";
-import Feature from "./Feature";
+import backgroundImg from "../../assets/Images/our features design.png";
+import backgroundImage from "../../assets/Images/Ellipse 39.png";
+import Icon1 from "../../assets/Icons/Group 460.png";
+import Icon2 from "../../assets/Icons/Group 461.png";
+import Icon3 from "../../assets/Icons/Group 462.png";
+import Icon4 from "../../assets/Icons/Group 463.png";
+import Icon5 from "../../assets/Icons/Group 464.png";
+import Icon6 from "../../assets/Icons/Group 465.png";
+import Feature from "../Feature";
+import * as React from "react";
 
 const Features = () => {
-  const handleClickScroll = () =>{
-    const element = document.querySelector('.section');
-    if (element){
-      element.scrollIntoView({behavior: 'smooth'});
+  const handleClickScroll = () => {
+    const element = document.querySelector(".section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
   return (
     <Stylecontainer>
       <div className="section">

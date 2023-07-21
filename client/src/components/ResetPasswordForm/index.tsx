@@ -1,3 +1,4 @@
+import * as React from "react";
 import { StyledResetPasswordForm } from "./styles";
 
  export const ResetPasswordForm = () => {

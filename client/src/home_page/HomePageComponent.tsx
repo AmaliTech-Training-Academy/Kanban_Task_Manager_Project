@@ -1,15 +1,17 @@
-import * as React from 'react'
-import Navbar from '../components/Navbar';
-import Home from '../components/Home';
-import Testimonials from '../components/Testimonials';
-import Features from '../components/Features';
-import About from '../components/About';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import * as React from "react";
+import Navbar from "../components/Navbar/Navbar";
+import Home from "../Home/Home";
+import Testimonials from "../components/Testimonials/Testimonials";
+import Features from "../components/Features/Features";
+import About from "../components/About/About";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
+import { SetNewPassword } from "../set-new-password";
+import { ForgotPassword } from "../forgot-password";
 
 const HomePageComponent = () => {
   return (
-    <div className="App">
+    <>
       <Navbar />
       <Home />
       <Features />
@@ -17,9 +19,11 @@ const HomePageComponent = () => {
       <About />
       <Contact />
       <Footer />
+      <SetNewPassword />
+      <ForgotPassword/>
       {/* <DashBoardSideBar/> */}
-    </div>
+    </>
   );
-}
+};
 
-export default HomePageComponent
+export default HomePageComponent;
