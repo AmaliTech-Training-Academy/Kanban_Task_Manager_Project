@@ -1,11 +1,9 @@
-import { DataTypes } from "sequelize";
-import sequelize from "../db/dbConfig.js";
-import bcrypt from "bcryptjs";
-
-import Task from "./TaskModel.js";
+import { DataTypes } from 'sequelize';
+import sequelize from '../db/dbConfig.js';
+import bcrypt from 'bcryptjs';
 
 const User = sequelize.define(
-  "User",
+  'User',
   {
     id: {
       type: DataTypes.UUID,
@@ -19,15 +17,15 @@ const User = sequelize.define(
       allowNull: false,
       validate: {
         notEmpty: {
-          msg: "Please provide your photo",
+          msg: 'Please provide your photo',
         },
       },
     },
 
     role: {
       type: DataTypes.ENUM,
-      values: ["user", "admin"],
-      defaultValue: "user",
+      values: ['user', 'admin'],
+      defaultValue: 'user',
     },
 
     fullName: {
@@ -35,7 +33,7 @@ const User = sequelize.define(
       allowNull: false,
       validate: {
         notEmpty: {
-          msg: "Please tell us your full name",
+          msg: 'Please tell us your full name',
         },
         len: [3, 50],
       },
@@ -47,7 +45,7 @@ const User = sequelize.define(
       unique: true,
       validate: {
         isEmail: {
-          msg: "Please Provide a valid email",
+          msg: 'Please Provide a valid email',
         },
       },
     },
@@ -57,7 +55,7 @@ const User = sequelize.define(
       allowNull: false,
       validate: {
         notEmpty: {
-          msg: "Please provide a password",
+          msg: 'Please provide a password',
         },
         len: [8, 20],
       },
@@ -69,7 +67,7 @@ const User = sequelize.define(
       validate: {
         validatePasswords(value: string) {
           if (!(value === this.password)) {
-            throw new Error("Passwords are not the same");
+            throw new Error('Passwords are not the same');
           }
         },
       },
@@ -92,8 +90,8 @@ const User = sequelize.define(
     status: {
       type: DataTypes.ENUM,
       allowNull: false,
-      values: ["active", "inactive"],
-      defaultValue: "active",
+      values: ['active', 'inactive'],
+      defaultValue: 'active',
     },
     isVerified: { type: DataTypes.BOOLEAN, defaultValue: false },
     passwordChangedAt: DataTypes.DATE,
@@ -108,7 +106,7 @@ const User = sequelize.define(
 
 // Hooks
 User.beforeSave(async (user: any) => {
-  if (!user.changed("password")) {
+  if (!user.changed('password')) {
     return;
   }
   // STEP: Hash the password with cost of 12
@@ -118,19 +116,9 @@ User.beforeSave(async (user: any) => {
   user.passwordChangedAt = Date.now() - 1000;
 });
 
-// NOTE: Associations
-User.belongsToMany(Task, {
-  foreignKey: "userId",
-  through: "TaskAndAssignee",
-});
-Task.belongsToMany(User, {
-  foreignKey: "taskId",
-  through: "TaskAndAssignee",
-});
-
 // Model Synchronization
 User.sync({ alter: true })
-  .then(() => console.log("✔ Synchronize user table"))
-  .catch((err) => console.log("Failed to create table", err));
+  .then(() => console.log('✔ Synchronize user table'))
+  .catch(err => console.log('Failed to create table', err));
 
 export default User;
