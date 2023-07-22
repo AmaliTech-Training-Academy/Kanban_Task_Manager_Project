@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { StyledLoginForm } from "./styles";
+import * as React from "react";
 
 export const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleEmailChange = (event) => {
+  const handleEmailChange = (event:any) => {
     setEmail(event.target.value);
   };
 
-  const handlePasswordChange = (event) => {
+  const handlePasswordChange = (event:any) => {
     setPassword(event.target.value);
   };
 
