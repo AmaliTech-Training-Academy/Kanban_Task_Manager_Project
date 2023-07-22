@@ -16,9 +16,9 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppRootComponent />}>
       <Route index element={<HomePageComponent />} />
-      <Route path="login" element={<AdminLogin />}  />
-      <Route path="adminregistration" element={<Admin/>}/>
-
+      {/* <Route path="login" element={<AdminLogin />} /> */}
+      {/* <Route path="adminregistration" element={<Admin />} /> */}
+      <Route path="/" element={<KanbanSidebar />} />
     </Route>
   )
 );
