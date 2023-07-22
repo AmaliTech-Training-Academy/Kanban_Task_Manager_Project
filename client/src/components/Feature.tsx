@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { FeatureTypeScript } from "../types/Feature";
 
 const Feature = ({ icon, header, description }: FeatureTypeScript) => {

@@ -3,6 +3,7 @@ import girlImage from "../assets/Images/Group 538.png";
 import playArrow from "../assets/Icons/Play arrow.svg";
 import companyNames from "../assets/Images/Vector.png";
 import { Stylecontainer } from "./styles";
+import * as React from "react";
 
 const Home = () => {
   return (

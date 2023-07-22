@@ -1,4 +1,5 @@
-import Logo from "../assets/Icons/logo.png";
+import * as React from "react";
+import Logo from "../../assets/Icons/logo.png";
 import {
   Nav,
   // SmallLogo,
@@ -9,7 +10,8 @@ import {
   NavLink,
   NavBtnLink,
   NavBtnLink2,
-} from "../components/NavbarElements";
+} from "./NavbarElements";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const handleClickScroll = (value: string): any => {
@@ -50,11 +52,15 @@ const Navbar = () => {
 
         <NavBtn>
           <NavBtnLink>
-            {" "}
-            <a href="">Login</a>
+            <Link to="login">
+              Login
+            </Link>
           </NavBtnLink>
           <NavBtnLink2>
-            <a href="">Register</a>
+            <Link to="adminregistration">
+              Register
+            </Link>
+            
           </NavBtnLink2>
         </NavBtn>
       </Nav>

@@ -1,5 +1,5 @@
-// import React from 'react'
-import socialIcons from "../assets/Images/Group 482.png";
+import * as React from "react";
+import socialIcons from "../../assets/Images/Group 482.png";
 import { Stylecontainer } from "./Footer.styles";
 
 const Footer = () => {

@@ -1,21 +1,40 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { StyledLoginForm } from "./styles";
 
 export const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    // Your login logic here, e.g., validate credentials, make API calls, etc.
+    console.log("Email:", email);
+    console.log("Password:", password);
+  };
+
   return (
     <StyledLoginForm>
       <div>
         <form action="/submit-form" method="POST">
           <div className="grid">
             <div className="form1">
-              <label htmlFor="fullname">Fullname</label>
+              <label htmlFor="fullname">Email</label>
               <input
-                type="text"
-                name="fullname"
-                id="fullname"
-                placeholder="Salami Joseph"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="salamijoe@example.com"
+                value={email}
+                onChange={handleEmailChange}
                 required
-              ></input>
+              />
             </div>
           </div>
 
@@ -27,9 +46,11 @@ export const LoginForm = () => {
                 name="password"
                 id="password"
                 placeholder="*********"
+                value={password}
+                onChange={handlePasswordChange}
                 required
                 minLength={8}
-              ></input>
+              />
             </div>
           </div>
 
@@ -49,7 +70,12 @@ export const LoginForm = () => {
             </div>
           </div>
 
-          <button type="submit" className="login-button-container">
+          {/* Use a regular button with type "button" to prevent form submission */}
+          <button
+            type="button"
+            className="login-button-container"
+            onClick={handleSubmit}
+          >
             LOGIN
           </button>
         </form>

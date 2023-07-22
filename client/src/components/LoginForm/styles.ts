@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledLoginForm = styled.form`
   form {
-    width: 648px;
     margin-top: 24px;
     display: flex;
     gap: 20px;
@@ -11,7 +10,6 @@ export const StyledLoginForm = styled.form`
   }
 
   .login-button-container {
-    width: 416px;
     height: 40px;
     border-radius: 20px;
     border: 1px solid rgba(130, 143, 163, 0.25);
