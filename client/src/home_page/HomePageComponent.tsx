@@ -19,8 +19,8 @@ const HomePageComponent = () => {
       <About />
       <Contact />
       <Footer />
-      <SetNewPassword />
-      <ForgotPassword/>
+      {/* <SetNewPassword /> */}
+      {/* <ForgotPassword/> */}
       {/* <DashBoardSideBar/> */}
     </>
   );
