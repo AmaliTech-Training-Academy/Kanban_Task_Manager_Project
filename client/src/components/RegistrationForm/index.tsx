@@ -151,6 +151,7 @@ export const RegistrationForm = () => {
           </div>
 
           <button type="submit" className="submit-container">
+            
             Create account
           </button>
         </form>
