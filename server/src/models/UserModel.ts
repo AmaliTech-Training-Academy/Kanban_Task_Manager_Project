@@ -90,6 +90,11 @@ const User = sequelize.define(
       allowNull: true,
     },
 
+    about: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
     status: {
       type: DataTypes.ENUM,
       allowNull: false,
