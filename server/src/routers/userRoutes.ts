@@ -1,5 +1,5 @@
 import express from 'express';
-import {getAllUser} from "../controllers/userController.js"
+import { getAllUser, getUser } from "../controllers/userController.js";
 import {
   login,
   forgotPassword,
@@ -18,5 +18,6 @@ router.patch('/reset-password/new/:token', resetPassword);
 
 router.use(protect)
 router.get('/users/',getAllUser)
+router.get('/users/:id',getUser)
 
 export default router;
