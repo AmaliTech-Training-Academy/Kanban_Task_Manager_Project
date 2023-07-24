@@ -99,7 +99,7 @@ const User = sequelize.define(
       type: DataTypes.ENUM,
       allowNull: false,
       values: ['active', 'inactive'],
-      defaultValue: 'active',
+      defaultValue: 'inactive',
     },
     isVerified: { type: DataTypes.BOOLEAN, defaultValue: false },
     passwordChangedAt: DataTypes.DATE,
