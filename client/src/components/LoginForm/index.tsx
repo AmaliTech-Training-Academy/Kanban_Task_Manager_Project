@@ -2,7 +2,11 @@ import { useState } from "react";
 import { StyledLoginForm } from "./styles";
 import * as React from "react";
 
-export const LoginForm = () => {
+interface LoginFormProps {
+  setIsUserLoggedIn: (arg: boolean) => void;
+}
+
+export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,6 +22,7 @@ export const LoginForm = () => {
     // Your login logic here, e.g., validate credentials, make API calls, etc.
     console.log("Email:", email);
     console.log("Password:", password);
+    setIsUserLoggedIn(true);
   };
 
   return (
