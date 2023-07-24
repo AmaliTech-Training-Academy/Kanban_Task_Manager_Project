@@ -11,7 +11,9 @@ export const Nav = styled.nav`
   background-color: #fff;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3),
     0px 4px 8px 3px rgba(0, 0, 0, 0.15);
- 
+  /* position: sticky;
+  z-index: 100%;
+  top: 0; */
 `;
 
 export const NavLink = styled(Link)`
