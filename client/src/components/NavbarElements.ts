@@ -8,10 +8,10 @@ export const Nav = styled.nav`
   justify-content: space-between;
   height: 50px;
   padding: 17px 71px;
-  flex-shrink: 0;
-  background: #fff;
+  background-color: #fff;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3),
     0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+ 
 `;
 
 export const NavLink = styled(Link)`
