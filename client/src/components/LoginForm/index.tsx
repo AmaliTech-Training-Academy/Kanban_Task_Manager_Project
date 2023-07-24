@@ -71,7 +71,7 @@ export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
                 Remember me
               </label>
             </div>
-            <div className="forgotPassword">
+            <div className="Password">
               <a href="">Forgot password?</a>
             </div>
           </div>
@@ -82,7 +82,7 @@ export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
             className="login-button-container"
             onClick={handleSubmit}
           >
-            LOGIN
+            Log in
           </button>
         </form>
       </div>

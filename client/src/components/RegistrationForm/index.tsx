@@ -8,6 +8,7 @@ interface FormState {
   email: string;
   password: string;
   confirmPassword: string;
+
 }
 
 interface FormErrors {
@@ -20,7 +21,8 @@ export const RegistrationForm = () => {
     fullname: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword: ""
+    ,
   };
 
   const validatePassword = (password: string): string => {

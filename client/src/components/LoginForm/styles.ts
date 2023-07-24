@@ -31,7 +31,9 @@ export const StyledLoginForm = styled.form`
     border-radius: 4px;
     border: 1px solid rgba(130, 143, 163, 0.25);
   }
- 
+  input:focus {
+    outline-color: #828fa3;
+  }
 
   label {
     font-size: 13px;
@@ -73,14 +75,16 @@ export const StyledLoginForm = styled.form`
     font-weight: 500;
   }
 
-  .forgotPassword a {
+  .Password a {
     color: #828fa3;
     text-decoration: none;
     font-weight: 500;
     font-size: 13px;
   }
-  .forgotPassword {
+  .Password {
     width: 114px;
     height: 23px;
   }
+  
+  
 `;
