@@ -50,3 +50,23 @@ export const getUser = catchAsync(
     });
   }
 );
+
+// NOTE: Delete User
+export const deleteUser = catchAsync(
+  async (req: Request | any, res: Response | any, next: any) => {
+    const id = req.params.id;
+
+    const user = await User.findByPk(id);
+
+    if (!user) {
+      return next(new AppError("No user found with that ID", 404));
+    }
+
+    await user.destroy();
+
+    res.status(200).json({
+      status: "success",
+      data:null
+    });
+  }
+);
