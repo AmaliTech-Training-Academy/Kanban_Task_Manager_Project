@@ -15,6 +15,11 @@ import { ForgotPassword } from './forgot-password'
 import { ResetPassword } from './reset-password'
 import { SetNewPassword } from './set-new-password'
 import { AdminLogin } from './admin-user-login'
+import TaskBoard from "./components/taskboard/TaskBoard";
+import EditTask from "./components/edit task/EditTask";
+import DeleteTask from "./components/delete task/DeleteTask";
+import AddTask from "./components/add task/AddTask";
+import CardDetails from "./components/card details/CardDetails";
 
 
 function App() {
@@ -34,6 +39,10 @@ function App() {
         <Admin/>
         <AdminLogin/> */}
       </Router>
+      <TaskBoard />
+      {/* <DeleteTask /> */}
+      {/* <CardDetails /> */}
+      {/* <AddTask name="Edit Task" submit="Update Task" /> */}
     </div>
   );
 }

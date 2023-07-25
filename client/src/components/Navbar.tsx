@@ -1,3 +1,4 @@
+import * as React from "react";
 import Logo from "../assets/Icons/logo.png";
 import {
   Nav,
