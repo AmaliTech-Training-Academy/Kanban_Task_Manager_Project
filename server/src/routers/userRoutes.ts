@@ -3,6 +3,7 @@ import {
   getAllUser,
   getUser,
   deleteUser,
+  updateUser,
 } from "../controllers/userController.js";
 import {
   login,
@@ -25,6 +26,7 @@ router.use(protect);
 router.get("/users/", getAllUser);
 router.get("/users/:id", getUser);
 
-router.delete("/users/:id", restrictTo("admin"), deleteUser);
+router.use(restrictTo("admin"));
+router.route("/users/:id").delete(deleteUser).patch(updateUser);
 
 export default router;

@@ -66,7 +66,34 @@ export const deleteUser = catchAsync(
 
     res.status(200).json({
       status: "success",
-      data:null
+      data: null,
+    });
+  }
+);
+
+// NOTE: Update User
+export const updateUser = catchAsync(
+  async (req: Request | any, res: Response | any, next: any) => {
+    const id = req.params.id;
+
+    const user = await User.update(
+      {
+        fullName: req.body?.fullName,
+        email: req.body?.email,
+        specialization: req.body?.specialization,
+        rank: req.body?.rank,
+        status: req.body?.status,
+      },
+      { where: { id } }
+    );
+
+    if (!user) {
+      return next(new AppError("No user found with that ID", 404));
+    }
+
+    res.status(200).json({
+      status: "success",
+      data: { user },
     });
   }
 );
