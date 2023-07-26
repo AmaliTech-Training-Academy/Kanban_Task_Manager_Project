@@ -2,37 +2,37 @@ import styled from "styled-components";
 
 export const Stylecontainer = styled.div`
 
-    .heading {
-  font-size: 1.5rem;
+.heading {
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.89;
 }
 .heading-3 {
-  font-size: 1.2rem;
+  font-size: 12px;
   font-weight: 700;
-  line-height: 1.51rem;
+  line-height: 15.1px;
 }
 .heading-3-light {
-  font-size: 1.3rem;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 2.3rem;
+  line-height: 23px;
 }
 
 .heading-4 {
   text-transform: uppercase;
   font-weight: 700;
   color: #828fa3;
-  size: 1.2rem;
-  line-height: 1.51rem;
-  letter-spacing: 0.24rem;
+  size: 12px;
+  line-height: 15.1px;
+  letter-spacing: 2.4px;
 }
 
 .paragraph {
-  font-size: 1.3rem;
+  font-size: 13px;
   font-weight: 500;
   color: #828fa3;
-  line-height: 2rem;
-  word-spacing: 0.1rem;
+  line-height: 20px;
+  word-spacing: 1px;
 }
 
 .color-purlpe {
@@ -40,7 +40,7 @@ export const Stylecontainer = styled.div`
 }
 .label {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 12px;
   line-height: 1.51;
 }
 
@@ -55,7 +55,7 @@ export const Stylecontainer = styled.div`
 /* NOTE:  UTILITES*/
 
 .mr-12 {
-  margin-right: 1.2rem;
+  margin-right: 12px;
 }
 
 .hidden {
@@ -75,9 +75,9 @@ export const Stylecontainer = styled.div`
 }
 .circle {
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 50rem;
+  width: 15px;
+  height: 15px;
+  border-radius: 500px;
 }
 
 /* =================================== */
@@ -91,14 +91,13 @@ export const Stylecontainer = styled.div`
 }
 
 .card {
-  padding: 1.6rem;
-  width: 29.2rem;
+  padding: 16px;
+  width: 292px;
   max-height: 100%;
-  border-radius: 0.8rem;
-  box-shadow: 0 0.2rem 0.6rem 0.2rem #d3d8e3;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px 2px #d3d8e3;
   background-color: #fff;
   transition: 0.2s;
-
   position: relative;
 }
 .card:hover {
@@ -111,11 +110,11 @@ export const Stylecontainer = styled.div`
   display: flex;
   flex-direction: column;
   align-self: stretch;
-  gap: 1.6rem;
+  gap: 16px;
 }
 
 .card-title-container {
-  margin-bottom: 0.8rem;
+  margin-bottom: 8px;
 
   display: flex;
   align-items: center;
@@ -126,14 +125,14 @@ export const Stylecontainer = styled.div`
 
 .card-assignees {
   display: flex;
-  gap: -2rem;
+  gap: -20px;
 }
 .card-image-box:not(:first-child) {
-  margin-left: -2rem;
+  margin-left: -20px;
 }
 .card-image-box {
-  height: 4rem;
-  width: 4rem;
+  height: 40px;
+  width: 40px;
 }
 
 .card-image-box:last-child {
@@ -141,15 +140,15 @@ export const Stylecontainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #d9d9d9;
-  border-radius: 50rem;
-  border: #fff 0.2rem solid;
+  border-radius: 500px;
+  border: #fff 2px solid;
 }
 
 .card-photo {
   width: 100%;
   height: 100%;
-  border: transparent 0.2rem solid;
-  border-radius: 50rem;
+  border: transparent 2px solid;
+  border-radius: 500px;
   background-color: #fff !important;
 }
 
@@ -162,8 +161,8 @@ export const Stylecontainer = styled.div`
 }
 
 .card-due-date-container {
-  border-radius: 0.8rem;
-  padding: 0.8rem;
+  border-radius: 8px;
+  padding: 8px;
   background-color: #fcfcff;
 
   display: flex;
@@ -172,7 +171,7 @@ export const Stylecontainer = styled.div`
 }
 
 .card-due-date {
-  margin-left: 0.8rem;
+  margin-left: 8px;
 }
 
 .card-progress-container {
@@ -181,7 +180,7 @@ export const Stylecontainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 0.8rem;
+  gap: 8px;
 }
 
 .card-progress-percentage {
@@ -194,8 +193,8 @@ export const Stylecontainer = styled.div`
 
 .card-progress-bar {
   position: relative;
-  border-radius: 50rem;
-  height: 0.5rem;
+  border-radius: 500px;
+  height: 5px;
   /* height: 20rem; */
   background-color: #d9d9d9;
 }
@@ -204,17 +203,17 @@ export const Stylecontainer = styled.div`
   position: absolute;
   width: 60%;
   height: 100%;
-  border-radius: 50rem;
+  border-radius: 500px;
   background-color: #8471f2;
 }
 
 .icon-box-16 {
-  width: 2rem;
-  height: 2rem;
+  width: 20px;
+  height: 20px;
 }
 .icon-box-24 {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 24px;
+  height: 24px;
 }
 
 .icon-due-date {
@@ -233,26 +232,26 @@ export const Stylecontainer = styled.div`
 
 .card-action {
   position: absolute;
-  padding: 1.6rem 0;
-  top: 4rem;
+  padding: 16px 0;
+  top: 40px;
   right: 0;
   height: max-content;
-  width: 19.2rem;
-  border-radius: 0.8rem;
+  width: 192px;
+  border-radius: 8px;
   background-color: #fff;
-  box-shadow: 0 2rem 2rem 0 #d3d8e3, 0 2rem 2rem 0 #d3d8e3;
+  box-shadow: 0 20 20 0 #d3d8e3, 0 20 20 0 #d3d8e3;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.8rem;
+  gap: 8px;
 
   /* position: relative; */
 }
 .card-action-option {
-  padding: 0 1.6rem;
-  font-size: 1.3rem;
+  padding: 0 16px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 2.3rem;
+  line-height: 23px;
 
   cursor: pointer;
 }
@@ -271,8 +270,8 @@ export const Stylecontainer = styled.div`
 }
 
 .task-board {
-  margin: 3.5rem 0;
-  width: 107.4rem;
+  margin: 35px 0;
+  width: 1074px;
 
   display: flex;
   justify-content: space-between;
@@ -285,13 +284,13 @@ export const Stylecontainer = styled.div`
 }
 
 .task-board-column {
-  width: 29.9rem;
+  width: 299px;
   height: 100%;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4rem;
+  gap: 40px;
 }
 
 .task-board-container-head {
@@ -299,8 +298,8 @@ export const Stylecontainer = styled.div`
 }
 
 .task-board-todo-container-head-title {
-  margin-right: 1.2rem;
-  margin-bottom: 1.6rem;
+  margin-right: 12px;
+  margin-bottom: 16px;
 
   display: flex;
 }

@@ -100,18 +100,22 @@ export const formatDate = (dateString:any):any => {
 
 const Card = ({
   title,
+  task,
   description,
   dueDate,
   assignees,
   progress,
   id,
   index,
-  openEditTaskForm
+  openEditTaskForm,
+  openDeleteModal, 
+  status
 }:any):any => {
  
 const [isOpen, setIsOpen] = useState(false);
 
 console.log("card id" + id)
+console.log("card status" + status)
 
   return (
     <Draggable key={id} draggableId={`${id}`} index={index}>
@@ -174,8 +178,8 @@ console.log("card id" + id)
               <Progress percentage={progress} />
             </div>
             <div className={`card-action ${isOpen ? "" : "hidden"}`}>
-              <span className="card-action-option text-grey" onClick={() => {console.log("card starting call" + id);openEditTaskForm(id)}}>Edit task</span>
-              <span className="card-action-option text-red">Delete task</span>
+              <span className="card-action-option text-grey" onClick={() => {openEditTaskForm(id, task)}}>Edit task</span>
+              <span className="card-action-option text-red" onClick={() => {openDeleteModal(task)}}>Delete task</span>
             </div>
           </div>
         );

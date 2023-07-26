@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Stylecontainer = styled.div`
     .container{
-        background-color:#5680fa;
         width: 100%;
         height: 100vh;
         /* padding: 24px; */
@@ -11,9 +10,7 @@ export const Stylecontainer = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 1;
-        background-color: rgba(0,0,0,0.6); 
-        backdrop-filter: blur(3px); 
+        z-index: 2;
     }
     .delete-modal{
         width: 464px;

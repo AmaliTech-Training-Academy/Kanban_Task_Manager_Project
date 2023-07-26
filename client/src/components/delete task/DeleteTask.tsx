@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import {Stylecontainer} from './DeleteTask.styles'
-import closeImage from '../assets/Group 18.svg'
+import closeImage from '../../assets/Icons/Group 18.svg'
 
-const DeleteTask = ({closeShowAddTaskForm}) => {
+const DeleteTask = ({closeDeleteModal}) => {
   return (
     <Stylecontainer>
     <div className='container'>
@@ -13,7 +13,7 @@ const DeleteTask = ({closeShowAddTaskForm}) => {
                 <h3>Delete Task</h3>
             </div>
             <div className="close-modal">
-            <img src={closeImage} alt="" onClick={closeShowAddTaskForm}/>           
+            <img src={closeImage} alt="" onClick={closeDeleteModal}/>           
             </div>
            </div>
            <p>
