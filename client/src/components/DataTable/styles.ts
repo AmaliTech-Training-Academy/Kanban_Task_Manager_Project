@@ -50,12 +50,12 @@
 import styled from "styled-components";
 
 export const StyleTable = styled.table`
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
   margin-top: 1rem;
   border: 1px solid red;
-  
-  
+  position: relative;
+  left: 20%;
   `;
 
 export const StyleTh = styled.th`
@@ -74,20 +74,12 @@ export const StyleTd = styled.td`
   padding: 0.5rem 1rem;
   border: 1px solid gold;
   border-bottom: 1px solid pink;
-
-`
-
-
-export const TableContainer = styled.div`
-width: 60%;
-height: 50%;
-background-color: blanchedalmond;
-border: 2px solid red;
-position: relative;
-left: 40%;
-
   
-`;
+  `
+
+
+
+;
 
 
 

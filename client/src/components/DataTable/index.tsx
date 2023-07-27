@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { useTable } from "react-table";
 import userData from "../../userData.json";
 import {StyleTable,StyleTh,StyleTd,TableContainer} from "./styles";
-
+ 
 
 interface UserData {
   fullname: string;
@@ -17,9 +17,20 @@ const DataTable: React.FC = () => {
 
   const columns = useMemo(
     () => [
+  
       {
         Header: "Fullname",
         accessor: "fullname",
+        Cell: ({ row }) => (
+          <div>
+            <img
+              src={row.original.photo}
+              alt="User"
+              style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+            />
+            <span>{row.original.fullname}</span>
+          </div>
+        ),
       },
       {
         Header: "Email address",
@@ -45,7 +56,7 @@ const DataTable: React.FC = () => {
     useTable<UserData>({ columns, data });
 
   return (
-    <TableContainer>
+     <TableContainer>
       <StyleTable {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -79,7 +90,7 @@ const DataTable: React.FC = () => {
         </tbody>
       </StyleTable>
 
-     </TableContainer>
+     </TableContainer> 
   );
 };
 
