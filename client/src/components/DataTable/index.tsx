@@ -56,7 +56,7 @@ const DataTable: React.FC = () => {
     useTable<UserData>({ columns, data });
 
   return (
-     <TableContainer>
+    <TableContainer>
       <StyleTable {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -90,7 +90,7 @@ const DataTable: React.FC = () => {
         </tbody>
       </StyleTable>
 
-     </TableContainer> 
+   </TableContainer> 
   );
 };
 
