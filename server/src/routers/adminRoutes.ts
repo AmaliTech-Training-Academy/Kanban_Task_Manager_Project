@@ -1,5 +1,5 @@
 import express from 'express';
-import { sendVerificationMail } from '../controllers/adminController.js';
+import { bulkInputUsers, sendVerificationMail } from '../controllers/adminController.js';
 import { protect } from '../controllers/authController.js';
 import { restrictTo } from '../utils/helpers.js';
 import {
@@ -21,5 +21,6 @@ router.use(protect);
 //  NOTE: Restricto admins
 router.use(restrictTo('admin'));
 router.post('/send-verification-link', sendVerificationMail);
+router.post('/add-users', bulkInputUsers);
 
 export default router;
