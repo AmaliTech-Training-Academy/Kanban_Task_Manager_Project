@@ -50,6 +50,10 @@ export const StyledSidebarContainer = styled.div`
   .row #title {
     flex: 70%;
   }
-  
- 
 `;
+
+
+
+
+
+
