@@ -21,7 +21,6 @@ const HomePageComponent = () => {
       <Footer />
       <SetNewPassword />
       <ForgotPassword/>
-      {/* <DashBoardSideBar/> */}
     </>
   );
 };
