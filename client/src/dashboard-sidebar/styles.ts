@@ -84,6 +84,15 @@ export const StyledSidebarContainer = styled.div`
     justify-content: center;
   }
 
+  .ToggleBtnContainer img {
+    margin-right: 20px; 
+    margin-left: 20px; 
+  }
+  .ToggleButtonContainer {
+    margin-right: 8px; 
+    margin-left: 8px;
+  }
+
   .HideSideBar-Btn {
     width: 127px;
     height: 19px;
