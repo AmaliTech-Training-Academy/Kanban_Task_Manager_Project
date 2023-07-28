@@ -1,6 +1,5 @@
 import { Model } from "sequelize";
 import randomstring from "randomstring";
-import bcrypt from "bcryptjs";
 
 import User from "../models/UserModel.js";
 import sendMail from "../utils/email.js";
@@ -37,7 +36,7 @@ export const sendVerificationMail = catchAsync(
       process.env.NODE_ENV === "production"
         ? process.env.HOST
         : req.get("host");
-    const verificationURL = `${req.protocol}://${host}/api/user/set-password/new/${resetToken}`;
+    const verificationURL = `${req.protocol}://${host}/api/v1/users/set-password/new/${resetToken}`;
 
     // STEP: Send Verification mail
     try {
@@ -53,7 +52,7 @@ export const sendVerificationMail = catchAsync(
 
     res.status(200).json({
       status: "success",
-      message: "Mail sent",
+      message: "Email verification links sent successfully.",
     });
   }
 );
@@ -76,13 +75,14 @@ export const bulkInputUsers = catchAsync(
     // STEP: Save data in chunks
     const chunkNumber = 10;
     const userChunks = chunkArray(usersQuery, chunkNumber);
-    
+
     for (const userChunk of userChunks) {
       usersQuery = await User.bulkCreate(userChunk, { validate: true });
     }
 
     res.status(200).json({
       status: "success",
+      message: "Bulk user creation successful.",
     });
   }
 );
