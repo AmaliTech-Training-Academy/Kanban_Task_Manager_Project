@@ -1,11 +1,5 @@
 import React, { useMemo, useState } from "react";
-import {
-  useFilters,
-  useSortBy,
-  useTable,
-  FilterValue,
-  IdType,
-} from "react-table";
+import {useFilters,  useSortBy, useTable, FilterValue,IdType} from "react-table";
 import userData from "../../userData.json";
 import { StyleTable, StyleTh, StyleTd, TableContainer } from "./styles";
 
