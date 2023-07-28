@@ -2,6 +2,7 @@ import { StyledSetNewPassword } from "./styles";
 import Logo from "../assets/Icons/logo.png";
 // import { LoginFooter } from "../components/LoginFooter";
 import { SetPasswordForm } from "../components/SetNewPasswordForm";
+import * as React from "react";
 
 export const SetNewPassword = () => {
   return (

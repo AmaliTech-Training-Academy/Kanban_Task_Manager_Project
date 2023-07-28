@@ -1,10 +1,11 @@
 // import React from 'react'
 import { Stylecontainer } from "./About.styles";
-import backgroundImage from "../assets/Images/Group 558.png";
-import contentIcon from "../assets/Images/about us icon 1.png";
-import contentIconn from "../assets/Images/about us icon 2.png";
-import contentImage from "../assets/Images/Rectangle 25.png";
-import contentImg from "../assets/Images/Group 543.png";
+import backgroundImage from "../../assets/Images/Group 558.png";
+import contentIcon from "../../assets/Images/about us icon 1.png";
+import contentIconn from "../../assets/Images/about us icon 2.png";
+import contentImage from "../../assets/Images/Rectangle 25.png";
+import contentImg from "../../assets/Images/Group 543.png";
+import * as React from "react";
 
 const About = () => {
   return (

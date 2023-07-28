@@ -1,11 +1,18 @@
 import { StyledAdminLoginContainer } from "./styles";
 import Logo from "../assets/Icons/logo.png";
 import { LoginFooter } from "../components/LoginFooter";
-import { SetPasswordForm } from "../components/SetNewPasswordForm";
 import { LoginForm } from "../components/LoginForm";
 import * as React from "react";
+import { useState } from "react";
+import { DashBoardPage } from "../components/DashBoardPage";
 
 export const AdminLogin = () => {
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+  if (isUserLoggedIn) {
+    return <DashBoardPage />;
+  }
+
   return (
     <StyledAdminLoginContainer>
       <div className="container-body">
@@ -17,7 +24,7 @@ export const AdminLogin = () => {
               <p className="text">
                 "Please enter your login details below to access you account."
               </p>
-              <LoginForm />
+              <LoginForm setIsUserLoggedIn={setIsUserLoggedIn} />
               <LoginFooter />
             </div>
           </div>

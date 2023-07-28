@@ -1,3 +1,4 @@
+import * as React from "react";
 import { StyledNewPasswordForm } from "./styles";
 
 export const SetPasswordForm = () => {

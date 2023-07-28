@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledLoginForm = styled.form`
   form {
-    width: 648px;
     margin-top: 24px;
     display: flex;
     gap: 20px;
@@ -11,7 +10,6 @@ export const StyledLoginForm = styled.form`
   }
 
   .login-button-container {
-    width: 416px;
     height: 40px;
     border-radius: 20px;
     border: 1px solid rgba(130, 143, 163, 0.25);
@@ -33,7 +31,9 @@ export const StyledLoginForm = styled.form`
     border-radius: 4px;
     border: 1px solid rgba(130, 143, 163, 0.25);
   }
- 
+  input:focus {
+    outline-color: #828fa3;
+  }
 
   label {
     font-size: 13px;
@@ -75,14 +75,16 @@ export const StyledLoginForm = styled.form`
     font-weight: 500;
   }
 
-  .forgotPassword a {
+  .Password a {
     color: #828fa3;
     text-decoration: none;
     font-weight: 500;
     font-size: 13px;
   }
-  .forgotPassword {
+  .Password {
     width: 114px;
     height: 23px;
   }
+  
+  
 `;

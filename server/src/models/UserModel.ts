@@ -2,6 +2,9 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../db/dbConfig.js';
 import bcrypt from 'bcryptjs';
 
+import Task from "./taskModel.js";
+
+
 const User = sequelize.define(
   'User',
   {
@@ -115,6 +118,18 @@ User.beforeSave(async (user: any) => {
   // NOTE: -1000 is ensure the token is always created after the password has been changed
   user.passwordChangedAt = Date.now() - 1000;
 });
+
+
+// NOTE: Associations
+User.belongsToMany(Task, {
+  foreignKey: "userId",
+  through: "TaskAndAssignee",
+});
+Task.belongsToMany(User, {
+  foreignKey: "taskId",
+  through: "TaskAndAssignee",
+});
+
 
 // Model Synchronization
 User.sync({ alter: true })

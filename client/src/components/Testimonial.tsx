@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import facebookLogo from "../assets/Images/facebook logo.png";
 import { TestimonialTypeScript } from "../types/Testimonial";
 

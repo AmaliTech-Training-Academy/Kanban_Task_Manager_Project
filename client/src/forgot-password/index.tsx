@@ -2,6 +2,7 @@ import { StyledForgotPasswordContainer } from "./styles";
 import Logo from "../assets/Icons/logo.png";
 import { ForgotPasswordFooter } from "../components/ForgotPasswordFooter";
 import { ForgotPasswordForm } from "../components/ForgotPasswordForm";
+import * as React from "react";
 
 export const ForgotPassword = () => {
   return (

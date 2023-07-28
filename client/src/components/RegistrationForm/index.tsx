@@ -8,6 +8,7 @@ interface FormState {
   email: string;
   password: string;
   confirmPassword: string;
+
 }
 
 interface FormErrors {
@@ -20,7 +21,8 @@ export const RegistrationForm = () => {
     fullname: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword: ""
+    ,
   };
 
   const validatePassword = (password: string): string => {
@@ -31,7 +33,7 @@ export const RegistrationForm = () => {
   };
 
   const validateConfirmPassword = (
-    password: string,
+    password: string|number,
     confirmPassword: string
   ): string => {
     if (password !== confirmPassword) {
@@ -151,6 +153,7 @@ export const RegistrationForm = () => {
           </div>
 
           <button type="submit" className="submit-container">
+            
             Create account
           </button>
         </form>

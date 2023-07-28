@@ -1,5 +1,5 @@
 import * as React from "react";
-import Logo from "../assets/Icons/logo.png";
+import Logo from "../../assets/Icons/logo.png";
 import {
   Nav,
   // SmallLogo,
@@ -10,7 +10,8 @@ import {
   NavLink,
   NavBtnLink,
   NavBtnLink2,
-} from "../components/NavbarElements";
+} from "./NavbarElements";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const handleClickScroll = (value: string): any => {
@@ -30,20 +31,20 @@ const Navbar = () => {
 
         <NavContainer>
           <NavMenu>
-            <NavLink1 to="/">Home</NavLink1>
-            <NavLink to="/about" onClick={() => handleClickScroll(".about")}>
+            <NavLink1 to="/">Home </NavLink1>
+            
+            <NavLink  
+            onClick={() => handleClickScroll(".about")}>
               About
             </NavLink>
+
             <NavLink
-              to="/features"
-              onClick={() => handleClickScroll(".features")}
-            >
+              onClick={() => handleClickScroll(".features")}>
               Features
             </NavLink>
+
             <NavLink
-              to="/contact"
-              onClick={() => handleClickScroll(".contact")}
-            >
+              onClick={() => handleClickScroll(".contact")}>
               Contact Us
             </NavLink>
           </NavMenu>
@@ -51,11 +52,15 @@ const Navbar = () => {
 
         <NavBtn>
           <NavBtnLink>
-            {" "}
-            <a href="">Login</a>
+            <Link to="login">
+              Login
+            </Link>
           </NavBtnLink>
+
           <NavBtnLink2>
-            <a href="">Register</a>
+            <Link to="adminregistration">
+              Register
+            </Link>
           </NavBtnLink2>
         </NavBtn>
       </Nav>

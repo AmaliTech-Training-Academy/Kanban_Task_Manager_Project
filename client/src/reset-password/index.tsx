@@ -2,6 +2,7 @@ import Logo from "../assets/Icons/logo.png";
 import {ResetPasswordForm} from "../components/ResetPasswordForm";
 import { ResetPasswordFooter } from "../components/ResetPasswordFooter";
 import { StyledResetPassword } from "./styles";
+import * as React from "react";
 
 export const ResetPassword = () => {
   return (
