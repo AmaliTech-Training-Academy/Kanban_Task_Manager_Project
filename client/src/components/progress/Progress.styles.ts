@@ -300,8 +300,9 @@ export const Stylecontainer = styled.div`
 .task-board-todo-container-head-title {
   margin-right: 12px;
   margin-bottom: 16px;
-
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 `

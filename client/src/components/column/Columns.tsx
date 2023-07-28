@@ -4,7 +4,7 @@ import Card from "../card/Card";
 
 import  { useCallback } from "react";
 
-const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal }:any):any => {
+const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal,openCardDetails }:any):any => {
   
 
   const updateActiveTaskOnTaskBoard = useCallback(
@@ -13,6 +13,10 @@ const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal }:any):any => 
   );
   const openDeleteModalOnTaskBoard = useCallback(
     (task): void => {openDeleteModal(task)},
+    []
+  );
+  const openCardDetailsOnTaskBoard = useCallback(
+    (task): void => {openCardDetails(task)},
     []
   );
   // const showDeleteModal= React.useState (
@@ -34,7 +38,7 @@ const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal }:any):any => 
           style={{ backgroundColor: `${column?.color ?? "#fff"}` }}
         ></span>
         <h4 className="heading-4">
-          {column?.name} ({tasks?.length})
+          {column?.name} ({column?.tasks?.length})
         </h4>
       </div>
     </div>
@@ -46,7 +50,7 @@ const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal }:any):any => 
           ref={provided.innerRef}
           {...provided.droppableProps}
         >
-          {column.tasks.map((task:any, index:any):any => (
+          { column?.tasks?.length > 0 && column.tasks.map((task:any, index:any):any => (
             // <Draggable key={task.id} draggableId={`${task.id}`} index={index}>
             // {(draggableProvided, draggableSnapshot) => (
 
@@ -63,6 +67,7 @@ const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal }:any):any => 
               status={column.name}
               openEditTaskForm= {updateActiveTaskOnTaskBoard}
               openDeleteModal={openDeleteModalOnTaskBoard}
+              openCardDetails={openCardDetailsOnTaskBoard}
               // ref={draggableProvided.innerRef}
               // {...draggableProvided.droppableProps}
               // {...draggableProvided.dragHandleProps}

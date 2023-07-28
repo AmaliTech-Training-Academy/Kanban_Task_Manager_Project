@@ -83,14 +83,14 @@
 
 // export default Card;
 // import "./App.css";
-import  * as React from 'react'
+import * as React from "react";
 import { useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import Progress from "../progress/Progress";
 import AssigneePhoto from "../assignees/AssigneePhoto";
 
 // NOTE: Get Date
-export const formatDate = (dateString:any):any => {
+export const formatDate = (dateString: any): any => {
   const date = new Date(dateString);
   const year = date.getFullYear();
   const month = date.toLocaleString("default", { month: "short" });
@@ -108,45 +108,49 @@ const Card = ({
   id,
   index,
   openEditTaskForm,
-  openDeleteModal, 
-  status
-}:any):any => {
- 
-const [isOpen, setIsOpen] = useState(false);
-
-console.log("card id" + id)
-console.log("card status" + status)
+  openDeleteModal,
+  openCardDetails,
+  status,
+}: any): any => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Draggable key={id} draggableId={`${id}`} index={index}>
-      {(provided:any, snapshot:any):any => {
+      {(provided: any, snapshot: any): any => {
         return (
-          <div
-            className="card"
-            // ref={provided.innerRef}
-            // {...provided.droppableProps}
-            // {...provided.dragHandleProps}
-          >
-            <div className="card-content">
+          <div className="card">
+            <div className="card-title-container">
+              <h3
+                className="card-title heading"
+                onClick={() => {
+                  openCardDetails(task);
+                }}
+              >
+                {title}
+              </h3>
+              <button
+                className="card-option icon-box-2"
+                onClick={() => setIsOpen((c) => !c)}
+              >
+                <img
+                  src="icon/more-horiz.svg"
+                  className="icon-due-date"
+                  alt="Calendar icon"
+                />
+              </button>
+            </div>
+            <div
+              className="card-content"
+              onClick={() => {
+                openCardDetails(task);
+              }}
+            >
               <div className="card-body">
-                <div className="card-title-container">
-                  <h3 className="card-title heading">{title}</h3>
-                  <button
-                    className="card-option icon-box-2"
-                    onClick={() => setIsOpen((c) => !c)}
-                  >
-                    <img
-                      src="icon/more-horiz.svg"
-                      className="icon-due-date"
-                      alt="Calendar icon"
-                    />
-                  </button>
-                </div>
                 <p className="card-paragraph paragraph">{description}</p>
               </div>
               <div className="card-assign-due-date">
                 <div className="card-assignees">
-                  {assignees.map((assignee:any, i:any):any => {
+                  {assignees.map((assignee: any, i: any): any => {
                     if (i < 3) {
                       return (
                         <AssigneePhoto
@@ -178,21 +182,31 @@ console.log("card status" + status)
               <Progress percentage={progress} />
             </div>
             <div className={`card-action ${isOpen ? "" : "hidden"}`}>
-              <span className="card-action-option text-grey" onClick={() => {openEditTaskForm(id, task)}}>Edit task</span>
-              <span className="card-action-option text-red" onClick={() => {openDeleteModal(task)}}>Delete task</span>
+              <span
+                className="card-action-option text-grey"
+                onClick={() => {
+                  openEditTaskForm(id, task);
+                }}
+              >
+                Edit task
+              </span>
+              <span
+                className="card-action-option text-red"
+                onClick={() => {
+                  openDeleteModal(task);
+                }}
+              >
+                Delete task
+              </span>
             </div>
           </div>
         );
       }}
-    </Draggable>  )
-}
+    </Draggable>
+  );
+};
 
-export default Card
-
-
-
-
-
+export default Card;
 
 // export default function Card({
 //   title,
@@ -203,22 +217,22 @@ export default Card
 //   id,
 //   index,
 // }) {
-  // const [progressBar, setProgressBar] = useState(percentage);
+// const [progressBar, setProgressBar] = useState(percentage);
 
-  // console.log(assignees);
+// console.log(assignees);
 
-  // const [isOpen, setIsOpen] = useState(false);
-  // // console.log("💥💥💥", key);
+// const [isOpen, setIsOpen] = useState(false);
+// // console.log("💥💥💥", key);
 
-  // return (
-  //   <Draggable key={id} draggableId={`${id}`} index={index}>
-  //     {(provided, snapshot) => {
-  //       return (
-  //         <div
-  //           className="card"
-            // ref={provided.innerRef}
-            // {...provided.droppableProps}
-            // {...provided.dragHandleProps}
+// return (
+//   <Draggable key={id} draggableId={`${id}`} index={index}>
+//     {(provided, snapshot) => {
+//       return (
+//         <div
+//           className="card"
+// ref={provided.innerRef}
+// {...provided.droppableProps}
+// {...provided.dragHandleProps}
 //           >
 //             <div className="card-content">
 //               <div className="card-body">
@@ -280,4 +294,3 @@ export default Card
 //     </Draggable>
 //   );
 // }
-

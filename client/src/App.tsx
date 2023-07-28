@@ -26,13 +26,13 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        {/* <Navbar />
         <Home />
         <Features />
         <About />
         <Testimonials />
         <Contact />
-        <Footer />
+        <Footer /> */}
         {/* <ForgotPassword/>
         <ResetPassword/>
         <SetNewPassword/>

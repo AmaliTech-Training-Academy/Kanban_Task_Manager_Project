@@ -1,11 +1,11 @@
 import React from 'react'
 import {Stylecontainer} from "./CardDetails.styles"
-import closeImage from "../assets/Group 18.svg"
-import brightnessImage from "../assets/jam_brightness.svg"
-import dateIcon from "../assets/Vector.svg"
-import maleImg from "../../public/users/dustin-washington.jpg"
+import closeImage from "../../assets/Icons/Group 18.svg"
+import brightnessImage from "../../assets/Icons/jam_brightness.svg"
+import dateIcon from "../../assets/Icons/Vector.svg"
+import maleImg from "../../../public/users/dustin-washington.jpg"
 
-const CardDetails = () => {
+const CardDetails = ({closeCardDetails,assignees}) => {
   return (
         <Stylecontainer>
     <div className='container'>
@@ -17,7 +17,7 @@ const CardDetails = () => {
         
             <div className="close-modal">
                {/* <img src={editImage} alt="" className='editImg' /> */}
-            <img src={closeImage} alt="" />
+            <img src={closeImage} alt="" onClick={closeCardDetails}/>
             </div>
           </div>
 

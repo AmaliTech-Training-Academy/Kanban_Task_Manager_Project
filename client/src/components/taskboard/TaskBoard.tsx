@@ -8,13 +8,17 @@ import { Stylecontainer } from "./TaskBoard.styles";
 import cardUsersImage from "../../public/users/leo.jpg";
 import axios from "axios";
 import DeleteTask from "../delete task/DeleteTask";
+import CardDetails from "../card details/CardDetails";
+import { BASE_URL } from "../../../constants";
 
 const TaskBoard = () => {
   const [showAddTaskForm, setShowAddTaskForm] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showCardDetails, setShowCardDetails] = useState(false);
   const [activeTask, setActiveTask] = useState({});
   const [cardHeading, setCardHeading] = useState("Add New Task");
   const [cardButton, setCardButton] = useState("Create Task");
+  const [allTasks, setAllTasks] = useState({})
 
   const [todo, setTodo] = useState({});
   const [doing, setDoing] = useState({});
@@ -27,8 +31,11 @@ const TaskBoard = () => {
 
   const fetchTask = async () => {
     const tasks = await axios.get("./data.json");
+    // const tasks = await axios.get(BASE_URL + "/api/task/all");
+
 
     if (tasks.status === 200) {
+      setAllTasks(prev =>Object.assign(prev, tasks.data))
       const saveTasks = tasks.data?.columns ?? [];
 
       if (saveTasks.length > 0) {
@@ -56,7 +63,29 @@ const TaskBoard = () => {
     setIsDataLoaded(true);
   };
 
+  // const fetchLocalStorageData = () =>
+
   useEffect(() => fetchTask, []);
+
+  const saveOrUpdateTask = useCallback((task) => {
+
+    // const tasks = await axios.get( BASE_URL+"/api/task");
+
+    // if (tasks.status === 200) {
+
+        //todo: display toast, close form
+
+    // }
+
+    //REMOVE WHEN BACKEND IS READY
+    console.log("usecallback called");
+    
+
+    const id = Math.random() * 5000;
+    // console.log(lastId)
+    task.id =  id;
+    
+  }, [allTasks])
 
   const closeShowAddTaskForm = useCallback((): void => {
     setActiveTask({});
@@ -69,6 +98,11 @@ const TaskBoard = () => {
     setShowDeleteModal(false);
   }, [showDeleteModal]);
 
+  const closeCardDetails = useCallback((): void => {
+    setActiveTask({});
+    setShowCardDetails(false);
+  }, [showCardDetails]);
+
   const openEditTaskForm = useCallback(
     (taskId: number, status: string): void => {
       console.log("Columm called taskboard");
@@ -77,9 +111,18 @@ const TaskBoard = () => {
     [showAddTaskForm, activeTask]
   );
   const openDeleteModal = useCallback(
-    (task): void => 
-      {setActiveTask((prev) => Object.assign(prev, task)); setShowDeleteModal(true)},
+    (task): void => {
+      setActiveTask((prev) => Object.assign(prev, task));
+      setShowDeleteModal(true);
+    },
     [showDeleteModal, activeTask]
+  );
+  const openCardDetails = useCallback(
+    (task): void => {
+      setActiveTask((prev) => Object.assign(prev, task));
+      setShowCardDetails(true);
+    },
+    [showCardDetails, activeTask]
   );
 
   const updateActiveTask = (taskId: number, task) => {
@@ -106,38 +149,44 @@ const TaskBoard = () => {
             {showAddTaskForm && (
               <AddTask
                 closeShowAddTaskForm={closeShowAddTaskForm}
+                saveOrUpdateTask={saveOrUpdateTask}
                 name={cardHeading}
                 submit={cardButton}
                 activeTask={activeTask}
               />
             )}
             {showDeleteModal && (
-              <DeleteTask closeDeleteModal={closeDeleteModal}              
-              />
+              <DeleteTask closeDeleteModal={closeDeleteModal} />
+            )}
+            {showCardDetails && (
+              <CardDetails closeCardDetails={closeCardDetails} />
             )}
             <DragDropContext onDragEnd={onDragEnd}>
               <div className="task">
-                {(showAddTaskForm || showDeleteModal) && <div className="overlay"></div>}
+                {(showAddTaskForm || showDeleteModal) && (
+                  <div className="overlay"></div>
+                )}
                 <div className="task-board">
                   <Column
                     tasks={[todo.tasks]}
                     column={todo}
                     openEditTaskForm={openEditTaskForm}
                     openDeleteModal={openDeleteModal}
-
+                    openCardDetails={openCardDetails}
                   />
                   <Column
                     tasks={[doing.tasks]}
                     column={doing}
                     openEditTaskForm={openEditTaskForm}
                     openDeleteModal={openDeleteModal}
+                    openCardDetails={openCardDetails}
                   />
                   <Column
                     tasks={[done.tasks]}
                     column={done}
                     openEditTaskForm={openEditTaskForm}
                     openDeleteModal={openDeleteModal}
-
+                    openCardDetails={openCardDetails}
                   />
                 </div>
               </div>

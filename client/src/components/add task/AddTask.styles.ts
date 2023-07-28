@@ -16,7 +16,7 @@ export const Stylecontainer = styled.div`
         backdrop-filter: blur(3px); */
   }
   form {
-    width: 464px;
+    /* width: 464px; */
     height: 545px;
     display: inline-flex;
     padding: 24px;
@@ -53,7 +53,7 @@ export const Stylecontainer = styled.div`
   .title {
     color: #828fa3;
     font-family: Plus Jakarta Sans;
-    /* font-size: 36px; */
+    font-size: 10px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -69,9 +69,12 @@ export const Stylecontainer = styled.div`
     line-height: 23px;
     /* opacity: 0.25; */
     width: 416px;
-    padding: 2%;
+    padding: 9px;
   }
+  textarea{
+    width: 428px;
 
+  }
   .submitt {
     width: 416px;
     /* height: 40px; */
@@ -81,5 +84,7 @@ export const Stylecontainer = styled.div`
     border: none;
     margin-top: 50px;
     color: #fff;
+    margin: 50px 0 0 10px;
   }
-`;
+  
+`

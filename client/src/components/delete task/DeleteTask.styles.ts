@@ -46,21 +46,19 @@ export const Stylecontainer = styled.div`
         color: #EA5555;
     }
     .close-modal{
-        /* display: flex;
+        display: flex;
         justify-content: space-between;
         text-align: center;
-        margin-left: 230px;
-        border: 1px solid red; */
     }
 .title{
-            color: #828FA3;
+            /* color: #828FA3;
         font-family: Plus Jakarta Sans;
-        /* font-size: 36px; */
+        font-size: 36px;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
         margin-bottom: 10px;
-        margin-top: 20px;
+        margin-top: 20px; */
     }
 input{
     color: #000112;
@@ -71,7 +69,7 @@ font-weight: 500;
 line-height: 23px;
 /* opacity: 0.25; */
 width: 416px;
-padding: 2%;
+padding: 9px;
 }
 
 .submitt{
@@ -81,8 +79,10 @@ width: 416px;
 border-radius: 20px;
 background: #EA5555;
 border: none;
-margin-top: 30px;
+/* margin-top: 30px; */
 color: #fff;
+margin: 30px 0 0 20px;
+
 }
 .submittt{
 width: 416px;
@@ -91,8 +91,9 @@ width: 416px;
 border-radius: 20px;
 background: rgba(99, 95, 199, 0.10);
 border: none;
-margin-top: 30px;
 color: #635FC7;
+margin: 0 0 0 20px;
+
 }
 
  p{
@@ -101,6 +102,8 @@ font-size: 13px;
 font-style: normal;
 font-weight: 500;
 line-height: 23px; /* 176.923% */
-margin-top: 1rem;
+/* margin-top: 10px; */
+margin: 5px 0 10px 10px;
+
 }
 `
