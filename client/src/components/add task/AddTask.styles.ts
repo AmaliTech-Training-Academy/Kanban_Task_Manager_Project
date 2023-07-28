@@ -71,9 +71,8 @@ export const Stylecontainer = styled.div`
     width: 416px;
     padding: 9px;
   }
-  textarea{
+  textarea {
     width: 428px;
-
   }
   .submitt {
     width: 416px;
@@ -86,5 +85,4 @@ export const Stylecontainer = styled.div`
     color: #fff;
     margin: 50px 0 0 10px;
   }
-  
-`
+`;

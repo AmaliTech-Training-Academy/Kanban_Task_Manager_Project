@@ -27,10 +27,7 @@ const AddTask = ({
   activeTask,
   saveOrUpdateTask,
 }: AddTaskProps) => {
-
   const [taskToUpdate, setTaskToUpdate] = useState(activeTask ?? {});
-  const [inputs, setInputs] = useState({});
-  const [textarea, setTextarea] = useState({});
 
   const handleSubmit = async (event) => {
     event.preventDefault();
