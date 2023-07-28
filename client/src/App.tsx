@@ -6,18 +6,18 @@ import HomePageComponent from "./home_page/HomePageComponent";
 import { Admin } from "./admin_registration_page";
 import { AdminLogin } from "./admin-user-login";
 import DataTable from "./components/DataTable";
+import { KanbanNavbar } from "./dashboard-navbar";
+import { KanbanSidebar } from "./dashboard-sidebar";
+import { DashBoardPage } from "./components/DashBoardPage";
 
  const router = createBrowserRouter(
    createRoutesFromElements(
      <Route path="/" element={<AppRootComponent />}>
-       <Route index element={<HomePageComponent />} />
+       <Route index element={<DashBoardPage />} />
        <Route path="adminregistration" element={<Admin />} />
        <Route path="login" element={<AdminLogin />}>
-       <Route path="datatable" element={<DataTable />} />
-
+         <Route path="datatable" element={<DataTable />} />
        </Route>
-       
-       
      </Route>
    )
  );
