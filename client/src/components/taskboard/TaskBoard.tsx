@@ -159,7 +159,10 @@ const TaskBoard = () => {
               <DeleteTask closeDeleteModal={closeDeleteModal} />
             )}
             {showCardDetails && (
-              <CardDetails closeCardDetails={closeCardDetails} />
+              <CardDetails closeCardDetails={closeCardDetails} 
+              activeTask={activeTask}
+
+              />
             )}
             <DragDropContext onDragEnd={onDragEnd}>
               <div className="task">
