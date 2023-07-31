@@ -5,13 +5,12 @@ import AppRootComponent from "./app_root/AppRootComponent";
 import HomePageComponent from "./home_page/HomePageComponent";
 import { Admin } from "./admin_registration_page";
 import { AdminLogin } from "./admin-user-login";
-import { DashBoardPage } from "./components/DashBoardPage";
 
 
  const router = createBrowserRouter(
    createRoutesFromElements(
      <Route path="/" element={<AppRootComponent />}>
-       <Route index element={<DashBoardPage />} />
+       <Route index element={<HomePageComponent />} />
        <Route path="login" element={<AdminLogin />} />
        <Route path="adminregistration" element={<Admin />} />
      </Route>
