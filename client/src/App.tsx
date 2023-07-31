@@ -6,6 +6,12 @@ import HomePageComponent from "./home_page/HomePageComponent";
 import { Admin } from "./admin_registration_page";
 import { AdminLogin } from "./admin-user-login";
 import DataTable from "./components/DataTable";
+import TaskBoard from "./components/taskboard/TaskBoard";
+import EditTask from "./components/edit task/EditTask";
+import DeleteTask from "./components/delete task/DeleteTask";
+import AddTask from "./components/add task/AddTask";
+import CardDetails from "./components/card details/CardDetails";
+
 
  const router = createBrowserRouter(
    createRoutesFromElements(
@@ -25,8 +31,30 @@ import DataTable from "./components/DataTable";
 
 function App() {
   return (
-      <><RouterProvider router={router}/></>
+      <>
+      <RouterProvider router={router}/> 
 
+    <div className="App">
+      {/* <Router> */}
+        {/* <Navbar />
+        <Home />
+        <Features />
+        <About />
+        <Testimonials />
+        <Contact />
+      <Footer /> */}
+        {/* <ForgotPassword/>
+        <ResetPassword/>
+        <SetNewPassword/>
+        <Admin/>
+      <AdminLogin/> */}
+      {/* </Router> */}
+      <TaskBoard />
+      {/* <DeleteTask /> */}
+      {/* <CardDetails /> */}
+      {/* <AddTask name="Edit Task" submit="Update Task" /> */}
+    </div>
+      </>
   );
 }
 
