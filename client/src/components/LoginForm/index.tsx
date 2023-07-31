@@ -1,56 +1,34 @@
-import * as React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { StyledLoginForm } from "./styles";
-import axios from "axios";
+import * as React from "react";
 
-// Define FormState interface
-interface FormState {
-  email: string;
-  password: string;
+interface LoginFormProps {
+  setIsUserLoggedIn: (arg: boolean) => void;
 }
 
-// Define FormErrors interface (if applicable)
-// interface FormErrors {
-//   fieldName: string;
-//   errorMessage: string;
-//   // Add more error fields if needed
-// }
+export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-export const LoginForm = () => {
-  const initialFormState: FormState = {
-    email: "",
-    password: "",
+  const handleEmailChange = (event:any) => {
+    setEmail(event.target.value);
   };
 
-  const useForm = () => {
-    const [formState, setFormState] = useState<FormState>(initialFormState);
-    // const [formErrors, setFormErrors] = useState<FormErrors>({});
-
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const { name, value } = event.target;
-      setFormState((prevState) => ({ ...prevState, [name]: value }));
-    };
-
-    const handleSubmit = async (event: React.FormEvent) => {
-      event.preventDefault();
-      // Add your logic here for form submission, axios requests, etc.
-    };
-
-    return {
-      formState,
-      // formErrors, // Uncomment this line if you have FormErrors defined
-      handleInputChange,
-      handleSubmit,
-    };
+  const handlePasswordChange = (event:any) => {
+    setPassword(event.target.value);
   };
 
-  const { formState, handleInputChange, handleSubmit } = useForm();
+  const handleSubmit = () => {
+    // Your login logic here, e.g., validate credentials, make API calls, etc.
+    console.log("Email:", email);
+    console.log("Password:", password);
+    setIsUserLoggedIn(true);
+  };
 
   return (
     <StyledLoginForm>
       <div>
-        <form onSubmit={handleSubmit}>
+        <form action="/submit-form" method="POST">
           <div className="grid">
             <div className="form1">
               <label htmlFor="fullname">Email</label>
@@ -59,9 +37,9 @@ export const LoginForm = () => {
                 name="email"
                 id="email"
                 placeholder="salamijoe@example.com"
+                value={email}
+                onChange={handleEmailChange}
                 required
-                value={formState.email}
-                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -74,10 +52,10 @@ export const LoginForm = () => {
                 name="password"
                 id="password"
                 placeholder="*********"
+                value={password}
+                onChange={handlePasswordChange}
                 required
                 minLength={8}
-                value={formState.password}
-                onChange={handleInputChange}
               />
             </div>
           </div>
@@ -93,17 +71,19 @@ export const LoginForm = () => {
                 Remember me
               </label>
             </div>
-            <div className="forgotPassword">
+            <div className="Password">
               <a href="">Forgot password?</a>
             </div>
           </div>
 
-          {/* Wrap the button inside the Link */}
-          {/* <Link to="/dashboard"> */}
-            <button className="login-button-container" type="submit">
-              LOGIN
-            </button>
-          {/* </Link> */}
+          {/* Use a regular button with type "button" to prevent form submission */}
+          <button
+            type="button"
+            className="login-button-container"
+            onClick={handleSubmit}
+          >
+            Log in
+          </button>
         </form>
       </div>
     </StyledLoginForm>

@@ -15,10 +15,9 @@ import { SetNewPassword } from "../set-new-password";
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppRootComponent />}>
-      {/* <Route index element={<HomePageComponent />} /> */}
-      {/* <Route path="login" element={<AdminLogin />} /> */}
-      {/* <Route path="adminregistration" element={<Admin />} /> */}
-      <Route path="/" element={<KanbanSidebar />} />
+      <Route index element={<HomePageComponent />} />
+      <Route path="login" element={<AdminLogin />} />
+      <Route path="adminregistration" element={<Admin />} />
     </Route>
   )
 );

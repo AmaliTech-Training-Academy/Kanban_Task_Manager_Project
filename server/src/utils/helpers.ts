@@ -84,3 +84,12 @@ export const changePasswordAfter = function (JWTTimestamp: any, user: any) {
   // NOTE: if FALSE means password was NOT change
   return false;
 };
+
+// NOTE: Get Date
+export const getDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return [year, month, day].join("-");
+};

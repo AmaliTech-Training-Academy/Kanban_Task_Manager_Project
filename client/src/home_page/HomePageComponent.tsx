@@ -6,21 +6,19 @@ import Features from "../components/Features/Features";
 import About from "../components/About/About";
 import Contact from "../components/Contact/Contact";
 import Footer from "../components/Footer/Footer";
-import { SetNewPassword } from "../set-new-password";
-import { ForgotPassword } from "../forgot-password";
+
+
 
 const HomePageComponent = () => {
   return (
     <>
-      <Navbar />
+       <Navbar/> 
       <Home />
       <Features />
       <Testimonials />
       <About />
       <Contact />
-      <Footer />
-      <SetNewPassword />
-      <ForgotPassword/>
+      <Footer /> 
     </>
   );
 };
