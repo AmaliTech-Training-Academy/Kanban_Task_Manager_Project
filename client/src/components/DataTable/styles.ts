@@ -16,10 +16,9 @@ export const StyleTh = styled.th`
   padding: 0.5rem 1rem;
   font-weight: bold;
   text-align: left;
-  border-radius: 8px 8px 0px 0px;
   background-color: #e4ebfa;
   border: none;
-  `;
+`;
 
 export const StyleTd = styled.td`
   padding: 0.5rem 1rem;
