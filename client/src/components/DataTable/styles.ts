@@ -23,10 +23,9 @@ export const StyleTh = styled.th`
 
 export const StyleTd = styled.td`
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid pink;
-    height: 69px;
-
-  `
+  border-bottom: 1px solid #828fa3;
+  height: 69px;
+`;
 
   export const TableContainer = styled.div`
   
