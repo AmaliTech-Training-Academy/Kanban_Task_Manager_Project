@@ -5,7 +5,6 @@ import logoutIcon from "../assets/Icons/logout icon.svg";
 import hideSideBar from "../assets/Icons/Hide side bar icon.svg";
 import lightIcon from "../assets/Icons/light mode icon.svg";
 import darkIcon from "../assets/Icons/dark mode icon.svg";
-
 import ToggleButton from "../components/SideBarToggleBtn";
 
 export const KanbanSidebar = () => {
