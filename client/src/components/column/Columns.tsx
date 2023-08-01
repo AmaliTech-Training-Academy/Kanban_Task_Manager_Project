@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Droppable } from "react-beautiful-dnd";
 import Card from "../card/Card";
+import {Droppable} from "react-beautiful-dnd"
 
 import  { useCallback } from "react";
 
@@ -8,15 +8,15 @@ const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal,openCardDetail
   
 
   const updateActiveTaskOnTaskBoard = useCallback(
-    (taskId:number, task): void => {openEditTaskForm(taskId, task)},
+    (taskId:number, task: any): void => {openEditTaskForm(taskId, task)},
     []
   );
   const openDeleteModalOnTaskBoard = useCallback(
-    (task): void => {openDeleteModal(task)},
+    (task: any): void => {openDeleteModal(task)},
     []
   );
   const openCardDetailsOnTaskBoard = useCallback(
-    (task): void => {openCardDetails(task)},
+    (task: any): void => {openCardDetails(task)},
     []
   );
   // const showDeleteModal= React.useState (
@@ -44,7 +44,7 @@ const Columns = ({ column, tasks,openEditTaskForm,openDeleteModal,openCardDetail
     </div>
 
     <Droppable droppableId={`${column?.id}`}>
-      {(provided, snapshot) => (
+      {(provided: { innerRef: React.LegacyRef<HTMLDivElement> | undefined; droppableProps: React.JSX.IntrinsicAttributes & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement>; }, snapshot: any) => (
         <div
           className="task-board-column"
           ref={provided.innerRef}

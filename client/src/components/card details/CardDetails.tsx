@@ -1,11 +1,11 @@
-import React from "react";
+import * as React from "react";
 import { Stylecontainer } from "./CardDetails.styles";
 import closeImage from "../../assets/Icons/Group 18.svg";
 import brightnessImage from "../../assets/Icons/jam_brightness.svg";
 import dateIcon from "../../assets/Icons/Vector.svg";
 import maleImg from "../../../public/users/dustin-washington.jpg";
 
-const CardDetails = ({ closeCardDetails, activeTask,assignees }) => {
+const CardDetails = ({ closeCardDetails, activeTask, }) => {
   return (
     <Stylecontainer>
       <div className="container">

@@ -1,0 +1,145 @@
+{
+  "user": [
+    {
+      "fullname": "Frederick Neal",
+      "photo": "/users/frederick-neal.jpg",
+      "email": "frederick@gmail.com",
+      "specialization": "frontend Developer",
+      "rank": "senior",
+      "status": "active"
+    },
+
+    {
+      "fullname": "Gina Newman",
+      "photo": "/users/gina-newman.jpg",
+      "email": "gina@gmail.com",
+      "specialization": "frontend Developer",
+      "rank": "junior",
+      "status": "active"
+    },
+
+    {
+      "fullname": "Troy Jacobs",
+      "photo": "/users/troy-jacobs.jpg",
+      "email": "troy@gmail.com",
+      "specialization": "backend Developer",
+      "rank": "senior",
+      "status": "active"
+    },
+
+    {
+      "fullname": "Curtis Cox",
+      "photo": "/users/curtis-cox.jpg",
+      "email": "curits@gmail.com",
+      "specialization": "UI/UX designer",
+      "rank": "expert",
+      "status": "inactive"
+    },
+
+    {
+      "fullname": "Dibbie Alexander",
+      "photo": "/users/debbie-alexander.jpg",
+      "email": "dibbie@gmail.com",
+      "rank": "expert",
+      "status": "inactive"
+    },
+
+    {
+      "fullname": "leo washington",
+      "photo": "/users/leo-washington.jpg",
+      "email": "leo@gmail.com",
+      "specialization": "tester",
+      "rank": "senior",
+      "status": "inactive"
+    },
+
+    {
+      "fullname": "eleanor chavez",
+      "photo": "/users/eleanor-chavez.jpg",
+      "email": "eleanor@gmail.com",
+      "specialization": "tester",
+      "rank": "mid-level",
+      "status": "inactive"
+    },
+    {
+      "fullname": "pearl webb",
+      "photo": "/users/pearl-webb.jpg",
+      "email": "pearl@gmail.com",
+      "specialization": "UI/UX designer",
+      "rank": "junior",
+      "status": "inactive"
+    },
+    {
+      "fullname": "roland kim",
+      "photo": "/users/roland-kim.jpg",
+      "email": "roland@gmail.com",
+      "specialization": "backend Developer",
+      "rank": "junior",
+      "status": "active"
+    },
+    {
+      "fullname": "sandra allen",
+      "photo": "/users/sandra-allen.jpg",
+      "email": "sandra@gmail.com",
+      "specialization": "frontend Developer",
+      "rank": "fullstack develop",
+      "status": "inactive"
+    },
+    
+    {
+      "fullname": "tara-walker",
+      "photo": "users/tara-walker.jpg",
+      "email": "tara@gmail.com",
+      "specialization": "tester",
+      "rank": "fullstack develop",
+      "status": "inactive"
+    },
+    
+    {
+      "fullname": "leo",
+      "photo": "/users/leo.jpg",
+      "email": "leo@gmail.com",
+      "specialization": "tester",
+      "rank": "fullstack develop",
+      "status": "inactive"
+    },
+
+    {
+      "fullname": "willie williamson",
+      "photo": "/users/willie-williamson.jpg",
+      "email": "willie@gmail.com",
+      "specialization": "frontend Developer",
+      "rank": "mid-level",
+      "status": "active"
+    },
+
+    {
+      "fullname": "vincent grant",
+      "photo": "/users/vincent-grant.jpg",
+      "email": "vincent@gmail.com",
+      "specialization": "frontend Developer",
+      "rank": "senior",
+      "status": "active"
+    },
+
+    {
+      "fullname": "wayne scott",
+      "photo": "/users/wayne-scott.jpg",
+      "email": "wayne-scott.@gmail.com",
+      "specialization": "UI/UX designer",
+      "rank": "expert",
+      "status": "inactive"
+    },
+
+    {
+      "fullname": "june-hansen",
+      "photo": "/users/june-hansen.jpg",
+      "email": "june@gmail.com",
+      "specialization": "frontend Developer",
+      "rank": "mid-level",
+      "status": "active"
+    }
+
+   
+  ]
+}

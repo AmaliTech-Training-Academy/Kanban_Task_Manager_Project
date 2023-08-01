@@ -36,7 +36,12 @@ export const createTask = catchAsync(
     });
 
     if (users.length === 0) {
-      return next(new AppError("No assignees. Please assign assignees", 401));
+      return next(
+        new AppError(
+          "No verified assignees found. Please assign verified assignees to this task.",
+          401
+        )
+      );
     }
 
     // STEP: Get Due Date
@@ -65,29 +70,20 @@ export const createTask = catchAsync(
 // NOTE: GET ALL TASK
 export const allTask = catchAsync(
   async (req: Request | any, res: Response | any, next: any) => {
-    const allTask = await Task.findAll();
+    let doc;
+    if (!(req.query.include === "assignees")) {
+      doc = await Task.findAll();
+    } else {
+      doc = await Task.findAll({
+        include: { model: User, attributes: { exclude: excludeFields } },
+        attributes: { exclude: ["createdAt", "updatedAt"] },
+      });
+    }
 
     res.status(200).json({
       statut: "success",
       data: {
-        allTask,
-      },
-    });
-  }
-);
-
-// NOTE: GET ALL TASK AND ASSIGNES
-export const allTaskAndAssignee = catchAsync(
-  async (req: Request | any, res: Response | any, next: any) => {
-    const allTask = await Task.findAll({
-      include: { model: User, attributes: { exclude: excludeFields } },
-      attributes: { exclude: ["createdAt", "updatedAt"] },
-    });
-
-    res.status(200).json({
-      statut: "success",
-      data: {
-        allTask,
+        doc,
       },
     });
   }
@@ -171,40 +167,24 @@ export const getTask = catchAsync(
     //STEP: Get task id from URL
     const taskId = req.params.id;
 
-    const task = await Task.findByPk(taskId);
+    let doc;
+    if (!(req.query.include === "assignees")) {
+      doc = await Task.findByPk(taskId);
+    } else {
+      doc = await Task.findOne({
+        where: { id: taskId },
+        include: { model: User, attributes: { exclude: excludeFields } },
+      });
+    }
 
-    if (!task) {
+    if (!doc) {
       return next(new AppError("task not found", 404));
     }
 
     res.status(200).json({
       statut: "success",
       data: {
-        task,
-      },
-    });
-  }
-);
-
-// NOTE: Get Task and Assignees
-export const getTaskAndAssignee = catchAsync(
-  async (req: Request | any, res: Response | any, next: any) => {
-    //STEP: Get task id from URL
-    const taskId = req.params.id;
-
-    const task = await Task.findOne({
-      where: { id: taskId },
-      include: { model: User, attributes: { exclude: excludeFields } },
-    });
-
-    if (!task) {
-      return next(new AppError("task not found", 404));
-    }
-
-    res.status(200).json({
-      statut: "success",
-      data: {
-        task,
+        doc,
       },
     });
   }
