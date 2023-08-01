@@ -2,6 +2,7 @@ import { Model, Op } from "sequelize";
 
 import Task from "../models/taskModel.js";
 import User from "../models/UserModel.js";
+import assignees from "../associations/tasksAndUsers.js";
 import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
 import { getDate } from "../utils/helpers.js";
@@ -75,7 +76,11 @@ export const allTask = catchAsync(
       doc = await Task.findAll();
     } else {
       doc = await Task.findAll({
-        include: { model: User, attributes: { exclude: excludeFields } },
+        include: {
+          model: User,
+          as: "assignees",
+          attributes: { exclude: excludeFields },
+        },
         attributes: { exclude: ["createdAt", "updatedAt"] },
       });
     }
@@ -173,7 +178,12 @@ export const getTask = catchAsync(
     } else {
       doc = await Task.findOne({
         where: { id: taskId },
-        include: { model: User, attributes: { exclude: excludeFields } },
+        include: {
+          model: User,
+          as: "assignees",
+          through: { attributes: [] },
+          attributes: { exclude: excludeFields },
+        },
       });
     }
 

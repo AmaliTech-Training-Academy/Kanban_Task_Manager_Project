@@ -31,8 +31,8 @@ const Task = sequelize.define("Task", {
 });
 
 // Model Synchronization
-Task.sync({ alter: true })
-  .then(() => console.log("✔ Synchronize user table"))
-  .catch((err) => console.log("Failed to create table", err));
+// Task.sync({ alter: true })
+//   .then(() => console.log("🟢 Synchronize Task table"))
+//   .catch((err) => console.log("Failed to create table", err));
 
 export default Task;
