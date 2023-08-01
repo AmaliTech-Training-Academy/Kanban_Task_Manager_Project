@@ -14,7 +14,9 @@ export const StyleTh = styled.th`
   background-color: #f2f2f2;
   height: 52px;
   padding: 0.5rem 1rem;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 12px;
+  color:#3E3F4E;
   text-align: left;
   background-color: #e4ebfa;
   border: none;
