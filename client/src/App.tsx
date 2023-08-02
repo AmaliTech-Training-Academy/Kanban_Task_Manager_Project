@@ -10,11 +10,12 @@ import EditTask from "./components/edit task/EditTask";
 import DeleteTask from "./components/delete task/DeleteTask";
 import AddTask from "./components/add task/AddTask";
 import CardDetails from "./components/card details/CardDetails";
+import { DashBoardPage } from "./components/DashBoardPage";
 
  const router  = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<AppRootComponent />}>
-      <Route index element={<HomePageComponent />} />
+      <Route index element={<DashBoardPage  />} />
       <Route path="login" element={<AdminLogin />} />
       <Route path="adminregistration" element={<Admin />} />
     </Route>
@@ -25,9 +26,8 @@ import CardDetails from "./components/card details/CardDetails";
 function App() {
   return (
       <>
-      <RouterProvider router={router}/> 
-
     <div className="App">
+      {/* <RouterProvider router={router}/>  */}
       {/* <Router> */}
         {/* <Navbar />
         <Home />

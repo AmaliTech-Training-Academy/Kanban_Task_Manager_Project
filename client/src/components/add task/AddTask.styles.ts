@@ -12,6 +12,7 @@ export const Stylecontainer = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 2;
+    border: 3px solid red;
     /* background-color: rgba(0,0,0,0.6);
         backdrop-filter: blur(3px); */
   }
@@ -71,8 +72,24 @@ export const Stylecontainer = styled.div`
     width: 416px;
     padding: 9px;
   }
+  .select{
+    color: #000112;
+    font-family: Plus Jakarta Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23px;
+    /* opacity: 0.25; */
+    width: 434px;
+    /* padding: 9px; */
+    height: 260px;
+    overflow-y: scroll;
+    /* background-color:  orange; */
+    
+  }
   textarea {
-    width: 428px;
+    width: 416px;
+    padding: 9px;
   }
   .submitt {
     width: 416px;
@@ -83,6 +100,22 @@ export const Stylecontainer = styled.div`
     border: none;
     margin-top: 50px;
     color: #fff;
-    margin: 50px 0 0 10px;
+    margin: 30px 0 0 10px;
+  }
+  .option{
+    display: inline;
+    background-color: red;
+  }
+  input[type="checkbox"]{
+    background-color: green;
+    width: 50px;
+  }
+  .check{
+    display: flex;
+    /* width: 200px; */
+    justify-content: space-between;
+    /* text-align: center; */
+
+    /* border: 2px solid brown; */
   }
 `;

@@ -18,6 +18,8 @@ interface AddTaskProps {
   submit: string;
   activeTask: Task | null;
   saveOrUpdateTask: (task: Task) => void;
+  allUsers:string;
+  users:string;
 }
 
 const AddTask = ({
@@ -26,6 +28,8 @@ const AddTask = ({
   submit,
   activeTask,
   saveOrUpdateTask,
+  allUsers,
+  users,
 }: AddTaskProps) => {
   const [taskToUpdate, setTaskToUpdate] = useState(activeTask ?? {});
 
@@ -39,6 +43,7 @@ const AddTask = ({
 
   //REMOVE WHEN BACKEND IS READY
   // const sa
+  
   return (
     <Stylecontainer>
       <div className="new-task-container" /*onClick={closeShowAddTaskForm}*/>
@@ -88,6 +93,14 @@ const AddTask = ({
           />
           <label className="title">Assignee </label>
           <input type="text" />
+          <div className="select">
+            {allUsers.map((user)=>
+              {return <div className="check"> 
+              <input type="checkbox" className="checkboxs" />
+              <option key={users} className="option"> {user.fullName} </option></div>}
+            )}
+          </div>
+
           <label className="title">Due Date </label>
           <input
             value={taskToUpdate ? taskToUpdate.dueDate : ""}
