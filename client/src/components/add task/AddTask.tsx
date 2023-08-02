@@ -2,13 +2,13 @@ import * as React from "react";
 import { useState } from "react";
 import { Stylecontainer } from "../../components/add task/AddTask.styles";
 import closeImage from "../../assets/Icons/Group 18.svg";
-import axios from "axios";
-import { BASE_URL } from "../../../constants";
+
 
 interface Task {
   title: string;
   description: string;
   dueDate: string;
+  
   // Add more properties here if necessary
 }
 
@@ -33,13 +33,17 @@ const AddTask = ({
 }: AddTaskProps) => {
   const [taskToUpdate, setTaskToUpdate] = useState(activeTask ?? {});
 
-  const handleSubmit = async (event) => {
+
+  const handleSubmit = async (event:any) => {
     event.preventDefault();
     //perform validations
     saveOrUpdateTask(taskToUpdate);
 
     console.log(taskToUpdate);
   };
+
+  
+
 
   //REMOVE WHEN BACKEND IS READY
   // const sa

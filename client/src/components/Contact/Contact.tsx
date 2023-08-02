@@ -1,4 +1,3 @@
-// import React from 'react'
 import { Stylecontainer } from "./Contact.styles";
 import backgroundImag from "../../assets/Images/Ellipse 42.png";
 import backgroundImagg from "../../assets/Images/Group 545.png";

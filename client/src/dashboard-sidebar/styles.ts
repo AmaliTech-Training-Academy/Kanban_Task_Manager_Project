@@ -5,6 +5,7 @@ export const StyledSidebarContainer = styled.div`
   height: 100vh;
   width: 220px;
   position: fixed;
+  /* background-color: gainsboro; */
 
   .SidebarList {
     height: auto;
@@ -24,7 +25,6 @@ export const StyledSidebarContainer = styled.div`
     list-style-type: none;
     font-weight: 700;
     font-size: 15px;
-
   }
   .SidebarList .row:hover {
     cursor: pointer;
@@ -50,6 +50,66 @@ export const StyledSidebarContainer = styled.div`
   .row #title {
     flex: 70%;
   }
-  
- 
+
+  .SubContainer {
+    margin-left: 32px;
+    height: 196px;
+    margin-top: 160px;
+  }
+  .logoutBtn {
+    width: 100px;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    color: #828fa3;
+    font-size: 15px;
+    font-weight: 700;
+    &:active {
+      cursor: pointer;
+      transform: translateY(1px);
+    }
+  }
+  .ToggleBtnContainer {
+    height: 48px;
+    width: 188px;
+    margin-top: 48px;
+    background-color: #f4f7fd;
+    border-radius: 10px;
+    background-color: #f4f7fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ToggleBtnContainer img {
+    margin-right: 20px; 
+    margin-left: 20px; 
+  }
+  .ToggleButtonContainer {
+    margin-right: 8px; 
+    margin-left: 8px;
+  }
+
+  .HideSideBar-Btn {
+    width: 127px;
+    height: 19px;
+    border: none;
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-weight: 700;
+    color: #828fa3;
+    &:active {
+      cursor: pointer;
+      transform: translateY(1px);
+    }
+  }
 `;
+  
+  
+  

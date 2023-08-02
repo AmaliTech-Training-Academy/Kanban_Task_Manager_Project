@@ -19,7 +19,6 @@ const HomePageComponent = () => {
       <About />
       <Contact />
       <Footer /> 
-    
     </>
   );
 };
