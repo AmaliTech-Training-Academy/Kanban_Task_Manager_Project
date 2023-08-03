@@ -7,13 +7,22 @@ import { Admin } from "./admin_registration_page";
 import { AdminLogin } from "./admin-user-login";
 import TaskBoard from "./components/taskboard/TaskBoard";
 
+import DataTable from "./components/DataTable";
+import TaskBoard from "./components/taskboard/TaskBoard";
+import EditTask from "./components/edit task/EditTask";
+import DeleteTask from "./components/delete task/DeleteTask";
+import AddTask from "./components/add task/AddTask";
+import CardDetails from "./components/card details/CardDetails";
+
 
  const router = createBrowserRouter(
    createRoutesFromElements(
      <Route path="/" element={<AppRootComponent />}>
        <Route index element={<HomePageComponent />} />
-       <Route path="login" element={<AdminLogin />} />
        <Route path="adminregistration" element={<Admin />} />
+       <Route path="login" element={<AdminLogin />}>
+       <Route path="datatable" element={<DataTable />} />
+       </Route>
      </Route>
    )
  );
