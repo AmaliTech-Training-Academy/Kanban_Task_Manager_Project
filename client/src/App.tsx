@@ -5,6 +5,7 @@ import AppRootComponent from "./app_root/AppRootComponent";
 import HomePageComponent from "./home_page/HomePageComponent";
 import { Admin } from "./admin_registration_page";
 import { AdminLogin } from "./admin-user-login";
+import TaskBoard from "./components/taskboard/TaskBoard";
 
 import DataTable from "./components/DataTable";
 import TaskBoard from "./components/taskboard/TaskBoard";
@@ -30,9 +31,26 @@ import CardDetails from "./components/card details/CardDetails";
 function App() {
   return (
       <>
-      <RouterProvider router={router}/> 
-
     <div className="App">
+      {/* <RouterProvider router={router}/>  */}
+      {/* <Router> */}
+        {/* <Navbar />
+        <Home />
+        <Features />
+        <About />
+        <Testimonials />
+        <Contact />
+      <Footer /> */}
+        {/* <ForgotPassword/>
+        <ResetPassword/>
+        <SetNewPassword/>
+        <Admin/>
+      <AdminLogin/> */}
+      {/* </Router> */}
+      <TaskBoard />
+      {/* <DeleteTask /> */}
+      {/* <CardDetails /> */}
+      {/* <AddTask name="Edit Task" submit="Update Task" /> */}
 
     </div>
       </>
