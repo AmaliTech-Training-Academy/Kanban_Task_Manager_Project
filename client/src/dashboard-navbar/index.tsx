@@ -36,7 +36,7 @@ export const KanbanNavbar = () => {
           </RightContainer>
         </NavbarInnerContainer>
       </StyledNavContainer>
-      {/* <KanbanSidebar /> */}
+      <KanbanSidebar />
     </>
   );
 };

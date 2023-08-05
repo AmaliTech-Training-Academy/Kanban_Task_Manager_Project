@@ -5,7 +5,6 @@ export const StyledSidebarContainer = styled.div`
   height: 100vh;
   width: 220px;
   position: fixed;
-  /* background-color: gainsboro; */
 
   .SidebarList {
     height: auto;
@@ -35,7 +34,6 @@ export const StyledSidebarContainer = styled.div`
   }
   .SidebarList .row:active {
     cursor: pointer;
-    background-color: #635fc7;
   }
   .SidebarList #active {
     background-color: #635fc7;
