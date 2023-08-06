@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useState } from "react";
 import { StyledNavContainer, LeftContainer,RightContainer,NavbarInnerContainer,} from "./styles";
 import { KanbanSidebar } from "../dashboard-sidebar";
 import Kanbanlogo from "../assets/Icons/logo.png";

@@ -1,3 +1,4 @@
+import * as React from "react";
 import { StyledResetPasswordFooter } from "./styles";
 
 export const ResetPasswordFooter = () => {

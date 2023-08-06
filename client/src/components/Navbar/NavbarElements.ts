@@ -32,9 +32,9 @@ export const NavLink = styled(Link)`
     text-decoration: none;
   }
 
-  &.active {
+  &:active {
     color: #635fc7;
-  }
+ }
   &:hover {
     color: #a8a4ff;
   }
@@ -51,12 +51,13 @@ export const NavLink1 = styled(Link)`
   font-weight: 700;
   line-height: normal;
 
-  a {
+  a:active{
     text-decoration: none;
   }
 
   &.active {
     color: #635fc7;
+
   }
   &:hover {
     color: #a8a4ff;
@@ -73,6 +74,9 @@ export const NavMenu = styled.div`
 
 export const NavContainer = styled.div`
   display: flex;
+  .active-link{
+    color: red;
+  }
 `;
 
 export const NavBtn = styled.div`
@@ -102,6 +106,7 @@ export const NavBtnLink = styled.div`
     background: #a8a4ff;
     cursor: pointer;
   }
+ 
 `;
 
 export const NavBtnLink2 = styled.div`

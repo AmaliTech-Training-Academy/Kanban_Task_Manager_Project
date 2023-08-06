@@ -31,20 +31,20 @@ const Navbar = () => {
 
         <NavContainer>
           <NavMenu>
-            <NavLink1 to="/">Home</NavLink1>
-            <NavLink to="/about" onClick={() => handleClickScroll(".about")}>
+            <NavLink1 to="/">Home </NavLink1>
+            
+            <NavLink  
+            onClick={() => handleClickScroll(".about")}>
               About
             </NavLink>
+
             <NavLink
-              to="/features"
-              onClick={() => handleClickScroll(".features")}
-            >
+              onClick={() => handleClickScroll(".features")}>
               Features
             </NavLink>
+
             <NavLink
-              to="/contact"
-              onClick={() => handleClickScroll(".contact")}
-            >
+              onClick={() => handleClickScroll(".contact")}>
               Contact Us
             </NavLink>
           </NavMenu>
@@ -56,11 +56,11 @@ const Navbar = () => {
               Login
             </Link>
           </NavBtnLink>
+
           <NavBtnLink2>
             <Link to="adminregistration">
               Register
             </Link>
-            
           </NavBtnLink2>
         </NavBtn>
       </Nav>
