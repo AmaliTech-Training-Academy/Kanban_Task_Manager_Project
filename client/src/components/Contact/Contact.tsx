@@ -1,0 +1,61 @@
+import { Stylecontainer } from "./Contact.styles";
+import backgroundImag from "../../assets/Images/Ellipse 42.png";
+import backgroundImagg from "../../assets/Images/Group 545.png";
+import Faq from "../Faq";
+import * as React from "react";
+
+const Contact = () => {
+  const dummyAnswer =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus dolorum facere, " +
+    "ab eos natus debitis aspernatur cum asperiores vel possimus fugit accusamus praesentium " +
+    "deserunt rerum. Laboriosam possimus doloremque quisquam voluptate.";
+  return (
+    <Stylecontainer>
+      <div className="section">
+        <img src={backgroundImag} alt="" className="imag" />
+
+        <div className="contact">
+          <h2 className="contactUs">Contact Us</h2>
+        </div>
+        <div className="text">
+          <h1>Frequently asked questions</h1>
+        </div>
+        <div className="text2">
+          <p>
+            Everything you need to know about the product and billing. Can’t
+            find the answer you’re looking for? Please chat to our team.
+          </p>
+        </div>
+        <div className="asked-questions">
+          <Faq
+            questions="What are the benefits of using Kanban as a task management app? "
+            answers={dummyAnswer}
+          />
+          <Faq
+            questions="What are the benefits of using Kanban as a task management app? "
+            answers={dummyAnswer}
+          />
+          <Faq
+            questions="What are the benefits of using Kanban as a task management app? "
+            answers={dummyAnswer}
+          />
+          <Faq
+            questions="What are the benefits of using Kanban as a task management app? "
+            answers={dummyAnswer}
+          />
+          <Faq
+            questions="What are the benefits of using Kanban as a task management app? "
+            answers={dummyAnswer}
+          />
+          <Faq
+            questions="What are the benefits of using Kanban as a task management app? "
+            answers={dummyAnswer}
+          />
+        </div>
+        <img src={backgroundImagg} alt="" className="imagg" />
+      </div>
+    </Stylecontainer>
+  );
+};
+
+export default Contact;

@@ -1,0 +1,68 @@
+{
+  "status": "success",
+  "results": 15,
+  "data": {
+    "allUsers": [
+      {
+        "id": "8f79b20f-a6b0-4a0a-afaa-adebd5ddd3ec",
+        "photo": "default.jpg",
+        "fullName": "Frederick Neal",
+        "email": "frederick@gmail.com",
+        "specialization": "frontend Developer",
+        "rank": "senior",
+        "about": null,
+        "status": "inactive"
+      },
+      {
+        "id": "7bef39a4-46c3-4420-ab2f-0485d442fd77",
+        "photo": "default.jpg",
+        "fullName": "Gina Newman",
+        "email": "gina@gmail.com",
+        "specialization": "frontend Developer",
+        "rank": "junior",
+        "about": null,
+        "status": "inactive"
+      },
+      {
+        "id": "d0915551-1fdb-454c-afd3-9aa60c2dd7a8",
+        "photo": "default.jpg",
+        "fullName": "Troy Jacobs",
+        "email": "troy@gmail.com",
+        "specialization": "backend Developer",
+        "rank": "senior",
+        "about": null,
+        "status": "inactive"
+      },
+      {
+        "id": "b5b7fe26-2cd9-408c-88e3-9c5420a4c765",
+        "photo": "default.jpg",
+        "fullName": "Curtis Cox",
+        "email": "curits@gmail.com",
+        "specialization": "UI/UX designer",
+        "rank": "expert",
+        "about": null,
+        "status": "inactive"
+      },
+      {
+        "id": "fa22fa26-b757-4680-9e4c-bd8598035198",
+        "photo": "default.jpg",
+        "fullName": "Dibbie Alexander",
+        "email": "dibbie@gmail.com",
+        "specialization": "UI/UX designer",
+        "rank": "expert",
+        "about": null,
+        "status": "inactive"
+      },
+      {
+        "id": "3520834a-5077-4dd4-a98d-94afe14bfc1f",
+        "photo": "default.jpg",
+        "fullName": "leo washington",
+        "email": "leo@gmail.com",
+        "specialization": "tester",
+        "rank": "senior",
+        "about": null,
+        "status": "inactive"
+      }
+    ]
+  }
+}

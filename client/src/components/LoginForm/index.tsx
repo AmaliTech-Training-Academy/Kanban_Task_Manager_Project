@@ -1,21 +1,46 @@
-import * as React from "react";
+import { useState } from "react";
 import { StyledLoginForm } from "./styles";
+import * as React from "react";
 
-export const LoginForm = () => {
+interface LoginFormProps {
+  setIsUserLoggedIn: (arg: boolean) => void;
+}
+
+export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (event:any) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event:any) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    // Your login logic here, e.g., validate credentials, make API calls, etc.
+    console.log("Email:", email);
+    console.log("Password:", password);
+    setIsUserLoggedIn(true);
+  };
+
   return (
     <StyledLoginForm>
       <div>
         <form action="/submit-form" method="POST">
           <div className="grid">
             <div className="form1">
-              <label htmlFor="fullname">Fullname</label>
+              <label htmlFor="fullname">Email</label>
               <input
-                type="text"
-                name="fullname"
-                id="fullname"
-                placeholder="Salami Joseph"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="salamijoe@example.com"
+                value={email}
+                onChange={handleEmailChange}
                 required
-              ></input>
+              />
             </div>
           </div>
 
@@ -27,9 +52,11 @@ export const LoginForm = () => {
                 name="password"
                 id="password"
                 placeholder="*********"
+                value={password}
+                onChange={handlePasswordChange}
                 required
                 minLength={8}
-              ></input>
+              />
             </div>
           </div>
 
@@ -44,13 +71,18 @@ export const LoginForm = () => {
                 Remember me
               </label>
             </div>
-            <div className="forgotPassword">
+            <div className="Password">
               <a href="">Forgot password?</a>
             </div>
           </div>
 
-          <button type="submit" className="login-button-container">
-            LOGIN
+          {/* Use a regular button with type "button" to prevent form submission */}
+          <button
+            type="button"
+            className="login-button-container"
+            onClick={handleSubmit}
+          >
+            Log in
           </button>
         </form>
       </div>
