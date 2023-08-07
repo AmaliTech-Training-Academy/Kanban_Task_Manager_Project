@@ -9,6 +9,7 @@ interface FormState {
   email: string;
   password: string;
   confirmPassword: string;
+
 }
 
 interface FormErrors {
@@ -21,7 +22,8 @@ export const RegistrationForm = () => {
     fullname: "",
     email: "",
     password: "",
-    confirmPassword: "",
+    confirmPassword: ""
+    ,
   };
 
   const [photo, setPhoto] = useState("");
@@ -45,7 +47,7 @@ console.log("🎙🎙", formData)
   };
 
   const validateConfirmPassword = (
-    password: string,
+    password: string|number,
     confirmPassword: string
   ): string => {
     if (password !== confirmPassword) {
@@ -170,7 +172,7 @@ console.log("🎙🎙", formData)
                 )}
               </div>
             </div>
-
+            
             <button type="submit" className="submit-container">
               Create account
             </button>
@@ -178,5 +180,31 @@ console.log("🎙🎙", formData)
         </div>
       </StyledRegistrationForm>
     </>
+
+            <div className="form1">
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                value={formState.confirmPassword}
+                onChange={handleInputChange}
+                placeholder="***********"
+                required
+                minLength={8}
+              />
+              {formErrors.confirmPasswordError && (
+                <p>{formErrors.confirmPasswordError}</p>
+              )}
+            </div>
+          </div>
+
+          <button type="submit" className="submit-container">
+            
+            Create account
+          </button>
+        </form>
+      </div>
+    </StyledRegistrationForm>
   );
 };

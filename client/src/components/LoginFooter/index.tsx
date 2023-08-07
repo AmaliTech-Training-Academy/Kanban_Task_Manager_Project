@@ -1,11 +1,13 @@
+import * as React from "react";
 import { StyledLoginFooter } from "./styles";
+import { Link } from "react-router-dom";
 
 export const LoginFooter = () => {
   return (
     <div>
       <StyledLoginFooter>
         <footer>
-          Don't have an account?<a href="http:// ">Register</a>
+          <Link to="/adminregistration">Don't have an account? Register</Link>
         </footer>
       </StyledLoginFooter>
     </div>

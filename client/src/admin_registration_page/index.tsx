@@ -1,14 +1,11 @@
 import { StyledRegistrationContainer } from "./styles";
-import Logo from "../assets/Icons/logo.png"
+import Logo from "../assets/Icons/logo.png";
 import * as React from "react";
 import { UploadPhoto } from "../components/UploadPhoto";
 import { RegistrationForm } from "../components/RegistrationForm";
 import { RegistrationFooter } from "../components/RegistrationFooter";
 
 export const Admin = () => {
-
- 
-  
   return (
     <StyledRegistrationContainer>
       <div className="container-body">
@@ -30,5 +27,3 @@ export const Admin = () => {
     </StyledRegistrationContainer>
   );
 };
-
-
