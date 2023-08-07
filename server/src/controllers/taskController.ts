@@ -53,6 +53,7 @@ export const createTask = catchAsync(
       title: req.body?.title,
       description: req.body?.description,
       assignee: req.body?.assignee,
+      position: req.body?.position,
       dueDate: dueDate,
     });
 
