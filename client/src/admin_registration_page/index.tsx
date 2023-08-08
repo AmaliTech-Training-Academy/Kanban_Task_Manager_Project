@@ -18,7 +18,6 @@ export const Admin = () => {
                 Please fill out the required fields below to create your
                 account. We look forward to having you join our community
               </p>
-              <UploadPhoto />
               <RegistrationForm />
               <RegistrationFooter />
             </div>
