@@ -52,7 +52,7 @@ const DataTable: React.FC = () => {
   );
 
   return (
-    <TableContainer>
+    
       <StyleTable>
         <thead>
           <tr>
@@ -77,7 +77,6 @@ const DataTable: React.FC = () => {
           ))}
         </tbody>
       </StyleTable>
-    </TableContainer>
   );
 };
 

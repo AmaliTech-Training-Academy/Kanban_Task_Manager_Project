@@ -4,7 +4,8 @@ import { SidebarData } from "./sidebardata";
 
 export const KanbanSidebar = () => {
   return (
-    <><StyledSidebarContainer>
+    <>
+    <StyledSidebarContainer>
       <div className="SidebarContainer">
         <ul className="SidebarList">
           {SidebarData.map((val, key) => (
