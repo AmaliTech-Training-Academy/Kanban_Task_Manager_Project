@@ -100,7 +100,6 @@ export const StyledSidebarContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     font-weight: 700;
-    font-weight: 700;
     color: #828fa3;
     &:active {
       cursor: pointer;
