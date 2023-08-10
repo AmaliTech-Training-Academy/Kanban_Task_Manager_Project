@@ -2,21 +2,27 @@
 
 import styled from "styled-components";
 
+export const StyleBtnsContainer = styled.div`
+
+width: 533px;
+height: 49px;
+background-color: red;
+justify-self
+
+`;
+
+
 export const StyleTable = styled.table`
   /* width: 50%; */
   border-collapse: collapse;
-  margin-top: 5rem;
+  margin-top: 1rem;
     margin-bottom: 5rem;
 
   /* position: relative; */
   /* left: 19%;  */
   /* background-color: yellow;
   
-  tr {
-    /* border: 2px solid red; */
-    /* width: 10%; */
-    background-color: seagreen;
-  }
+
   th{
     border: 2px solid green;
     width: 20%;
@@ -49,9 +55,13 @@ export const TableContainer = styled.div`
   margin-top: 1rem;
   position: relative;
   left: 19%;
-  padding: 0.5%
-  `
+  padding: 0.5%;
+  /* margin-left:-10px */
 
+  
+  `
+  
+ 
 
 
 

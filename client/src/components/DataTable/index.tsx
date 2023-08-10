@@ -1,6 +1,12 @@
 import React, { useMemo } from "react";
 import userData from "../../userData.json";
-import { StyleTable, StyleTh, StyleTd, TableContainer} from "./styles";
+import {
+  StyleTable,
+  StyleTh,
+  StyleTd,
+  TableContainer,
+  StyleBtnsContainer,
+} from "./styles";
 import StatusIndicator from "./StatusIndcator";
 
 interface UserData {
@@ -53,6 +59,9 @@ const DataTable: React.FC = () => {
 
   return (
     <TableContainer>
+<StyleBtnsContainer>
+      <div className="DataTable-BtnsContainer"></div>
+</StyleBtnsContainer>
       <StyleTable>
         <thead>
           <tr>
