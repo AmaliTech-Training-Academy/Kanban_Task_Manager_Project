@@ -4,7 +4,7 @@ import { LoginFooter } from "../components/LoginFooter";
 import { LoginForm } from "../components/LoginForm";
 import * as React from "react";
 import { useState } from "react";
-import { DashBoardPage } from "../components/DashBoardPage";
+import { DashBoardPage } from "../DashBoardPage";
 
 export const AdminLogin = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
