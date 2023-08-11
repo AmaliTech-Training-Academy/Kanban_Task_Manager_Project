@@ -1,13 +1,8 @@
 import React, { useMemo } from "react";
 import userData from "../../userData.json";
-import {
-  StyleTable,
-  StyleTh,
-  StyleTd,
-  TableContainer,
-  StyleBtnsContainer,
-} from "./styles";
+import {StyleTable,StyleTh,StyleTd,TableContainer,StyleBtnsContainer,} from "./styles";
 import StatusIndicator from "./StatusIndcator";
+import { FilterBtn } from "../DataFilterBtn";
 
 interface UserData {
   fullname: string;
@@ -58,35 +53,37 @@ const DataTable: React.FC = () => {
   );
 
   return (
-    <TableContainer>
-<StyleBtnsContainer>
-      <div className="DataTable-BtnsContainer"></div>
-</StyleBtnsContainer>
-      <StyleTable>
-        <thead>
-          <tr>
-            {columns.map((column) => (
-              <StyleTh key={column.accessor}>
-                <th>{column.Header}</th>
-              </StyleTh>
+      <TableContainer>
+        <StyleBtnsContainer>
+          <div className="DataTable-BtnsContainer">
+            <FilterBtn/>
+          </div>
+        </StyleBtnsContainer>
+        <StyleTable>
+          <thead>
+            <tr>
+              {columns.map((column) => (
+                <StyleTh key={column.accessor}>
+                  <th>{column.Header}</th>
+                </StyleTh>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row, index) => (
+              <React.Fragment key={index}>
+                <tr>
+                  {columns.map((column) => (
+                    <StyleTd key={column.accessor}>
+                      <td>{row[column.accessor]}</td>
+                    </StyleTd>
+                  ))}
+                </tr>
+              </React.Fragment>
             ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, index) => (
-            <React.Fragment key={index}>
-              <tr>
-                {columns.map((column) => (
-                  <StyleTd key={column.accessor}>
-                    <td>{row[column.accessor]}</td>
-                  </StyleTd>
-                ))}
-              </tr>
-            </React.Fragment>
-          ))}
-        </tbody>
-      </StyleTable>
-    </TableContainer>
+          </tbody>
+        </StyleTable>
+      </TableContainer>
   );
 };
 
