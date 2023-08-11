@@ -24,6 +24,7 @@ const TaskBoard = () => {
   const [doing, setDoing] = useState({});
   const [done, setDone] = useState({});
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const [allUsers, setAllUsers] = useState([]);
 
   const onDragEnd = (result: any): any => {
     const { destination, source }: any = result;
@@ -32,6 +33,7 @@ const TaskBoard = () => {
   const fetchTask = async () => {
     const tasks = await axios.get("./data.json");
     // const tasks = await axios.get(BASE_URL + "/api/task/all");
+
 
 
     if (tasks.status === 200) {
@@ -62,6 +64,21 @@ const TaskBoard = () => {
     console.log("SET TODO", todo);
     setIsDataLoaded(true);
   };
+  const fetchUsers = async() => {
+    const users = await axios.get("./users.json");
+
+    if(users.status === 200){
+      setAllUsers(prev =>Object.assign(prev, users?.data?.data?.allUsers))
+      // const saveUsers = users.data?.columns ?? [];
+
+    }
+
+    console.log(
+      'USERS', users.data.data.allUsers)
+  
+  }
+
+  useEffect(() => fetchUsers,[]);
 
   // const fetchLocalStorageData = () =>
 
@@ -78,12 +95,6 @@ const TaskBoard = () => {
     // }
 
     //REMOVE WHEN BACKEND IS READY
-    console.log("usecallback called");
-    
-
-    const id = Math.random() * 5000;
-    // console.log(lastId)
-    task.id =  id;
     
   }, [allTasks])
 
@@ -153,6 +164,7 @@ const TaskBoard = () => {
                 name={cardHeading}
                 submit={cardButton}
                 activeTask={activeTask}
+                allUsers={allUsers}
               />
             )}
             {showDeleteModal && (

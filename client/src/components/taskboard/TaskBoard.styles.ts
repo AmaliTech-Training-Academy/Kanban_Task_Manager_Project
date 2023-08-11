@@ -7,13 +7,16 @@ export const Stylecontainer = styled.div`
   min-height: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
+  /* position: relative; */
+
 
 }
 
 .task-board {
   margin: 35px 0;
-  width: 1074px;
+  /* width: 1074px; */
+  width: 80%;
+
 
   display: flex;
   justify-content: space-between;

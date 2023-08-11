@@ -4,6 +4,8 @@ import closeImage from "../../assets/Icons/Group 18.svg";
 import brightnessImage from "../../assets/Icons/jam_brightness.svg";
 import dateIcon from "../../assets/Icons/Vector.svg";
 import maleImg from "../../../public/users/dustin-washington.jpg";
+import Progress from "../progress/Progress";
+import AssigneePhoto from "../assignees/AssigneePhoto";
 
 const CardDetails = ({ closeCardDetails, activeTask, }) => {
   return (
@@ -36,10 +38,19 @@ const CardDetails = ({ closeCardDetails, activeTask, }) => {
           <div className="date">
             <label>Assignees</label>
             <div className="image">
+              <img src={activeTask.assignees} alt="" />
+              {/* <img src={maleImg} alt="" />
               <img src={maleImg} alt="" />
-              <img src={maleImg} alt="" />
-              <img src={maleImg} alt="" />
-              <img src={maleImg} alt="" />
+              <img src={maleImg} alt="" /> */}
+              <AssigneePhoto 
+              key={activeTask.assignee.id}
+              photo={activeTask.assignee.photo}
+              fullName={activeTask.assignee.fulName}
+             />
+              <AssigneePhoto />
+              <AssigneePhoto />
+              <AssigneePhoto />
+              {/* {...activeTask.assignees}  */}
             </div>
           </div>
           <div className="title">
@@ -54,9 +65,11 @@ const CardDetails = ({ closeCardDetails, activeTask, }) => {
           <div className="title">
             <label>Description</label>
             <div className="title-description">
-              <p>{activeTask.description}</p>
+              <p>{activeTask.description} <a href="">Read me</a> </p>
             </div>
           </div>
+          <Progress percentage={activeTask.progress}/>
+          {/* <div className="progress">{activeTask.progress}</div> */}
         </div>
       </div>
     </Stylecontainer>
