@@ -1,1 +1,1 @@
-export const BASE_URL = "127.0.0.1:7000";
+export const BASE_URL = "https://kanban-api-j8ae.onrender.com/api/v1";

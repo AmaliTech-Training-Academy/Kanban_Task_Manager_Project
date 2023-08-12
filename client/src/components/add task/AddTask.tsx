@@ -4,6 +4,12 @@ import { Stylecontainer } from "../../components/add task/AddTask.styles";
 import closeImage from "../../assets/Icons/Group 18.svg";
 import axios from "axios";
 import { BASE_URL } from "../../../constants";
+// import UsersPhoto from "../../../../server/public/"
+
+interface User {
+  email: string;
+  photo: string; // This assumes 'photo' is a URL string
+}
 
 interface Task {
   title: string;
@@ -18,6 +24,8 @@ interface AddTaskProps {
   submit: string;
   activeTask: Task | null;
   saveOrUpdateTask: (task: Task) => void;
+  allUsers:User[];
+  users:string;
 }
 
 const AddTask = ({
@@ -26,10 +34,16 @@ const AddTask = ({
   submit,
   activeTask,
   saveOrUpdateTask,
+  allUsers,
+  users,
 }: AddTaskProps) => {
-  const [taskToUpdate, setTaskToUpdate] = useState(activeTask ?? {});
+  const [taskToUpdate, setTaskToUpdate] = useState(activeTask ?? {
+    title: "",
+    description: "",
+    dueDate: "",
+  });
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event:any) => {
     event.preventDefault();
     //perform validations
     saveOrUpdateTask(taskToUpdate);
@@ -37,8 +51,7 @@ const AddTask = ({
     console.log(taskToUpdate);
   };
 
-  //REMOVE WHEN BACKEND IS READY
-  // const sa
+
   return (
     <Stylecontainer>
       <div className="new-task-container" /*onClick={closeShowAddTaskForm}*/>
@@ -76,8 +89,8 @@ const AddTask = ({
             value={taskToUpdate ? taskToUpdate.description : ""}
             name="textarea"
             id=""
-            cols="54"
-            rows="10"
+            // cols="54"
+            // rows="10"
             onChange={(event) =>
               setTaskToUpdate({
                 ...taskToUpdate,
@@ -88,6 +101,14 @@ const AddTask = ({
           />
           <label className="title">Assignee </label>
           <input type="text" />
+          <div className="select">
+            {allUsers.map((user)=>
+              {return <div className="check"> 
+              <input type="checkbox" className="checkboxs" />
+              <option key={users} className="option"> {user.photo} {user.email} </option>
+              </div>}
+            )}
+          </div>
           <label className="title">Due Date </label>
           <input
             value={taskToUpdate ? taskToUpdate.dueDate : ""}

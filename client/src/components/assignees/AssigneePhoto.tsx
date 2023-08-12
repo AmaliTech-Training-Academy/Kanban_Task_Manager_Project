@@ -1,6 +1,11 @@
 import  * as React from 'react'
   
-const AssigneePhoto = ({ photo, fullName }:any):any => {
+interface AssigneePhotoProps {
+  photo: string;
+  fullName: string;
+}
+
+const AssigneePhoto = ({ photo, fullName }:AssigneePhotoProps) => {
     return (
       <div className="card-image-box">
         <img src={`users/${photo}`} alt={fullName} className="card-photo" />

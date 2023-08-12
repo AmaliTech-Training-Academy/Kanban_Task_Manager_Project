@@ -11,6 +11,8 @@ import DeleteTask from "../delete task/DeleteTask";
 import CardDetails from "../card details/CardDetails";
 import { BASE_URL } from "../../../constants";
 
+
+
 const TaskBoard = () => {
   const [showAddTaskForm, setShowAddTaskForm] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -24,6 +26,7 @@ const TaskBoard = () => {
   const [doing, setDoing] = useState({});
   const [done, setDone] = useState({});
   const [isDataLoaded, setIsDataLoaded] = useState(false);
+  const [allUsers, setAllUsers] = useState([]);
 
   const onDragEnd = (result: any): any => {
     const { destination, source }: any = result;
@@ -31,7 +34,7 @@ const TaskBoard = () => {
 
   const fetchTask = async () => {
     const tasks = await axios.get("./data.json");
-    // const tasks = await axios.get(BASE_URL + "/api/task/all");
+    // const tasks = await axios.get(BASE_URL + "/all");
 
 
     if (tasks.status === 200) {
@@ -63,6 +66,30 @@ const TaskBoard = () => {
     setIsDataLoaded(true);
   };
 
+  const fetchUsers = async () => {
+    // /tasks
+    const users = await axios.get(BASE_URL + "/users", {
+      headers: {
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MTY2ODE4MCwiZXhwIjoxNjk5NDQ0MTgwfQ.VKynJRWyOLILsFQuceN6I2OA3MFsS8H9l3aVzj5gglw",
+      },
+    });
+    console.log(users);
+
+    if (users.status === 200) {
+      setAllUsers((prev) => Object.assign(prev, users?.data?.data?.allUsers));
+      // const saveUsers = users.data?.columns ?? [];
+    }
+
+    // console.log("💥💥💥💥 USERS", users.data.data.allUsers);
+    console.log("✔✔✔✔ USERS", allUsers);
+    const usersEmail = users?.data?.data?.allUsers.map((user: any ) => {
+      return user.email
+    })
+    console.log("💥💥💥💥 USERSEMAIL", usersEmail);
+  };
+
+  useEffect(() => fetchUsers, []);
   // const fetchLocalStorageData = () =>
 
   useEffect(() => fetchTask, []);
@@ -76,16 +103,16 @@ const TaskBoard = () => {
         //todo: display toast, close form
 
     // }
-
-    //REMOVE WHEN BACKEND IS READY
-    console.log("usecallback called");
-    
-
-    const id = Math.random() * 5000;
-    // console.log(lastId)
-    task.id =  id;
-    
   }, [allTasks])
+    //REMOVE WHEN BACKEND IS READY
+    // console.log("usecallback called");
+    
+
+    // const id = Math.random() * 5000;
+    // console.log(lastId)
+    // task.id =  id;
+    
+  // }, [allTasks])
 
   const closeShowAddTaskForm = useCallback((): void => {
     setActiveTask({});
@@ -153,6 +180,7 @@ const TaskBoard = () => {
                 name={cardHeading}
                 submit={cardButton}
                 activeTask={activeTask}
+                allUsers = {allUsers}
               />
             )}
             {showDeleteModal && (
