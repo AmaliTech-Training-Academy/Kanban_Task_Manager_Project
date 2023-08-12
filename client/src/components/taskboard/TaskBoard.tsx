@@ -37,6 +37,7 @@ const TaskBoard = () => {
     // const tasks = await axios.get(BASE_URL + "/all");
 
 
+
     if (tasks.status === 200) {
       setAllTasks(prev =>Object.assign(prev, tasks.data))
       const saveTasks = tasks.data?.columns ?? [];
@@ -65,6 +66,21 @@ const TaskBoard = () => {
     console.log("SET TODO", todo);
     setIsDataLoaded(true);
   };
+  const fetchUsers = async() => {
+    const users = await axios.get("./users.json");
+
+    if(users.status === 200){
+      setAllUsers(prev =>Object.assign(prev, users?.data?.data?.allUsers))
+      // const saveUsers = users.data?.columns ?? [];
+
+    }
+
+    console.log(
+      'USERS', users.data.data.allUsers)
+  
+  }
+
+  useEffect(() => fetchUsers,[]);
 
   const fetchUsers = async () => {
     // /tasks

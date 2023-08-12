@@ -15,6 +15,7 @@ interface Task {
   title: string;
   description: string;
   dueDate: string;
+  
   // Add more properties here if necessary
 }
 
@@ -50,7 +51,6 @@ const AddTask = ({
 
     console.log(taskToUpdate);
   };
-
 
   return (
     <Stylecontainer>

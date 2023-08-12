@@ -12,6 +12,7 @@ export const Stylecontainer = styled.div`
     align-items: center;
     justify-content: center;
     z-index: 2;
+    /* border: 3px solid red; */
     /* background-color: rgba(0,0,0,0.6);
         backdrop-filter: blur(3px); */
   }
@@ -102,7 +103,6 @@ export const Stylecontainer = styled.div`
     color: #fff;
     margin: 30px 0 0 10px;
   }
-
   .option{
     display: inline;
     /* background-color: red; */
