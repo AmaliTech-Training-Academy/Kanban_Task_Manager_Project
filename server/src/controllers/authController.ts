@@ -44,7 +44,6 @@ export const protect = async (
   // STEP: Verify token
   // NOTE: We verfiy if the data was modified and if the token is expired
   const decode: any = jwt.verify(token, process.env.JWT_SECRET || "");
-
   const currentUser = await User.findByPk(decode.id);
 
   // STEP:  Check if user still exist
