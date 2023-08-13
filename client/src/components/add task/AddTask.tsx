@@ -9,6 +9,7 @@ import { BASE_URL } from "../../../constants";
 interface User {
   email: string;
   photo: string; // This assumes 'photo' is a URL string
+  fullName: string;
 }
 
 interface Task {
@@ -50,6 +51,8 @@ const AddTask = ({
     }
   );
 
+  const [titleError, setTitleError] = React.useState(false);
+
   const handleCheck = (user) => {
     if (taskToUpdate.assignee.includes(user.fullName)) {
       setTaskToUpdate({
@@ -58,19 +61,22 @@ const AddTask = ({
           taskToUpdate.assignee.filter((name) => name !== user.fullName),
         ],
       });
-
     } else {
       setTaskToUpdate({
         ...taskToUpdate,
         assignee: [...taskToUpdate.assignee, user.fullName],
       });
-
     }
     console.log(taskToUpdate);
   };
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
+    if (!taskToUpdate.title) {
+      setTitleError(true);
+      // Swa.fire("Hello")
+      return;
+    }
     //perform validations
     saveOrUpdateTask(taskToUpdate);
 
@@ -103,6 +109,8 @@ const AddTask = ({
               })
             }
           />
+          {titleError && <p style={{ color: "red" }}>title is required </p>}
+
           <label className="title">Description </label>
           <textarea
             value={taskToUpdate ? taskToUpdate.description : ""}
@@ -129,8 +137,7 @@ const AddTask = ({
                     onChange={() => handleCheck(user)}
                   />
                   <option key={users} className="option">
-                    {" "}
-                    {user.photo} {user.email} on
+                    {user.photo} {user.fullName}
                   </option>
                 </div>
               );

@@ -30,8 +30,10 @@ const TaskBoard = () => {
     const { destination, source }: any = result;
   };
 
+  //TodO : get token from local storage
+
   const token =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MTY2ODE4MCwiZXhwIjoxNjk5NDQ0MTgwfQ.VKynJRWyOLILsFQuceN6I2OA3MFsS8H9l3aVzj5gglw";
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MTkzNzAyMywiZXhwIjoxNjk5NzEzMDIzfQ.P1lFIHoQ5KhVEWoRWz4A8seP-o8B4Vbk5CpzglyPXiY";
 
   const fetchTask = async () => {
     // const tasks = await axios.get("./data.json");
@@ -76,27 +78,34 @@ const TaskBoard = () => {
 
   useEffect(() => fetchTask, []);
 
-  const saveOrUpdateTask = useCallback(
-    (task) => {
+  const saveOrUpdateTask =  useCallback( 
+    async (task) => {
       console.log(task);
 
-      // const tasks = await axios.get( BASE_URL+"/api/task");
+      task.position = todo.length +1
+      const tasks = await axios.post( BASE_URL+"/tasks", task, {
+        headers: {
+          authorization: token,
+        },
+      });
 
-      // if (tasks.status === 200) {
+      if (tasks.status === 200) {
 
-      //todo: display toast, close form
-
-      // }
+      // todo: display toast, close form
+        alert("Task Created successfully")
+        closeAddTaskForm()
+      }
     },
     [allTasks]
   );
-
-  const closeShowAddTaskForm = useCallback((): void => {
+  const closeAddTaskForm = () => {
     setActiveTask(null);
     setCardHeading("Add New Task");
     setCardButton("Create Task");
     setShowAddTaskForm(false);
-  }, [showAddTaskForm]);
+  }
+
+  const closeShowAddTaskForm = useCallback(closeAddTaskForm, [showAddTaskForm]);
   const closeDeleteModal = useCallback((): void => {
     setActiveTask(null);
     setShowDeleteModal(false);
