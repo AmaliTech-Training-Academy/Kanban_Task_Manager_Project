@@ -27,6 +27,7 @@ export const Stylecontainer = styled.div`
     border-radius: 8px;
     background: #fff;
     margin: 2rem;
+    overflow-y: scroll;
   }
   .headerClose {
     width: 100%;
@@ -82,13 +83,14 @@ export const Stylecontainer = styled.div`
     /* opacity: 0.25; */
     width: 434px;
     /* padding: 9px; */
-    height: 260px;
+    height: 362px;
     overflow-y: scroll;
     /* background-color:  orange; */
     
   }
   textarea {
     width: 416px;
+    height: 484px;
     padding: 9px;
   }
   .submitt {

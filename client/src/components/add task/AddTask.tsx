@@ -2,13 +2,21 @@ import * as React from "react";
 import { useState } from "react";
 import { Stylecontainer } from "../../components/add task/AddTask.styles";
 import closeImage from "../../assets/Icons/Group 18.svg";
+import axios from "axios";
+import { BASE_URL } from "../../../constants";
+// import UsersPhoto from "../../../../server/public/"
 
+interface User {
+  email: string;
+  photo: string; // This assumes 'photo' is a URL string
+}
 
 interface Task {
   title: string;
   description: string;
+  assignee: any[];
   dueDate: string;
-  
+
   // Add more properties here if necessary
 }
 
@@ -18,8 +26,8 @@ interface AddTaskProps {
   submit: string;
   activeTask: Task | null;
   saveOrUpdateTask: (task: Task) => void;
-  allUsers:string;
-  users:string;
+  allUsers: User[];
+  users: string;
 }
 
 const AddTask = ({
@@ -31,10 +39,37 @@ const AddTask = ({
   allUsers,
   users,
 }: AddTaskProps) => {
-  const [taskToUpdate, setTaskToUpdate] = useState(activeTask ?? {});
+  console.log("ACT", activeTask);
 
+  const [taskToUpdate, setTaskToUpdate] = useState(
+    activeTask ?? {
+      title: "",
+      description: "",
+      dueDate: "",
+      assignee: [],
+    }
+  );
 
-  const handleSubmit = async (event:any) => {
+  const handleCheck = (user) => {
+    if (taskToUpdate.assignee.includes(user.fullName)) {
+      setTaskToUpdate({
+        ...taskToUpdate,
+        assignee: [
+          taskToUpdate.assignee.filter((name) => name !== user.fullName),
+        ],
+      });
+
+    } else {
+      setTaskToUpdate({
+        ...taskToUpdate,
+        assignee: [...taskToUpdate.assignee, user.fullName],
+      });
+
+    }
+    console.log(taskToUpdate);
+  };
+
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     //perform validations
     saveOrUpdateTask(taskToUpdate);
@@ -42,12 +77,6 @@ const AddTask = ({
     console.log(taskToUpdate);
   };
 
-  
-
-
-  //REMOVE WHEN BACKEND IS READY
-  // const sa
-  
   return (
     <Stylecontainer>
       <div className="new-task-container" /*onClick={closeShowAddTaskForm}*/>
@@ -70,27 +99,20 @@ const AddTask = ({
             onChange={(event) =>
               setTaskToUpdate({
                 ...taskToUpdate,
-                // assignee: { ...taskToUpdate.assignee },
                 title: event.target.value,
               })
             }
           />
           <label className="title">Description </label>
-          {/* <input
-            type="text"
-            placeholder="e.g. It’s always good to take a break. This 15 minute break will 
-            recharge the batteries a little."
-          /> */}
           <textarea
             value={taskToUpdate ? taskToUpdate.description : ""}
             name="textarea"
             id=""
-            cols="54"
+            // cols="54"
             rows="10"
             onChange={(event) =>
               setTaskToUpdate({
                 ...taskToUpdate,
-                // assignee: { ...taskToUpdate.assignee },
                 description: event.target.value,
               })
             }
@@ -98,13 +120,22 @@ const AddTask = ({
           <label className="title">Assignee </label>
           <input type="text" />
           <div className="select">
-            {allUsers.map((user)=>
-              {return <div className="check"> 
-              <input type="checkbox" className="checkboxs" />
-              <option key={users} className="option"> {user.fullName} </option></div>}
-            )}
+            {allUsers.map((user) => {
+              return (
+                <div className="check">
+                  <input
+                    type="checkbox"
+                    className="checkboxs"
+                    onChange={() => handleCheck(user)}
+                  />
+                  <option key={users} className="option">
+                    {" "}
+                    {user.photo} {user.email} on
+                  </option>
+                </div>
+              );
+            })}
           </div>
-
           <label className="title">Due Date </label>
           <input
             value={taskToUpdate ? taskToUpdate.dueDate : ""}
@@ -114,7 +145,6 @@ const AddTask = ({
             onChange={(event) =>
               setTaskToUpdate({
                 ...taskToUpdate,
-                // assignee: { ...taskToUpdate.assignee },
                 dueDate: event.target.value,
               })
             }

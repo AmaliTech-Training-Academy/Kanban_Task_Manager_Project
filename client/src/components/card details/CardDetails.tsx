@@ -7,7 +7,28 @@ import maleImg from "../../../public/users/dustin-washington.jpg";
 import Progress from "../progress/Progress";
 import AssigneePhoto from "../assignees/AssigneePhoto";
 
-const CardDetails = ({ closeCardDetails, activeTask, }) => {
+interface Task {
+  title: string;
+  description: string;
+  dueDate: string;
+  assignees: string; // Assuming 'assignees' is a URL string
+  progress: number;
+}
+
+interface CardDetailsProps {
+  closeCardDetails: () => void;
+  activeTask: Task;
+  percentage: number; // Not sure how this is used
+  assignees: Assignee[]; // Assuming 'assignees' is an array of assignees
+}
+
+interface Assignee {
+  id: number;
+  photo: string;
+  fullName: string;
+}
+
+const CardDetails = ({ closeCardDetails, activeTask,percentage,assignees}:CardDetailsProps) => {
   return (
     <Stylecontainer>
       <div className="container">
@@ -47,9 +68,22 @@ const CardDetails = ({ closeCardDetails, activeTask, }) => {
               photo={activeTask.assignee.photo}
               fullName={activeTask.assignee.fulName}
              />
-              <AssigneePhoto />
-              <AssigneePhoto />
-              <AssigneePhoto />
+              <AssigneePhoto 
+              key={activeTask.assignee.id}
+              photo={activeTask.assignee.photo}
+              fullName={activeTask.assignee.fulName}
+             />
+              <AssigneePhoto 
+              key={activeTask.assignee.id}
+              photo={activeTask.assignee.photo}
+              fullName={activeTask.assignee.fulName}
+             />
+              <AssigneePhoto 
+              key={activeTask.assignee.id}
+              photo={activeTask.assignee.photo}
+              fullName={activeTask.assignee.fulName}
+             />
+            
               {/* {...activeTask.assignees}  */}
             </div>
           </div>
