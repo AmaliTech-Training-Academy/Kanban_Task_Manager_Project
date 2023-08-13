@@ -14,8 +14,9 @@ interface User {
 interface Task {
   title: string;
   description: string;
+  assignee: any[];
   dueDate: string;
-  
+
   // Add more properties here if necessary
 }
 
@@ -25,8 +26,8 @@ interface AddTaskProps {
   submit: string;
   activeTask: Task | null;
   saveOrUpdateTask: (task: Task) => void;
-  allUsers:User[];
-  users:string;
+  allUsers: User[];
+  users: string;
 }
 
 const AddTask = ({
@@ -38,13 +39,37 @@ const AddTask = ({
   allUsers,
   users,
 }: AddTaskProps) => {
-  const [taskToUpdate, setTaskToUpdate] = useState(activeTask ?? {
-    title: "",
-    description: "",
-    dueDate: "",
-  });
+  console.log("ACT", activeTask);
 
-  const handleSubmit = async (event:any) => {
+  const [taskToUpdate, setTaskToUpdate] = useState(
+    activeTask ?? {
+      title: "",
+      description: "",
+      dueDate: "",
+      assignee: [],
+    }
+  );
+
+  const handleCheck = (user) => {
+    if (taskToUpdate.assignee.includes(user.fullName)) {
+      setTaskToUpdate({
+        ...taskToUpdate,
+        assignee: [
+          taskToUpdate.assignee.filter((name) => name !== user.fullName),
+        ],
+      });
+
+    } else {
+      setTaskToUpdate({
+        ...taskToUpdate,
+        assignee: [...taskToUpdate.assignee, user.fullName],
+      });
+
+    }
+    console.log(taskToUpdate);
+  };
+
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     //perform validations
     saveOrUpdateTask(taskToUpdate);
@@ -74,27 +99,20 @@ const AddTask = ({
             onChange={(event) =>
               setTaskToUpdate({
                 ...taskToUpdate,
-                // assignee: { ...taskToUpdate.assignee },
                 title: event.target.value,
               })
             }
           />
           <label className="title">Description </label>
-          {/* <input
-            type="text"
-            placeholder="e.g. It’s always good to take a break. This 15 minute break will 
-            recharge the batteries a little."
-          /> */}
           <textarea
             value={taskToUpdate ? taskToUpdate.description : ""}
             name="textarea"
             id=""
             // cols="54"
-            // rows="10"
+            rows="10"
             onChange={(event) =>
               setTaskToUpdate({
                 ...taskToUpdate,
-                // assignee: { ...taskToUpdate.assignee },
                 description: event.target.value,
               })
             }
@@ -102,12 +120,21 @@ const AddTask = ({
           <label className="title">Assignee </label>
           <input type="text" />
           <div className="select">
-            {allUsers.map((user)=>
-              {return <div className="check"> 
-              <input type="checkbox" className="checkboxs" />
-              <option key={users} className="option"> {user.photo} {user.email} </option>
-              </div>}
-            )}
+            {allUsers.map((user) => {
+              return (
+                <div className="check">
+                  <input
+                    type="checkbox"
+                    className="checkboxs"
+                    onChange={() => handleCheck(user)}
+                  />
+                  <option key={users} className="option">
+                    {" "}
+                    {user.photo} {user.email} on
+                  </option>
+                </div>
+              );
+            })}
           </div>
           <label className="title">Due Date </label>
           <input
@@ -118,7 +145,6 @@ const AddTask = ({
             onChange={(event) =>
               setTaskToUpdate({
                 ...taskToUpdate,
-                // assignee: { ...taskToUpdate.assignee },
                 dueDate: event.target.value,
               })
             }

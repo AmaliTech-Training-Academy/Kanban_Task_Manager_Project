@@ -150,7 +150,7 @@ const Card = ({
               </div>
               <div className="card-assign-due-date">
                 <div className="card-assignees">
-                  {assignees.map((assignee: any, i: any): any => {
+                  {assignees?.map((assignee: any, i: any): any => {
                     if (i < 3) {
                       return (
                         <AssigneePhoto
@@ -163,7 +163,7 @@ const Card = ({
                   })}
 
                   <div className="card-image-box text-grey heading-3-light">
-                    {`+ ${assignees.slice(3).length}`}
+                    {`+ ${assignees?.slice(3).length}`}
                   </div>
                 </div>
                 <div className="card-due-date-container">

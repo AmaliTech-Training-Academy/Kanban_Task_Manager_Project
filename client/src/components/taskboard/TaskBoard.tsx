@@ -11,20 +11,18 @@ import DeleteTask from "../delete task/DeleteTask";
 import CardDetails from "../card details/CardDetails";
 import { BASE_URL } from "../../../constants";
 
-
-
 const TaskBoard = () => {
   const [showAddTaskForm, setShowAddTaskForm] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showCardDetails, setShowCardDetails] = useState(false);
-  const [activeTask, setActiveTask] = useState({});
+  const [activeTask, setActiveTask] = useState(null);
   const [cardHeading, setCardHeading] = useState("Add New Task");
   const [cardButton, setCardButton] = useState("Create Task");
-  const [allTasks, setAllTasks] = useState({})
+  const [allTasks, setAllTasks] = useState({});
 
-  const [todo, setTodo] = useState({});
-  const [doing, setDoing] = useState({});
-  const [done, setDone] = useState({});
+  const [todo, setTodo] = useState([]);
+  const [doing, setDoing] = useState([]);
+  const [done, setDone] = useState([]);
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
 
@@ -32,117 +30,80 @@ const TaskBoard = () => {
     const { destination, source }: any = result;
   };
 
+  const token =
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MTY2ODE4MCwiZXhwIjoxNjk5NDQ0MTgwfQ.VKynJRWyOLILsFQuceN6I2OA3MFsS8H9l3aVzj5gglw";
+
   const fetchTask = async () => {
-    const tasks = await axios.get("./data.json");
-    // const tasks = await axios.get(BASE_URL + "/all");
+    // const tasks = await axios.get("./data.json");
 
-
+    const tasks = await axios.get(BASE_URL + "/tasks?include=assignees", {
+      headers: {
+        authorization: token,
+      },
+    });
+    console.log(tasks);
 
     if (tasks.status === 200) {
-      setAllTasks(prev =>Object.assign(prev, tasks.data))
-      const saveTasks = tasks.data?.columns ?? [];
+      setAllTasks((prev) => Object.assign(prev, tasks.data));
+      const saveTasks = tasks.data?.data.doc ?? [];
 
       if (saveTasks.length > 0) {
-        setTodo((prev) =>
-          Object.assign(
-            prev,
-            saveTasks.find((task) => task.name === "todo")
-          )
-        );
-        setDoing((prev) =>
-          Object.assign(
-            prev,
-            saveTasks.find((task) => task.name === "doing")
-          )
-        );
-        setDone((prev) =>
-          Object.assign(
-            prev,
-            saveTasks.find((task) => task.name === "done")
-          )
-        );
+        setTodo(saveTasks.filter((task) => task.status === "todo"));
+        setDoing(saveTasks.filter((task) => task.status === "doing"));
+        setDone(saveTasks.filter((task) => task.status === "done"));
       }
     }
     console.log("SET TODO", todo);
     setIsDataLoaded(true);
   };
-  const fetchUsers = async() => {
-    const users = await axios.get("./users.json");
 
-    if(users.status === 200){
-      setAllUsers(prev =>Object.assign(prev, users?.data?.data?.allUsers))
-      // const saveUsers = users.data?.columns ?? [];
-
-    }
-
-    console.log(
-      'USERS', users.data.data.allUsers)
-  
-  }
-
-  useEffect(() => fetchUsers,[]);
+  useEffect(() => fetchUsers, []);
 
   const fetchUsers = async () => {
-    // /tasks
     const users = await axios.get(BASE_URL + "/users", {
       headers: {
-        authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MTY2ODE4MCwiZXhwIjoxNjk5NDQ0MTgwfQ.VKynJRWyOLILsFQuceN6I2OA3MFsS8H9l3aVzj5gglw",
+        authorization: token,
       },
     });
     console.log(users);
 
     if (users.status === 200) {
       setAllUsers((prev) => Object.assign(prev, users?.data?.data?.allUsers));
-      // const saveUsers = users.data?.columns ?? [];
     }
-
-    // console.log("💥💥💥💥 USERS", users.data.data.allUsers);
-    console.log("✔✔✔✔ USERS", allUsers);
-    const usersEmail = users?.data?.data?.allUsers.map((user: any ) => {
-      return user.email
-    })
-    console.log("💥💥💥💥 USERSEMAIL", usersEmail);
   };
 
   useEffect(() => fetchUsers, []);
-  // const fetchLocalStorageData = () =>
 
   useEffect(() => fetchTask, []);
 
-  const saveOrUpdateTask = useCallback((task) => {
+  const saveOrUpdateTask = useCallback(
+    (task) => {
+      console.log(task);
 
-    // const tasks = await axios.get( BASE_URL+"/api/task");
+      // const tasks = await axios.get( BASE_URL+"/api/task");
 
-    // if (tasks.status === 200) {
+      // if (tasks.status === 200) {
 
-        //todo: display toast, close form
+      //todo: display toast, close form
 
-    // }
-  }, [allTasks])
-    //REMOVE WHEN BACKEND IS READY
-    // console.log("usecallback called");
-    
-
-    // const id = Math.random() * 5000;
-    // console.log(lastId)
-    // task.id =  id;
-    
-  // }, [allTasks])
+      // }
+    },
+    [allTasks]
+  );
 
   const closeShowAddTaskForm = useCallback((): void => {
-    setActiveTask({});
+    setActiveTask(null);
     setCardHeading("Add New Task");
     setCardButton("Create Task");
     setShowAddTaskForm(false);
   }, [showAddTaskForm]);
   const closeDeleteModal = useCallback((): void => {
-    setActiveTask({});
+    setActiveTask(null);
     setShowDeleteModal(false);
   }, [showDeleteModal]);
 
   const closeCardDetails = useCallback((): void => {
-    setActiveTask({});
+    setActiveTask(null);
     setShowCardDetails(false);
   }, [showCardDetails]);
 
@@ -171,7 +132,7 @@ const TaskBoard = () => {
   const updateActiveTask = (taskId: number, task) => {
     setCardHeading("Edit Task");
     setCardButton("Update Task");
-    setActiveTask((prev) => Object.assign(prev, task));
+    setActiveTask(task);
     setShowAddTaskForm(true);
   };
 
@@ -196,16 +157,16 @@ const TaskBoard = () => {
                 name={cardHeading}
                 submit={cardButton}
                 activeTask={activeTask}
-                allUsers = {allUsers}
+                allUsers={allUsers}
               />
             )}
             {showDeleteModal && (
               <DeleteTask closeDeleteModal={closeDeleteModal} />
             )}
             {showCardDetails && (
-              <CardDetails closeCardDetails={closeCardDetails} 
-              activeTask={activeTask}
-
+              <CardDetails
+                closeCardDetails={closeCardDetails}
+                activeTask={activeTask}
               />
             )}
             <DragDropContext onDragEnd={onDragEnd}>
@@ -215,25 +176,28 @@ const TaskBoard = () => {
                 )}
                 <div className="task-board">
                   <Column
-                    tasks={[todo.tasks]}
-                    column={todo}
+                    tasks={todo}
+                    // column={todo}
                     openEditTaskForm={openEditTaskForm}
                     openDeleteModal={openDeleteModal}
                     openCardDetails={openCardDetails}
+                    title="TODO"
                   />
                   <Column
-                    tasks={[doing.tasks]}
-                    column={doing}
+                    tasks={doing}
+                    // column={doing}
                     openEditTaskForm={openEditTaskForm}
                     openDeleteModal={openDeleteModal}
                     openCardDetails={openCardDetails}
+                    title="DOING"
                   />
                   <Column
-                    tasks={[done.tasks]}
-                    column={done}
+                    tasks={done}
+                    // column={done}
                     openEditTaskForm={openEditTaskForm}
                     openDeleteModal={openDeleteModal}
                     openCardDetails={openCardDetails}
+                    title="DONE"
                   />
                 </div>
               </div>
