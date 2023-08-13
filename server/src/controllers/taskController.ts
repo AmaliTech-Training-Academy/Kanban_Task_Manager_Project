@@ -6,6 +6,7 @@ import assignees from "../associations/tasksAndUsers.js";
 import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
 import { getDate } from "../utils/helpers.js";
+import sendMail from "../utils/email.js";
 
 const excludeFields = [
   "TaskAndAssignee",
@@ -45,11 +46,27 @@ export const createTask = catchAsync(
       );
     }
 
+    try {
+      await new sendMail({}, "").sendAssigneeMail(
+        users,
+        req.body.title,
+        req.body.dueDate
+      );
+    } catch (err) {
+  
+      return next(
+        new AppError(
+          "There was an error sending the email. Try again later",
+          500
+        )
+      );
+    }
+
     // STEP: Get Due Date
     const dueDate = getDate(req.body.dueDate);
 
     // STEP: Create New Task
-    const newTask = await Task.create({
+    const newTask: Model | any = await Task.create({
       title: req.body?.title,
       description: req.body?.description,
       assignee: req.body?.assignee,

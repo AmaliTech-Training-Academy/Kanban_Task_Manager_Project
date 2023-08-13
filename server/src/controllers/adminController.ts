@@ -33,7 +33,6 @@ export const sendVerificationMail = catchAsync(
       resetToken = stringToken(user);
       await user.save();
     }
-  
 
     //STEP: Verification URL
     const host =

@@ -68,7 +68,15 @@ class Email {
     // STEP: Create a transport and send email
     await this.newTransport().sendMail(mailOptions);
   }
-  async sendMultiple(template: any, subject: string, recipients: []) {
+  async sendMultiple(
+    template: any,
+    subject: string,
+    recipients: [],
+    task: string | any,
+    dueDate: string | any
+  ) {
+
+
     const promise = [];
     for (const user of recipients) {
       const { email } = user;
@@ -78,6 +86,8 @@ class Email {
         userObj.fullName.slice(1).split(" ")[0];
 
       const html = pug.renderFile(`./views/email/${template}.pug`, {
+        task,
+        dueDate,
         firstName: firstName,
         email: email,
         url: this.url,
@@ -107,7 +117,18 @@ class Email {
     await this.sendMultiple(
       "userVerificationMail",
       "User Verification",
-      recipients
+      recipients,
+      null,
+      null
+    );
+  }
+  async sendAssigneeMail(recipients: [], task: string, dueDate: string) {
+    await this.sendMultiple(
+      "assigneeMail",
+      "Assign Task",
+      recipients,
+      task,
+      dueDate
     );
   }
   async sendPasswordReset() {
