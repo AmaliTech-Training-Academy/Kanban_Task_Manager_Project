@@ -1,10 +1,9 @@
 import * as React from "react";
 import { StyledNavContainer, LeftContainer,RightContainer,NavbarInnerContainer,} from "./styles";
-import Kanbanlogo from "../assets/Icons/logo.png";
-import searchIcon from "../assets/Icons/searchIcon.svg";
-import notiIcon from "../assets/Icons/Notification icon.svg";
-import ProfileImg from "../assets/Images/blank image.svg";
-import {Link} from "react-router-dom"
+import Kanbanlogo from "../../assets/Icons/logo.png";
+import searchIcon from "../../assets/Icons/searchIcon.svg";
+import notiIcon from "../../assets/Icons/Notification icon.svg";
+import ProfileImg from "../../assets/Images/blank image.svg";
 
 export const KanbanNavbar = () => {
   return (
@@ -12,10 +11,10 @@ export const KanbanNavbar = () => {
       <StyledNavContainer>
         <NavbarInnerContainer>
           <LeftContainer>
-            <Link to="">
+            <a href="http://">
               {" "}
               <img className="Kanbanlogo" src={Kanbanlogo} alt="" />
-            </Link>
+            </a>
           </LeftContainer>
           <RightContainer>
             <div id="active" className="Navtitle">

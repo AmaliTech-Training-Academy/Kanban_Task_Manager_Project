@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 *data
+*userData.json
 *users
-userData.json
+
