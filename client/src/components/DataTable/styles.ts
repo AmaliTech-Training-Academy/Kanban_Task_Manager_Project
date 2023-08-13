@@ -3,12 +3,12 @@
 import styled from "styled-components";
 
 export const StyleBtnsContainer = styled.div`
-
-width: 533px;
-height: 49px;
-margin-left: 50%;
-
-
+  .DataTable-BtnsContainer {
+    width: 533px;
+    height: 49px;
+    margin-left: 50%;
+    display: flex;
+  }
 `;
 
 

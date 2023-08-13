@@ -53,37 +53,37 @@ const DataTable: React.FC = () => {
   );
 
   return (
-      <TableContainer>
-        <StyleBtnsContainer>
-          <div className="DataTable-BtnsContainer">
-            <FilterBtn/>
-          </div>
-        </StyleBtnsContainer>
-        <StyleTable>
-          <thead>
-            <tr>
-              {columns.map((column) => (
-                <StyleTh key={column.accessor}>
-                  <th>{column.Header}</th>
-                </StyleTh>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((row, index) => (
-              <React.Fragment key={index}>
-                <tr>
-                  {columns.map((column) => (
-                    <StyleTd key={column.accessor}>
-                      <td>{row[column.accessor]}</td>
-                    </StyleTd>
-                  ))}
-                </tr>
-              </React.Fragment>
+    <TableContainer>
+      <StyleBtnsContainer>
+        <div className="DataTable-BtnsContainer">
+          <FilterBtn />
+        </div>
+      </StyleBtnsContainer>
+      <StyleTable>
+        <thead>
+          <tr>
+            {columns.map((column) => (
+              <StyleTh key={column.accessor}>
+                <th>{column.Header}</th>
+              </StyleTh>
             ))}
-          </tbody>
-        </StyleTable>
-      </TableContainer>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <React.Fragment key={index}>
+              <tr>
+                {columns.map((column) => (
+                  <StyleTd key={column.accessor}>
+                    <td>{row[column.accessor]}</td>
+                  </StyleTd>
+                ))}
+              </tr>
+            </React.Fragment>
+          ))}
+        </tbody>
+      </StyleTable>
+    </TableContainer>
   );
 };
 
