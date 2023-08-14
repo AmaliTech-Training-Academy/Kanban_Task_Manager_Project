@@ -348,6 +348,17 @@ export const setPassword = catchAsync(
 
     user.isVerified = true;
 
+    try {
+      await new sendMail(user, "").sendCompleteRegistrationMail();
+    } catch (err) {
+      return next(
+        new AppError(
+          "There was an error sending the email. Try again later",
+          500
+        )
+      );
+    }
+
     // STEP: Update password propety for the user
     user.password = req.body.password;
     user.confirmPassword = req.body.confirmPassword;

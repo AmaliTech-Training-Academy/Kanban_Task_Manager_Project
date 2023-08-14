@@ -113,6 +113,12 @@ class Email {
   async sendAdminVerificationMail() {
     await this.send("adminVerifyMail", "Admin Verification");
   }
+  async sendCompleteRegistrationMail() {
+    await this.send(
+      "completeRegistrationMail",
+      "Successful Registration"
+    );
+  }
   async sendUserVerificationMail(recipients: []) {
     await this.sendMultiple(
       "userVerificationMail",
