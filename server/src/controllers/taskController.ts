@@ -104,7 +104,7 @@ export const allTask = catchAsync(
     }
 
     res.status(200).json({
-      statut: "success",
+      status: "success",
       data: {
         doc,
       },
