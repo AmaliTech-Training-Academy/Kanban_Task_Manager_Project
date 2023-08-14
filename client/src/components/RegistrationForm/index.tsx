@@ -48,7 +48,7 @@ console.log("🎙🎙", formData)
 
   const validateConfirmPassword = (
     password: string|number,
-    confirmPassword: string
+    confirmPassword: string|number
   ): string => {
     if (password !== confirmPassword) {
       return "Passwords do not match.";

@@ -96,7 +96,6 @@ export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
             </div>
           </div>
 
-          {/* Use a regular button with type "button" to prevent form submission */}
           <button
             type="button"
             className="login-button-container"
