@@ -9,7 +9,6 @@ interface FormState {
   email: string;
   password: string;
   confirmPassword: string;
-
 }
 
 interface FormErrors {
@@ -18,12 +17,13 @@ interface FormErrors {
 }
 
 export const RegistrationForm = () => {
+    const [profilePhoto, setProfilePhoto] = useState<File | null>(null);
+
   const initialFormState: FormState = {
     fullname: "",
     email: "",
     password: "",
-    confirmPassword: ""
-    ,
+    confirmPassword: "",
   };
 
   const [photo, setPhoto] = useState("");
@@ -35,10 +35,10 @@ export const RegistrationForm = () => {
   formData.append("password", initialFormState.password);
   formData.append("confirmPassword", initialFormState.confirmPassword);
 
-  const handlePhoto = (data:any) => {
-    setPhoto(data);
+  const handlePhoto = (data: any) => {
+    setProfilePhoto(data);
   };
-console.log("🎙🎙", formData)
+  console.log(formData);
   const validatePassword = (password: string): string => {
     if (password.length < 8) {
       return "Password must be at least 8 characters long.";
@@ -47,7 +47,7 @@ console.log("🎙🎙", formData)
   };
 
   const validateConfirmPassword = (
-    password: string|number,
+    password: string | number,
     confirmPassword: string
   ): string => {
     if (password !== confirmPassword) {
@@ -58,7 +58,7 @@ console.log("🎙🎙", formData)
 
   const useForm = () => {
     const [formState, setFormState] = useState<FormState>(initialFormState);
-    console.log( formState);
+    console.log(formState);
     const [formErrors, setFormErrors] = useState<FormErrors>({
       passwordError: "",
       confirmPasswordError: "",
@@ -79,7 +79,10 @@ console.log("🎙🎙", formData)
       );
 
       setFormErrors({ passwordError, confirmPasswordError });
-      
+      console.log(initialFormState.fullname);
+      console.log(initialFormState.email);
+      console.log(initialFormState.password);
+      console.log(initialFormState.confirmPassword);
 
       if (!passwordError && !confirmPasswordError) {
         try {
@@ -87,10 +90,11 @@ console.log("🎙🎙", formData)
             "https://kanban-api-j8ae.onrender.com/api/v1/users/admin/sign-up ",
             formData
           );
-          console.log( response.data);
-          // Do something with the response if needed
+          console.log(response.data);
+          
         } catch (error) {
-          console.log( error);
+          console.log(error);
+          console.log(formData);
         }
       }
     };
@@ -106,92 +110,83 @@ console.log("🎙🎙", formData)
   const { formState, formErrors, handleInputChange, handleSubmit } = useForm();
 
   return (
-    <><>
-      <UploadPhoto onHandlePhoto={handlePhoto} />
-      <StyledRegistrationForm>
-        <div>
-          <form onSubmit={handleSubmit}>
-            <div className="grid">
-              <div className="form1">
-                <label htmlFor="fullname">Fullname</label>
-                <input
-                  type="text"
-                  name="fullname"
-                  id="fullname"
-                  value={formState.fullname}
-                  onChange={handleInputChange}
-                  placeholder="e.g. Salami Joseph"
-                  required />
+    
+      <>
+        <UploadPhoto onHandlePhoto={handlePhoto} />
+        <StyledRegistrationForm>
+          <div>
+            <form onSubmit={handleSubmit}>
+              <div className="grid">
+                <div className="form1">
+                  <label htmlFor="fullname">Fullname</label>
+                  <input
+                    type="text"
+                    name="fullname"
+                    id="fullname"
+                    value={formState.fullname}
+                    onChange={handleInputChange}
+                    placeholder="e.g. Salami Joseph"
+                    required
+                  />
+                </div>
+
+                <div className="form1">
+                  <label htmlFor="password">Password</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={formState.password}
+                    onChange={handleInputChange}
+                    placeholder="************"
+                    required
+                    minLength={8}
+                  />
+                  {formErrors.passwordError && (
+                    <p>{formErrors.passwordError}</p>
+                  )}
+                </div>
               </div>
 
-              <div className="form1">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={formState.password}
-                  onChange={handleInputChange}
-                  placeholder="************"
-                  required
-                  minLength={8} />
-                {formErrors.passwordError && <p>{formErrors.passwordError}</p>}
-              </div>
-            </div>
+              <div className="grid">
+                <div className="form1">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={formState.email}
+                    onChange={handleInputChange}
+                    placeholder="e.g. theresah@kanban.com"
+                    required
+                  />
+                </div>
 
-            <div className="grid">
-              <div className="form1">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={formState.email}
-                  onChange={handleInputChange}
-                  placeholder="e.g. theresah@kanban.com"
-                  required />
+                <div className="form1">
+                  <label htmlFor="confirmPassword">Confirm Password</label>
+                  <input
+                    type="password"
+                    id="confirmPassword"
+                    name="confirmPassword"
+                    value={formState.confirmPassword}
+                    onChange={handleInputChange}
+                    placeholder="***********"
+                    required
+                    minLength={8}
+                  />
+                  {formErrors.confirmPasswordError && (
+                    <p>{formErrors.confirmPasswordError}</p>
+                  )}
+                </div>
               </div>
 
-              <div className="form1">
-                <label htmlFor="confirmPassword">Confirm Password</label>
-                <input
-                  type="password"
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={formState.confirmPassword}
-                  onChange={handleInputChange}
-                  placeholder="***********"
-                  required
-                  minLength={8} />
-                {formErrors.confirmPasswordError && (
-                  <p>{formErrors.confirmPasswordError}</p>
-                )}
-              </div>
-            </div>
-
-            <button type="submit" className="submit-container">
-              Create account
-            </button>
-          </form>
-        </div>
-      </StyledRegistrationForm>
-    </>
-      <div className="form1">
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          value={formState.confirmPassword}
-          onChange={handleInputChange}
-          placeholder="***********"
-          required
-          minLength={8} />
-        {formErrors.confirmPasswordError && (
-          <p>{formErrors.confirmPasswordError}</p>
-        )}
-      </div>
-    </>
-      
+              <button type="submit" className="submit-container">
+                Create account
+              </button>
+            </form>
+          </div>
+        </StyledRegistrationForm>
+      </>
+   
   );
 };
