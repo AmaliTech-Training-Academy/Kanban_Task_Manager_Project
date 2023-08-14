@@ -106,7 +106,7 @@ console.log("🎙🎙", formData)
   const { formState, formErrors, handleInputChange, handleSubmit } = useForm();
 
   return (
-    <><>
+    <>
       <UploadPhoto onHandlePhoto={handlePhoto} />
       <StyledRegistrationForm>
         <div>
@@ -176,22 +176,7 @@ console.log("🎙🎙", formData)
         </div>
       </StyledRegistrationForm>
     </>
-      <div className="form1">
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          value={formState.confirmPassword}
-          onChange={handleInputChange}
-          placeholder="***********"
-          required
-          minLength={8} />
-        {formErrors.confirmPasswordError && (
-          <p>{formErrors.confirmPasswordError}</p>
-        )}
-      </div>
-    </>
+    
       
   );
 };
