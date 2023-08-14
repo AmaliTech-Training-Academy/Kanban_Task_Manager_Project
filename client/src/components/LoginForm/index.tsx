@@ -3,6 +3,7 @@ import { StyledLoginForm } from "./styles";
 import * as React from "react";
 import { BASE_URL } from "../../../constants";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 interface LoginFormProps {
   setIsUserLoggedIn: (arg: boolean) => void;
@@ -33,9 +34,11 @@ export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
         setIsUserLoggedIn(true);
       }
       
-    } catch (error) {
+    } catch (error:any) {
       console.log(error)
-      setIsUserLoggedIn(false)
+      setIsUserLoggedIn(false);
+      alert(error.response.data.message) 
+
       
     }
 
