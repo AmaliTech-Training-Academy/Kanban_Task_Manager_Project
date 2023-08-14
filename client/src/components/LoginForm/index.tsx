@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { StyledLoginForm } from "./styles";
 import * as React from "react";
+import { BASE_URL } from "../../../constants";
+import axios from "axios";
 
 interface LoginFormProps {
   setIsUserLoggedIn: (arg: boolean) => void;
@@ -18,11 +20,29 @@ export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     // Your login logic here, e.g., validate credentials, make API calls, etc.
     console.log("Email:", email);
     console.log("Password:", password);
-    setIsUserLoggedIn(true);
+    try {
+      const response = await axios.post(BASE_URL + "/users/login", { email, password });
+      console.log(response);
+      if (response.status == 200) {
+        const token = response.data.token;
+        localStorage.setItem("token", token)
+        setIsUserLoggedIn(true);
+      }
+      
+    } catch (error) {
+      console.log(error)
+      setIsUserLoggedIn(false)
+      
+    }
+
+
+
+    // return
+
   };
 
   return (
