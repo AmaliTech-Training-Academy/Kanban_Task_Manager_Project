@@ -7,6 +7,7 @@ export const DashBoardPage = () => {
     <div>
       <KanbanNavbar />
       <KanbanSidebar />
+
     </div>
   );
 };
