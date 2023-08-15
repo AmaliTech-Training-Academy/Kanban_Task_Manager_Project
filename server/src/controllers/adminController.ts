@@ -10,26 +10,29 @@ import catchAsync from "../utils/catchAsync.js";
 // NOTE: Send user verification
 export const sendVerificationMail = catchAsync(
   async (req: Request | any, res: Response | any, next: any) => {
-    const { email } = req.body;
+    const { recipients } = req.body;
 
-    const user: Model | any = await User.findOne({
-      where: { email },
+    const users: Model | any = await User.findAll({
+      where: { email: recipients },
     });
 
     // STEP: Check if use exist
-    if (!user) {
+    if (users.length === 0) {
       return next(
-        new AppError("There is no user with that email address", 404)
+        new AppError("There is no users with that email address", 404)
       );
     }
-
-    if (user.isVerified) {
-      return next(new AppError(" User already has an account", 401));
+    for (const user of users) {
+      if (user.isVerified) {
+        return next(new AppError(" User already has an account", 401));
+      }
     }
-
-    // STEP: Generate a token
-    const resetToken = stringToken(user);
-    await user.save();
+    let resetToken;
+    for (const user of users) {
+      // STEP: Generate a token
+      resetToken = stringToken(user);
+      await user.save();
+    }
 
     //STEP: Verification URL
     const host =
@@ -40,7 +43,7 @@ export const sendVerificationMail = catchAsync(
 
     // STEP: Send Verification mail
     try {
-      await new sendMail(user, verificationURL).sendUserVerificationMail();
+      await new sendMail({}, verificationURL).sendUserVerificationMail(users);
     } catch (err) {
       return next(
         new AppError(

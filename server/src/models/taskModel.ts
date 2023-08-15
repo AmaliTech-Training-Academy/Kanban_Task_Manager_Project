@@ -27,6 +27,20 @@ const Task = sequelize.define("Task", {
     allowNull: false,
   },
 
+  status: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: "todo",
+    validate: {
+      isIn: [["todo", "doing", "done"]],
+    },
+  },
+  
+  position: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+
   dueDate: { type: DataTypes.DATEONLY, allowNull: false },
 });
 

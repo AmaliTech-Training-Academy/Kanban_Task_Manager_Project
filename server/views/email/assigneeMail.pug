@@ -1,0 +1,40 @@
+extends baseEmail
+
+block content
+    img(src="./public/logo/kanban-logo.png", alt="Kanban Logo")
+    p Hi #{firstName},
+    p Just a quick note to inform you about a new task assigned to you.
+
+    p Feel free to log into the platform for more details. If you need any assistance, let us know.
+
+    p
+        strong Task Title:  
+        | #{task}
+        br
+        strong Due date: 
+        | #{dueDate}
+
+
+    p
+        | Thanks,
+        br
+        |  Kanban team
+
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='center')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    //- a(href=`${url}`, target='_blank') Complete registration
+    p.small
+        | This email was sent to 
+        span.text-blue #{email}
+        | . If you&apos;d rather not receive this kind of email, you can 
+        span.text-blue unsubscribe or manage your email preferences
+        | .
+
+        p.small © 2023 Kanban.
+

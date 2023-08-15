@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { StyledLoginForm } from "./styles";
 import * as React from "react";
+import { BASE_URL } from "../../../constants";
+import axios from "axios";
+import { useNavigate } from "react-router";
 
 interface LoginFormProps {
   setIsUserLoggedIn: (arg: boolean) => void;
@@ -18,11 +21,31 @@ export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     // Your login logic here, e.g., validate credentials, make API calls, etc.
     console.log("Email:", email);
     console.log("Password:", password);
-    setIsUserLoggedIn(true);
+    try {
+      const response = await axios.post(BASE_URL + "/users/login", { email, password });
+      console.log(response);
+      if (response.status == 200) {
+        const token = response.data.token;
+        localStorage.setItem("token", token)
+        setIsUserLoggedIn(true);
+      }
+      
+    } catch (error:any) {
+      console.log(error)
+      setIsUserLoggedIn(false);
+      alert(error.response.data.message) 
+
+      
+    }
+
+
+
+    // return
+
   };
 
   return (
@@ -76,7 +99,6 @@ export const LoginForm = ({ setIsUserLoggedIn }: LoginFormProps) => {
             </div>
           </div>
 
-          {/* Use a regular button with type "button" to prevent form submission */}
           <button
             type="button"
             className="login-button-container"

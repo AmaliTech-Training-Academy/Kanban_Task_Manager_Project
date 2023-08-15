@@ -47,7 +47,7 @@ export const RegistrationForm = () => {
   };
 
   const validateConfirmPassword = (
-    password: string | number,
+    password: string,
     confirmPassword: string
   ): string => {
     if (password !== confirmPassword) {
@@ -90,8 +90,7 @@ export const RegistrationForm = () => {
             "https://kanban-api-j8ae.onrender.com/api/v1/users/admin/sign-up ",
             formData
           );
-          console.log(response.data);
-          
+          console.log( response.data);
         } catch (error) {
           console.log(error);
           console.log(formData);
@@ -110,25 +109,23 @@ export const RegistrationForm = () => {
   const { formState, formErrors, handleInputChange, handleSubmit } = useForm();
 
   return (
-    
-      <>
-        <UploadPhoto onHandlePhoto={handlePhoto} />
-        <StyledRegistrationForm>
-          <div>
-            <form onSubmit={handleSubmit}>
-              <div className="grid">
-                <div className="form1">
-                  <label htmlFor="fullname">Fullname</label>
-                  <input
-                    type="text"
-                    name="fullname"
-                    id="fullname"
-                    value={formState.fullname}
-                    onChange={handleInputChange}
-                    placeholder="e.g. Salami Joseph"
-                    required
-                  />
-                </div>
+    <>
+      <UploadPhoto onHandlePhoto={handlePhoto} />
+      <StyledRegistrationForm>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <div className="grid">
+              <div className="form1">
+                <label htmlFor="fullname">Fullname</label>
+                <input
+                  type="text"
+                  name="fullname"
+                  id="fullname"
+                  value={formState.fullname}
+                  onChange={handleInputChange}
+                  placeholder="e.g. Salami Joseph"
+                  required />
+              </div>
 
                 <div className="form1">
                   <label htmlFor="password">Password</label>
@@ -180,13 +177,14 @@ export const RegistrationForm = () => {
                 </div>
               </div>
 
-              <button type="submit" className="submit-container">
-                Create account
-              </button>
-            </form>
-          </div>
-        </StyledRegistrationForm>
-      </>
-   
+            <button type="submit" className="submit-container">
+              Create account
+            </button>
+          </form>
+        </div>
+      </StyledRegistrationForm>
+    </>
+     
+      
   );
 };
