@@ -12,6 +12,7 @@ import {
   uploadUserPhoto,
   verifyAdmin,
   login,
+  logout,
   forgotPassword,
   resetPassword,
   setPassword,
@@ -34,6 +35,7 @@ router.post(
 );
 router.patch("/admin/new/token/:token", verifyAdmin);
 router.post("/login", login);
+router.get("/logout", logout);
 router.post("/forgot-password", forgotPassword);
 router.post("/set-password/new/:token", setPassword);
 router.patch("/reset-password/new/:token", resetPassword);

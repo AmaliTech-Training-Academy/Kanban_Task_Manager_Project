@@ -201,6 +201,14 @@ export const login = catchAsync(
   }
 );
 
+export const logout = (req: Request | any, res: Response | any) => {
+  res.cookie("jwt", "loggedout", {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnly: true,
+  });
+  res.status(200).json({ status: "success" });
+};
+
 // Forgot Password
 export const forgotPassword = async (
   req: Request | any,
