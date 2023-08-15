@@ -5,6 +5,7 @@ import { RegistrationForm } from "../components/RegistrationForm";
 import { RegistrationFooter } from "../components/RegistrationFooter";
 
 export const Admin = () => {
+
   return (
     <StyledRegistrationContainer>
       <div className="container-body">
