@@ -7,6 +7,7 @@ import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 // Developer Modules
 import AppError from "./utils/appError.js";
@@ -23,7 +24,10 @@ const app = express();
 //  GLOBAL MIDDLEWARES
 
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "/../views"));
+
+app.use(cors());
+app.options("*", cors());
 
 app.use(express.static(path.join(__dirname, "./public")));
 

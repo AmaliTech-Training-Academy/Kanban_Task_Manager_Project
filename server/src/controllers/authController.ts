@@ -27,10 +27,10 @@ export const protect = async (
   // STEP: Getting token and checking if it exist
   let token;
   if (
-    req.header.authorization &&
-    req.header.authorization.startsWith("Bearer")
+    req.headers.authorization &&
+    req.headers.authorization.startsWith("Bearer")
   ) {
-    token = req.header.authorization.split("")[1];
+    token = req.headers.authorization.split(" ")[1];
   } else if (req.cookies.jwt) {
     token = req.cookies.jwt;
   }
@@ -44,7 +44,6 @@ export const protect = async (
   // STEP: Verify token
   // NOTE: We verfiy if the data was modified and if the token is expired
   const decode: any = jwt.verify(token, process.env.JWT_SECRET || "");
-
   const currentUser = await User.findByPk(decode.id);
 
   // STEP:  Check if user still exist
@@ -348,6 +347,17 @@ export const setPassword = catchAsync(
     }
 
     user.isVerified = true;
+
+    try {
+      await new sendMail(user, "").sendCompleteRegistrationMail();
+    } catch (err) {
+      return next(
+        new AppError(
+          "There was an error sending the email. Try again later",
+          500
+        )
+      );
+    }
 
     // STEP: Update password propety for the user
     user.password = req.body.password;

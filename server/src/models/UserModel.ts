@@ -61,7 +61,7 @@ const User = sequelize.define(
         },
         len: {
           args: [8, 100], 
-          msg: "Password must be between 6 and 100 characters long.",
+          msg: "Password must be between 8 and 100 characters long.",
         },
       },
     },
