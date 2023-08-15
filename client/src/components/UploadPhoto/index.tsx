@@ -6,7 +6,6 @@ import { useState } from "react";
 
 export const UploadPhoto = ({onHandlePhoto}) => {
   const [profilePhoto, setProfilePhoto] = useState<File | null>(null);
-  console.log("default photo of user",profilePhoto)
   
 
   const [photoUrl, setPhotoUrl] = useState<string | null>(null);
@@ -15,14 +14,13 @@ export const UploadPhoto = ({onHandlePhoto}) => {
     const fileInput = document.createElement("input");
     fileInput.type = "file";
     fileInput.accept = "image/*";
-    console.log("pick profile");
 
     fileInput.addEventListener("change", (e: Event) => {
       const selectedFile = (e.target as HTMLInputElement).files?.[0];
       const formData = new FormData()
       formData.append("photo", selectedFile)
       if (selectedFile) {
-        setProfilePhoto(selectedFile);
+        onHandlePhoto(selectedFile);
         setPhotoUrl(URL.createObjectURL(selectedFile));
       }
       console.log( formData)
@@ -32,13 +30,15 @@ export const UploadPhoto = ({onHandlePhoto}) => {
 
   onHandlePhoto(profilePhoto)
 
+
+
   return (
     <StyledUploadPhoto>
       <div className="upload-photo">
         <div className="admin-photo">
           <img
             className="admin-photo"
-            src={photoUrl || photo}
+            src={photoUrl || photo} 
             alt="photo display"
           />
         </div>
@@ -50,7 +50,5 @@ export const UploadPhoto = ({onHandlePhoto}) => {
     </StyledUploadPhoto>
   );
 };
-function onHandlePhoto(profilePhoto: File | null) {
-  throw new Error("Function not implemented.");
-}
+
 

@@ -8,6 +8,11 @@ import { DashBoardPage } from "../DashBoardPage";
 
 export const AdminLogin = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  
+  // const [email, setEmail] = useState("")
+
+  // const [password, setPassword] = useState("")
+  
 
   if (isUserLoggedIn) {
     return <DashBoardPage />;

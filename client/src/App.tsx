@@ -6,7 +6,7 @@ import AppRootComponent from "./app_root/AppRootComponent";
 import HomePageComponent from "./home_page/HomePageComponent";
 import { Admin } from "./admin_registration_page";
 import { AdminLogin } from "./admin-user-login";
-import DataTable from "./components/DataTable";
+import { DashBoardPage } from "./DashBoardPage";
 
 
         
@@ -17,7 +17,7 @@ import DataTable from "./components/DataTable";
        <Route index element={<HomePageComponent />} />
        <Route path="adminregistration" element={<Admin />} />
        <Route path="login" element={<AdminLogin />}>
-       <Route path="datatable" element={<DataTable />} />
+       <Route path="dashboard" element={<DashBoardPage />} />
        </Route>
      </Route>
    )
