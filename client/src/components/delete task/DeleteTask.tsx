@@ -3,7 +3,7 @@ import { useState } from 'react'
 import {Stylecontainer} from './DeleteTask.styles'
 import closeImage from '../../assets/Icons/Group 18.svg'
 
-const DeleteTask = ({closeDeleteModal}) => {
+const DeleteTask = ({closeDeleteModal, activeTask,deleteTask}) => {
   return (
     <Stylecontainer>
     <div className='container'>
@@ -22,7 +22,7 @@ const DeleteTask = ({closeDeleteModal}) => {
            </p>
             
             <input type="submit" value="No keep" className='submittt'/>
-            <input type="submit" value="Yes, Delete" className='submitt'/>
+            <input type="submit" value="Yes, Delete" className='submitt' onClick={()=>deleteTask(activeTask)} />
     </div>
       </div>
     </Stylecontainer>

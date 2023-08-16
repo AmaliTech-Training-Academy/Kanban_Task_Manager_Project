@@ -33,7 +33,7 @@ const TaskBoard = () => {
   //TodO : get token from local storage
 
   const token =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MTkzNzAyMywiZXhwIjoxNjk5NzEzMDIzfQ.P1lFIHoQ5KhVEWoRWz4A8seP-o8B4Vbk5CpzglyPXiY";
+    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MjE3OTc4MCwiZXhwIjoxNjk5OTU1NzgwfQ.SEpHVunfNYSBvAJEF-KXTK6E--FmuQFg_7AVLdAs3J8";
 
   const fetchTask = async () => {
     // const tasks = await axios.get("./data.json");
@@ -78,22 +78,33 @@ const TaskBoard = () => {
 
   useEffect(() => fetchTask, []);
 
-  const saveOrUpdateTask =  useCallback( 
+  const saveOrUpdateTask = useCallback(
     async (task) => {
-      console.log(task);
+      if (!task.id) {
+        task.position = todo.length + 1;
+        const tasks = await axios.post(BASE_URL + "/tasks", task, {
+          headers: {
+            authorization: token,
+          },
+        });
 
-      task.position = todo.length +1
-      const tasks = await axios.post( BASE_URL+"/tasks", task, {
+        if (tasks.status === 200) {
+          // todo: display toast, close form
+          alert("Task Created successfully");
+          closeAddTaskForm();
+        }
+      }
+
+      const tasks = await axios.patch(`${BASE_URL}/tasks/${task.id}`, task, {
         headers: {
           authorization: token,
         },
       });
 
       if (tasks.status === 200) {
-
-      // todo: display toast, close form
-        alert("Task Created successfully")
-        closeAddTaskForm()
+        // todo: display toast, close form
+        alert("Task Updated successfully");
+        closeAddTaskForm();
       }
     },
     [allTasks]
@@ -103,7 +114,7 @@ const TaskBoard = () => {
     setCardHeading("Add New Task");
     setCardButton("Create Task");
     setShowAddTaskForm(false);
-  }
+  };
 
   const closeShowAddTaskForm = useCallback(closeAddTaskForm, [showAddTaskForm]);
   const closeDeleteModal = useCallback((): void => {
@@ -125,14 +136,39 @@ const TaskBoard = () => {
   );
   const openDeleteModal = useCallback(
     (task): void => {
-      setActiveTask((prev) => Object.assign(prev, task));
+      setActiveTask(task);
+      // setActiveTask((prev) => Object.assign(prev, task));  
       setShowDeleteModal(true);
     },
     [showDeleteModal, activeTask]
   );
+  const deleteTask = useCallback(
+   async (task): void => {
+      // setActiveTask((prev) => Object.assign(prev, task));  
+      // setShowDeleteModal(true);
+      console.log(task)
+
+      const tasks = await axios.delete(`${BASE_URL}/tasks/${task.id}`, {
+        headers: {
+          authorization: token,
+        },
+      });
+
+      if (tasks.status === 200) {
+        // todo: display toast, close form
+        alert("Task Deleted successfully");
+        closeDeleteModal();
+      }
+    },
+    [showDeleteModal, activeTask]
+  );
+  
+ 
   const openCardDetails = useCallback(
     (task): void => {
-      setActiveTask((prev) => Object.assign(prev, task));
+      setActiveTask(task)
+      // setActiveTask((prev) => Object.assign(prev, task));
+      console.log(task)
       setShowCardDetails(true);
     },
     [showCardDetails, activeTask]
@@ -170,7 +206,11 @@ const TaskBoard = () => {
               />
             )}
             {showDeleteModal && (
-              <DeleteTask closeDeleteModal={closeDeleteModal} />
+              <DeleteTask 
+                closeDeleteModal={closeDeleteModal} 
+                activeTask={activeTask}
+                deleteTask={deleteTask}
+                />
             )}
             {showCardDetails && (
               <CardDetails

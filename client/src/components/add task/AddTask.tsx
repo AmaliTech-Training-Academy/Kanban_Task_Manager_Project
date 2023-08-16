@@ -8,7 +8,7 @@ import { BASE_URL } from "../../../constants";
 
 interface User {
   email: string;
-  photo: string; // This assumes 'photo' is a URL string
+  photo: string; 
   fullName: string;
 }
 
@@ -53,7 +53,7 @@ const AddTask = ({
 
   const [titleError, setTitleError] = React.useState(false);
 
-  const handleCheck = (user) => {
+  const handleCheck = (user:any) => {
     if (taskToUpdate.assignee.includes(user.fullName)) {
       setTaskToUpdate({
         ...taskToUpdate,
@@ -126,7 +126,8 @@ const AddTask = ({
             }
           />
           <label className="title">Assignee </label>
-          <input type="text" />
+            <div className="assignees-display">{users}</div>
+          {/* <input type="text" /> */}
           <div className="select">
             {allUsers.map((user) => {
               return (
