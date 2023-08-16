@@ -24,6 +24,11 @@ export const StyledSidebarContainer = styled.div`
     list-style-type: none;
     font-weight: 700;
     font-size: 15px;
+
+    
+
+
+
   }
   .SidebarList .row:hover {
     cursor: pointer;
@@ -37,6 +42,8 @@ export const StyledSidebarContainer = styled.div`
   }
   .SidebarList #active {
     background-color: #635fc7;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
   }
 
   .row #icon {
@@ -83,11 +90,11 @@ export const StyledSidebarContainer = styled.div`
   }
 
   .ToggleBtnContainer img {
-    margin-right: 20px; 
-    margin-left: 20px; 
+    margin-right: 20px;
+    margin-left: 20px;
   }
   .ToggleButtonContainer {
-    margin-right: 8px; 
+    margin-right: 8px;
     margin-left: 8px;
   }
 

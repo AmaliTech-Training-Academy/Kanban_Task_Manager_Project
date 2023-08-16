@@ -15,12 +15,12 @@ export const SidebarData = [
   {
     title: "Tasklist",
     icon: <img src={TaskIcon} alt="" />,
-    link: "/DataTable",
+    link: "/tasklist",
   },
   {
     title: "Teams",
     icon: <img src={TeamIcon} alt="" />,
-    link: "",
+    link: "dashboard/DataTable",
   },
   {
     title: "Calendar",
