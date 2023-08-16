@@ -7,11 +7,13 @@ import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 // Developer Modules
 import AppError from "./utils/appError.js";
 import userRouter from "./routers/userRoutes.js";
 import taskRouter from "./routers/taskRoutes.js";
+import taskAndUsers from "./associations/tasksAndUsers.js"
 import globalErrorHandler from "./controllers/errorController.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -22,7 +24,10 @@ const app = express();
 //  GLOBAL MIDDLEWARES
 
 app.set("view engine", "pug");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "/../views"));
+
+app.use(cors());
+app.options("*", cors());
 
 app.use(express.static(path.join(__dirname, "./public")));
 
@@ -54,6 +59,7 @@ app.get("/", (req: Request, res: Response | any, next: any) =>
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/tasks", taskRouter);
+taskAndUsers
 
 // STEP: HANDLING ALL UNDHANDLE ROUTES
 app.all("*", (req, res, next) => {

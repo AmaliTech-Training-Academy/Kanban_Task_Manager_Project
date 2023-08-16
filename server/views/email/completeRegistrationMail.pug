@@ -1,0 +1,34 @@
+extends baseEmail
+
+block content
+    img(src="./public/logo/kanban-logo.png", alt="Kanban Logo")
+    p Hi #{firstName},
+    p Congratulations! Your password has been successfully set, and your registration is complete. You are now ready to access our platform.  Please click on the button below to login 
+
+
+    p
+        | Thanks,
+        br
+        |  Kanban team
+
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+        tbody
+            tr
+                td(align='center')
+                    table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+                        tbody
+                            tr
+                                td
+                                    a(href=`${url}`, target='_blank') log in
+
+    p We look forward to having you on board. If you encounter any issues or have questions, please don't hesitate to reach out to our support team.
+    
+    p.small
+        | This email was sent to 
+        span.text-blue #{email}
+        | . If you&apos;d rather not receive this kind of email, you can 
+        span.text-blue unsubscribe or manage your email preferences
+        | .
+
+        p.small © 2023 Kanban.
+

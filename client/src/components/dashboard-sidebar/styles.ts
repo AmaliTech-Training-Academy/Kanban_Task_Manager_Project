@@ -5,7 +5,6 @@ export const StyledSidebarContainer = styled.div`
   height: 100vh;
   width: 220px;
   position: fixed;
-  /* background-color: gainsboro; */
 
   .SidebarList {
     height: auto;
@@ -25,6 +24,11 @@ export const StyledSidebarContainer = styled.div`
     list-style-type: none;
     font-weight: 700;
     font-size: 15px;
+
+    
+
+
+
   }
   .SidebarList .row:hover {
     cursor: pointer;
@@ -35,10 +39,11 @@ export const StyledSidebarContainer = styled.div`
   }
   .SidebarList .row:active {
     cursor: pointer;
-    background-color: #635fc7;
   }
   .SidebarList #active {
     background-color: #635fc7;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
   }
 
   .row #icon {
@@ -85,11 +90,11 @@ export const StyledSidebarContainer = styled.div`
   }
 
   .ToggleBtnContainer img {
-    margin-right: 20px; 
-    margin-left: 20px; 
+    margin-right: 20px;
+    margin-left: 20px;
   }
   .ToggleButtonContainer {
-    margin-right: 8px; 
+    margin-right: 8px;
     margin-left: 8px;
   }
 
@@ -101,7 +106,6 @@ export const StyledSidebarContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-weight: 700;
     font-weight: 700;
     color: #828fa3;
     &:active {

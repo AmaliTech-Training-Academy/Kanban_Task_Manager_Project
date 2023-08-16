@@ -8,8 +8,6 @@ export const StyledNavContainer = styled.nav`
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: blanchedalmond;
-
 `;
 export const LeftContainer = styled.div`
   flex: 5%;

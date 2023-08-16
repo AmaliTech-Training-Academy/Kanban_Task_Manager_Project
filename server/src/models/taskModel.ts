@@ -27,12 +27,26 @@ const Task = sequelize.define("Task", {
     allowNull: false,
   },
 
+  status: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: "todo",
+    validate: {
+      isIn: [["todo", "doing", "done"]],
+    },
+  },
+  
+  position: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+
   dueDate: { type: DataTypes.DATEONLY, allowNull: false },
 });
 
 // Model Synchronization
-Task.sync({ alter: true })
-  .then(() => console.log("✔ Synchronize user table"))
-  .catch((err) => console.log("Failed to create table", err));
+// Task.sync({ alter: true })
+//   .then(() => console.log("🟢 Synchronize Task table"))
+//   .catch((err) => console.log("Failed to create table", err));
 
 export default Task;

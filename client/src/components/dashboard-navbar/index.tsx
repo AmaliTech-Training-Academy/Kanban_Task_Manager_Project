@@ -1,10 +1,9 @@
 import * as React from "react";
 import { StyledNavContainer, LeftContainer,RightContainer,NavbarInnerContainer,} from "./styles";
-import { KanbanSidebar } from "../dashboard-sidebar";
-import Kanbanlogo from "../assets/Icons/logo.png";
-import searchIcon from "../assets/Icons/searchIcon.svg";
-import notiIcon from "../assets/Icons/Notification icon.svg";
-import ProfileImg from "../assets/Images/blank image.svg";
+import Kanbanlogo from "../../assets/Icons/logo.png";
+import searchIcon from "../../assets/Icons/searchIcon.svg";
+import notiIcon from "../../assets/Icons/Notification icon.svg";
+import ProfileImg from "../../assets/Images/blank image.svg";
 
 export const KanbanNavbar = () => {
   return (
@@ -36,7 +35,6 @@ export const KanbanNavbar = () => {
           </RightContainer>
         </NavbarInnerContainer>
       </StyledNavContainer>
-      {/* <KanbanSidebar /> */}
     </>
   );
 };

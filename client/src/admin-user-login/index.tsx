@@ -4,13 +4,19 @@ import { LoginFooter } from "../components/LoginFooter";
 import { LoginForm } from "../components/LoginForm";
 import * as React from "react";
 import { useState } from "react";
-import { DashBoardPage } from "../components/DashBoardPage";
+
+import { useNavigate } from "react-router-dom";
 
 export const AdminLogin = () => {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
+  const navigate = useNavigate();
+  // const [email, setEmail] = useState("")
+
+  // const [password, setPassword] = useState("")
+
   if (isUserLoggedIn) {
-    return <DashBoardPage />;
+    navigate("dashboard");
   }
 
   return (

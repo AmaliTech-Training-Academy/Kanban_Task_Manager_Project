@@ -1,10 +1,10 @@
 import * as React from "react";
-import DashboardIcon from "../assets/Icons/fluent_board-split-24-regular.svg";
-import TaskIcon from "../assets/Icons/task icon.svg";
-import TeamIcon from "../assets/Icons/team icon.svg";
-import CalendarIcon from "../assets/Icons/calender icon.svg";
-import MessagesIcon from "../assets/Icons/Messages icon.svg";
-import SettingsIcon from "../assets/Icons/Settings.svg";
+import DashboardIcon from "../../assets/Icons/fluent_board-split-24-regular.svg";
+import TaskIcon from "../../assets/Icons/task icon.svg";
+import TeamIcon from "../../assets/Icons/team icon.svg";
+import CalendarIcon from "../../assets/Icons/calender icon.svg";
+import MessagesIcon from "../../assets/Icons/Messages icon.svg";
+import SettingsIcon from "../../assets/Icons/Settings.svg";
 
 export const SidebarData = [
   {
@@ -20,7 +20,7 @@ export const SidebarData = [
   {
     title: "Teams",
     icon: <img src={TeamIcon} alt="" />,
-    link: "/teams",
+    link: "dashboard/DataTable",
   },
   {
     title: "Calendar",

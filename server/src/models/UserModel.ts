@@ -61,7 +61,7 @@ const User = sequelize.define(
         },
         len: {
           args: [8, 100], 
-          msg: "Password must be between 6 and 100 characters long.",
+          msg: "Password must be between 8 and 100 characters long.",
         },
       },
     },
@@ -126,19 +126,10 @@ User.beforeSave(async (user: any) => {
   user.passwordChangedAt = Date.now() - 1000;
 });
 
-// NOTE: Associations
-User.belongsToMany(Task, {
-  foreignKey: "userId",
-  through: "TaskAndAssignee",
-});
-Task.belongsToMany(User, {
-  foreignKey: "taskId",
-  through: "TaskAndAssignee",
-});
 
 // Model Synchronization
-User.sync({ alter: true })
-  .then(() => console.log("✔ Synchronize user table"))
-  .catch((err) => console.log("Failed to create table", err));
+// User.sync({ alter: true })
+//   .then(() => console.log("🟢 Synchronize User table"))
+//   .catch((err) => console.log("Failed to create table", err));
 
 export default User;

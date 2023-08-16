@@ -31,7 +31,7 @@ const Navbar = () => {
 
         <NavContainer>
           <NavMenu>
-            <NavLink1 to="/">Home </NavLink1>
+            <NavLink1 to="/"   >Home </NavLink1>
             
             <NavLink  
             onClick={() => handleClickScroll(".about")}>
