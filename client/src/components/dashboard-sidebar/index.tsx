@@ -6,6 +6,7 @@ import hideSideBar from "../../assets/Icons/Hide side bar icon.svg";
 import lightIcon from "../../assets/Icons/light mode icon.svg";
 import darkIcon from "../../assets/Icons/dark mode icon.svg";
 import ToggleButton from "../SideBarToggleBtn";
+import { NavLink } from "react-router-dom";
 
 export const KanbanSidebar = () => {
   return (
@@ -14,17 +15,10 @@ export const KanbanSidebar = () => {
         <div className="SidebarContainer">
           <ul className="SidebarList">
             {SidebarData.map((val, key) => (
-              <li
-                key={key}
-                className="row"
-                id={window.location.pathname == val.link ? "active" : ""}
-                onClick={() => {
-                  window.location.pathname = val.link;
-                }}
-              >
+              <NavLink key={key} to="DataTable">
                 <div id="icon">{val.icon}</div>
                 <div id="title">{val.title}</div>
-              </li>
+              </NavLink>
             ))}
           </ul>
         </div>
@@ -47,7 +41,3 @@ export const KanbanSidebar = () => {
     </>
   );
 };
-
-
-
- 
