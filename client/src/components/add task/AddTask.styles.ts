@@ -73,7 +73,7 @@ export const Stylecontainer = styled.div`
     width: 416px;
     padding: 9px;
   }
-  .select{
+  .select {
     color: #000112;
     font-family: Plus Jakarta Sans;
     font-size: 13px;
@@ -86,7 +86,6 @@ export const Stylecontainer = styled.div`
     height: 362px;
     overflow-y: scroll;
     /* background-color:  orange; */
-    
   }
   textarea {
     width: 416px;
@@ -104,20 +103,35 @@ export const Stylecontainer = styled.div`
     color: #fff;
     margin: 30px 0 0 10px;
   }
-  .option{
+  .option {
     display: inline;
     /* background-color: red; */
   }
-  input[type="checkbox"]{
+  input[type="checkbox"] {
     /* background-color: green; */
     width: 50px;
   }
-  .check{
+  .check {
     display: flex;
     /* width: 200px; */
     justify-content: space-between;
     /* text-align: center; */
 
     /* border: 2px solid brown; */
+  }
+  .assignees-display {
+    color: #000112;
+    font-family: Plus Jakarta Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 23px;
+    width: 416px;
+    height: 170px;
+    padding: 9px;
+    border: 1px solid #7c7c7c;
+    border-radius: 1px;
+    /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); */
+    /* transition: border linear 0.2s, box-shadow linear 0.2s; */
   }
 `;

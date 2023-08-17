@@ -30,15 +30,16 @@ const TaskBoard = () => {
     const { destination, source }: any = result;
   };
 
-  const token =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MTY2ODE4MCwiZXhwIjoxNjk5NDQ0MTgwfQ.VKynJRWyOLILsFQuceN6I2OA3MFsS8H9l3aVzj5gglw";
+  //TodO : get token from local storage
+
+  const bearer = "Bearer ";
 
   const fetchTask = async () => {
     // const tasks = await axios.get("./data.json");
 
     const tasks = await axios.get(BASE_URL + "/tasks?include=assignees", {
       headers: {
-        authorization: token,
+        authorization: bearer+localStorage.getItem("token"),
       },
     });
     console.log(tasks);
@@ -77,26 +78,44 @@ const TaskBoard = () => {
   useEffect(() => fetchTask, []);
 
   const saveOrUpdateTask = useCallback(
-    (task) => {
-      console.log(task);
+    async (task) => {
+      if (!task.id) {
+        task.position = todo.length + 1;
+        const tasks = await axios.post(BASE_URL + "/tasks", task, {
+          headers: {
+            authorization: bearer+localStorage.getItem("token"),
+          },
+        });
 
-      // const tasks = await axios.get( BASE_URL+"/api/task");
+        if (tasks.status === 200) {
+          // todo: display toast, close form
+          alert("Task Created successfully");
+          closeAddTaskForm();
+        }
+      }
 
-      // if (tasks.status === 200) {
+      const tasks = await axios.patch(`${BASE_URL}/tasks/${task.id}`, task, {
+        headers: {
+          authorization: bearer + localStorage.getItem("token"),
+        },
+      });
 
-      //todo: display toast, close form
-
-      // }
+      if (tasks.status === 200) {
+        // todo: display toast, close form
+        alert("Task Updated successfully");
+        closeAddTaskForm();
+      }
     },
     [allTasks]
   );
-
-  const closeShowAddTaskForm = useCallback((): void => {
+  const closeAddTaskForm = () => {
     setActiveTask(null);
     setCardHeading("Add New Task");
     setCardButton("Create Task");
     setShowAddTaskForm(false);
-  }, [showAddTaskForm]);
+  };
+
+  const closeShowAddTaskForm = useCallback(closeAddTaskForm, [showAddTaskForm]);
   const closeDeleteModal = useCallback((): void => {
     setActiveTask(null);
     setShowDeleteModal(false);
@@ -116,14 +135,39 @@ const TaskBoard = () => {
   );
   const openDeleteModal = useCallback(
     (task): void => {
-      setActiveTask((prev) => Object.assign(prev, task));
+      setActiveTask(task);
+      // setActiveTask((prev) => Object.assign(prev, task));  
       setShowDeleteModal(true);
     },
     [showDeleteModal, activeTask]
   );
+  const deleteTask = useCallback(
+   async (task): void => {
+      // setActiveTask((prev) => Object.assign(prev, task));  
+      // setShowDeleteModal(true);
+      console.log(task)
+
+      const tasks = await axios.delete(`${BASE_URL}/tasks/${task.id}`, {
+        headers: {
+          authorization: bearer + localStorage.getItem("token"),
+        },
+      });
+
+      if (tasks.status === 200) {
+        // todo: display toast, close form
+        alert("Task Deleted successfully");
+        closeDeleteModal();
+      }
+    },
+    [showDeleteModal, activeTask]
+  );
+  
+ 
   const openCardDetails = useCallback(
     (task): void => {
-      setActiveTask((prev) => Object.assign(prev, task));
+      setActiveTask(task)
+      // setActiveTask((prev) => Object.assign(prev, task));
+      console.log(task)
       setShowCardDetails(true);
     },
     [showCardDetails, activeTask]
@@ -143,13 +187,13 @@ const TaskBoard = () => {
           <div>Loading...</div>
         ) : (
           <>
-            <button
+            {/* <button
               onClick={() => {
                 setShowAddTaskForm(true);
               }}
             >
               +Add New Task
-            </button>
+            </button> */}
             {showAddTaskForm && (
               <AddTask
                 closeShowAddTaskForm={closeShowAddTaskForm}
@@ -161,7 +205,11 @@ const TaskBoard = () => {
               />
             )}
             {showDeleteModal && (
-              <DeleteTask closeDeleteModal={closeDeleteModal} />
+              <DeleteTask 
+                closeDeleteModal={closeDeleteModal} 
+                activeTask={activeTask}
+                deleteTask={deleteTask}
+                />
             )}
             {showCardDetails && (
               <CardDetails

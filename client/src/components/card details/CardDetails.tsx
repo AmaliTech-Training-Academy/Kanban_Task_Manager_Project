@@ -11,7 +11,8 @@ interface Task {
   title: string;
   description: string;
   dueDate: string;
-  assignees: string; // Assuming 'assignees' is a URL string
+  assignees: string; 
+  assignee: string; 
   progress: number;
 }
 

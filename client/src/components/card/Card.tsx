@@ -1,93 +1,10 @@
-// import { Stylecontainer } from "./Card.styles";
-// import { useState } from "react";
-// import Progress from "./Progress";
-// import calenderIcon from "../../public/icon/more-horiz.svg";
-// import dateIcon from "../../public/icon/due-date-icon.svg";
-
-// const Card = ({ card, openEditTaskForm ,openDeleteModal}) => {
-//   const [isOpen, setIsOpen] = useState(false);
-//   return (
-//     <Stylecontainer>
-//       <div className="card">
-//         <div className="card-content">
-//           <div className="card-body">
-//             <div className="card-title-container">
-//               <h3 className="card-title heading">{card.title}</h3>
-//               <button
-//                 className="card-option icon-box-2"
-//                 onClick={() => setIsOpen((c) => !c)}
-//               >
-//                 <img
-//                   src={calenderIcon}
-//                   className="icon-due-date"
-//                   alt="Calendar icon"
-//                 />
-//               </button>
-//             </div>
-//             <p className="card-paragraph paragraph">{card.paragraph}</p>
-//           </div>
-//           <div className="card-assign-due-date">
-//             <div className="card-assignees">
-//               <div className="card-image-box">
-//                 <img
-//                   src={card.users}
-//                   alt="name of user"
-//                   className="card-photo"
-//                 />
-//               </div>
-//               <div className="card-image-box">
-//                 <img
-//                   src={card.users}
-//                   alt="name of user"
-//                   className="card-photo"
-//                 />
-//               </div>
-//               <div className="card-image-box">
-//                 <img
-//                   src={card.users}
-//                   alt="name of user"
-//                   className="card-photo"
-//                 />
-//               </div>
-//               <div className="card-image-box text-grey heading-3-light">+6</div>
-//             </div>
-//             <div className="card-due-date-container">
-//               <div className="icon-box-24">
-//                 <img
-//                   src={dateIcon}
-//                   className="icon-due-date"
-//                   alt="Calendar icon"
-//                 />
-//               </div>
-//               <h3 className="heading-3 color-purlpe card-due-date">
-//                 {card.date}
-//               </h3>
-//             </div>
-//           </div>
-//           <Progress />
-//         </div>
-//         <div className={`card-action ${isOpen ? "" : "hidden"}`}>
-//           <span
-//             className="card-action-option text-grey"
-//             onClick={() => openEditTaskForm(card.id)}
-//           >
-//             Edit task
-//           </span>
-//           <span className="card-action-option text-red" onClick={() =>
-//           openDeleteModal(card.id)}>Delete task</span>
-//         </div>
-//       </div>
-//     </Stylecontainer>
-//   );
-// };
-
-// export default Card;
-// import "./App.css";
 import * as React from "react";
 import { useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import Progress from "../progress/Progress";
 import AssigneePhoto from "../assignees/AssigneePhoto";
+import moreImg from "../../../src/assets/Icons/more-horiz.svg";
+import dateImg from "../../../src/assets/Icons/due-date-icon.svg"
 
 // NOTE: Get Date
 export const formatDate = (dateString: any): any => {
@@ -133,7 +50,7 @@ const Card = ({
                 onClick={() => setIsOpen((c) => !c)}
               >
                 <img
-                  src="icon/more-horiz.svg"
+                  src={moreImg}
                   className="icon-due-date"
                   alt="Calendar icon"
                 />
@@ -169,7 +86,7 @@ const Card = ({
                 <div className="card-due-date-container">
                   <div className="icon-box-24">
                     <img
-                      src="icon/due-date-icon.svg"
+                      src={dateImg}
                       className="icon-due-date"
                       alt="Calendar icon"
                     />
