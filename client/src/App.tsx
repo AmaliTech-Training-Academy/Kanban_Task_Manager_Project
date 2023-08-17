@@ -23,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="login" element={<AdminLogin />} />
       <Route path="dashboard" element={<DashBoardPage />}>
         <Route path="DataTable" element={<DataTable />} />
+        <Route path="tasklist" element={<TaskBoard />} />
       </Route>
     </Route>
   )
@@ -34,6 +35,7 @@ function App() {
       <div className="App">
         <RouterProvider router={router} />
       </div>
+
     </>
   );
 }

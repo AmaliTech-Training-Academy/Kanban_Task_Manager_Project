@@ -15,7 +15,7 @@ export const SidebarData = [
   {
     title: "Tasklist",
     icon: <img src={TaskIcon} alt="" />,
-    link: "/tasklist",
+    link: "dashboard/tasklist",
   },
   {
     title: "Teams",

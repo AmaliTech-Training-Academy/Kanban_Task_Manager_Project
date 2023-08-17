@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Draggable } from "react-beautiful-dnd";
 import Progress from "../progress/Progress";
 import AssigneePhoto from "../assignees/AssigneePhoto";
+import moreImg from "../../../src/assets/Icons/more-horiz.svg";
+import dateImg from "../../../src/assets/Icons/due-date-icon.svg"
 
 // NOTE: Get Date
 export const formatDate = (dateString: any): any => {
@@ -48,7 +50,7 @@ const Card = ({
                 onClick={() => setIsOpen((c) => !c)}
               >
                 <img
-                  src="icon/more-horiz.svg"
+                  src={moreImg}
                   className="icon-due-date"
                   alt="Calendar icon"
                 />
@@ -84,7 +86,7 @@ const Card = ({
                 <div className="card-due-date-container">
                   <div className="icon-box-24">
                     <img
-                      src="icon/due-date-icon.svg"
+                      src={dateImg}
                       className="icon-due-date"
                       alt="Calendar icon"
                     />

@@ -32,15 +32,14 @@ const TaskBoard = () => {
 
   //TodO : get token from local storage
 
-  const token =
-    "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQwZjBkMGZmLTdmMzAtNDQyZi04NTgxLTNiMTBlNDdkM2FiZiIsImlhdCI6MTY5MjE3OTc4MCwiZXhwIjoxNjk5OTU1NzgwfQ.SEpHVunfNYSBvAJEF-KXTK6E--FmuQFg_7AVLdAs3J8";
+  const bearer = "Bearer ";
 
   const fetchTask = async () => {
     // const tasks = await axios.get("./data.json");
 
     const tasks = await axios.get(BASE_URL + "/tasks?include=assignees", {
       headers: {
-        authorization: token,
+        authorization: bearer+localStorage.getItem("token"),
       },
     });
     console.log(tasks);
@@ -84,7 +83,7 @@ const TaskBoard = () => {
         task.position = todo.length + 1;
         const tasks = await axios.post(BASE_URL + "/tasks", task, {
           headers: {
-            authorization: token,
+            authorization: bearer+localStorage.getItem("token"),
           },
         });
 
@@ -97,7 +96,7 @@ const TaskBoard = () => {
 
       const tasks = await axios.patch(`${BASE_URL}/tasks/${task.id}`, task, {
         headers: {
-          authorization: token,
+          authorization: bearer + localStorage.getItem("token"),
         },
       });
 
@@ -150,7 +149,7 @@ const TaskBoard = () => {
 
       const tasks = await axios.delete(`${BASE_URL}/tasks/${task.id}`, {
         headers: {
-          authorization: token,
+          authorization: bearer + localStorage.getItem("token"),
         },
       });
 
@@ -188,13 +187,13 @@ const TaskBoard = () => {
           <div>Loading...</div>
         ) : (
           <>
-            <button
+            {/* <button
               onClick={() => {
                 setShowAddTaskForm(true);
               }}
             >
               +Add New Task
-            </button>
+            </button> */}
             {showAddTaskForm && (
               <AddTask
                 closeShowAddTaskForm={closeShowAddTaskForm}

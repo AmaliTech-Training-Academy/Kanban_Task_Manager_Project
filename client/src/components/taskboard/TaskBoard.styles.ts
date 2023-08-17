@@ -3,11 +3,17 @@ import styled from "styled-components";
 
 export const Stylecontainer = styled.div`
 
-    .task {
-  min-height: 100%;
+  .task {
+  /* min-height: 100%; */
   display: flex;
   justify-content: center;
   /* position: relative; */
+  /* background-color: salmon; */
+  width: 81%;
+   position: relative;
+  left: 19%;
+  margin-left: -10px;
+;
 
 
 }
@@ -15,11 +21,10 @@ export const Stylecontainer = styled.div`
 .task-board {
   margin: 35px 0;
   /* width: 1074px; */
-  width: 80%;
-
-
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: 20px;
 }
 .overlay{
   /* background-color: blue; */
@@ -40,6 +45,7 @@ export const Stylecontainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  /* background-color: #67e2ae; */
 }
 
 .task-board-container {
@@ -51,7 +57,6 @@ export const Stylecontainer = styled.div`
 .task-board-todo-contianer-head-title {
   margin-right: 12px;
   margin-bottom: 16px;
-
   display: flex;
 }
 
@@ -316,35 +321,15 @@ export const Stylecontainer = styled.div`
 
 /* NOTE:  TASKBOARD*/
 
-/* .task {
-  min-height: 100%;
-
-  display: flex;
-  justify-content: center;
-} */
-
-/* .task-board {
-  margin: 35px 0;
-  width: 1074px;
-
-  display: flex;
-  justify-content: space-between;
-} */
-
-/* .task-board-contianer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
 .task-board-column {
-  width: 299px;
-  height: 100%;
+  /* width: 299px; */
+  /* height: 100%; */
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  /* background-color: yellow; */
 }
 
 .task-board-container-head {
