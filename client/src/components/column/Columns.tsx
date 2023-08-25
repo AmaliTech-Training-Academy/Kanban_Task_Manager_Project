@@ -1,6 +1,6 @@
 import * as React from "react";
 import Card from "../card/Card";
-import { Droppable } from "react-beautiful-dnd";
+// import { Droppable } from "react-beautiful-dnd";
 
 import { useCallback } from "react";
 

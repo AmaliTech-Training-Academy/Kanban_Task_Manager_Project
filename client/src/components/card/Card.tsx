@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
-import { Draggable } from "react-beautiful-dnd";
+// import { Draggable } from "react-beautiful-dnd";
 import Progress from "../progress/Progress";
 import AssigneePhoto from "../assignees/AssigneePhoto";
 import moreImg from "../../../src/assets/Icons/more-horiz.svg";
