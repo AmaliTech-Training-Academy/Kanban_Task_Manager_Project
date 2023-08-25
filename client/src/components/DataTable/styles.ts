@@ -8,6 +8,7 @@ export const StyleBtnsContainer = styled.div`
     height: 49px;
     margin-left: 50%;
     display: flex;
+    justify-content: space-between;
   }
 `;
 

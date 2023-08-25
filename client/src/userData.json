@@ -2,7 +2,7 @@
   "user": [
     {
       "fullname": "Frederick Neal",
-      "photo": "/users/frederick-neal.jpg",
+      "photo": "/client/../users/frederick-neal.jpg",
       "email": "frederick@gmail.com",
       "specialization": "frontend Developer",
       "rank": "senior",

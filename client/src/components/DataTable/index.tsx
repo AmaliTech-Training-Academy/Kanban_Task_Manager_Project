@@ -2,7 +2,9 @@ import React, { useMemo } from "react";
 import userData from "../../userData.json";
 import {StyleTable,StyleTh,StyleTd,TableContainer,StyleBtnsContainer,} from "./styles";
 import StatusIndicator from "./StatusIndcator";
-import { FilterBtn } from "../DataFilterBtn";
+import { FilterBtn } from "../../DataFilterBtn";
+import { DataImpotBtn } from "../../DataImportBtn";
+import { InviteBtn } from "../../DataInviteBtn";
 
 interface UserData {
   fullname: string;
@@ -57,6 +59,8 @@ const DataTable: React.FC = () => {
       <StyleBtnsContainer>
         <div className="DataTable-BtnsContainer">
           <FilterBtn />
+          <DataImpotBtn />
+          <InviteBtn/>
         </div>
       </StyleBtnsContainer>
       <StyleTable>
