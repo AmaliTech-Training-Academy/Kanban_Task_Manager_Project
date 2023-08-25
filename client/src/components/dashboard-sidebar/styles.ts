@@ -52,7 +52,7 @@ export const StyledSidebarContainer = styled.div`
   .SubContainer {
     margin-left: 32px;
     height: 196px;
-    margin-top: 160px;
+    margin-top: 100px;
   }
   .logoutBtn {
     width: 100px;
